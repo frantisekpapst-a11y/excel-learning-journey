@@ -14,10 +14,10 @@
 | AVG() | PRŮMĚR() |
 | MAX() | MAX() |
 | MIN() | MIN() |
-| CASE WHEN | KDYŽ() |
-| JOIN | SVYHLEDAT / INDEX + POZVYHLEDAT |
+| CASE WHEN | KDYŽ() / IFS() |
+| JOIN | SVYHLEDAT / INDEX + POZVYHLEDAT / XLOOKUP |
 | CTE | Pomocný list / mezivýpočet |
-| Window functions | Pokročilé výpočty / dynamické reporty |
+| Window functions | Kumulativní výpočty / dynamické reporty |
 
 ---
 
@@ -101,10 +101,11 @@ Výhody:
 | `Ctrl + PgDown` | další list |
 | `Ctrl + PgUp` | předchozí list |
 | `F2` | editace buňky |
-| `F4` | zamčení adres |
+| `F4` | změna typu adresace |
 | `Ctrl + Alt + V` | vložit jinak |
 | `Ctrl + F3` | správce názvů |
 | `Alt + F11` | VBA editor |
+| `Ctrl + ;` | aktuální datum |
 
 ---
 
@@ -114,8 +115,8 @@ Výhody:
 |---|---|---|
 | Relativní | `A1` | mění řádek i sloupec |
 | Absolutní | `$A$1` | nemění nic |
-| Zamčený sloupec | `$A1` | mění se jen řádek |
-| Zamčený řádek | `A$1` | mění se jen sloupec |
+| Zamčený sloupec | `$A1` | sloupec zůstává, řádek se mění |
+| Zamčený řádek | `A$1` | řádek zůstává, sloupec se mění |
 
 ---
 
@@ -131,14 +132,40 @@ Použít pro:
 - centrální parametry
 
 Příklad:
+
 ```excel
 =A2*$B$2
 ```
 
 Lepší varianta s pojmenovanou oblastí:
+
 ```excel
 =A2*sleva
 ```
+
+---
+
+# 🧮 Smíšené adresování
+
+Používá se, když je potřeba zamknout pouze řádek nebo pouze sloupec.
+
+## Příklad násobící matice
+
+```excel
+=$A2*B$1
+```
+
+| Část | Význam |
+|---|---|
+| `$A2` | zamčený sloupec A |
+| `B$1` | zamčený řádek 1 |
+
+Použití:
+- tabulky sazeb
+- matice cen
+- měnové přepočty
+- scénářové modely
+- výpočty kopírované dolů i doprava
 
 ---
 
@@ -147,13 +174,14 @@ Lepší varianta s pojmenovanou oblastí:
 | Metoda | Chování |
 |---|---|
 | Fill Handle | kopíruje vzorec + formát |
-| Ctrl + Enter | kopíruje jen vzorec |
+| Ctrl + Enter | kopíruje jen vzorec / obsah do vybrané oblasti |
 
 ---
 
 # 📌 Důležitý mindset
 
 Junior:
+
 ```text
 ruční práce
 kopírování myší
@@ -161,6 +189,7 @@ všechno na jednom listu
 ```
 
 Analytik:
+
 ```text
 automatizace
 struktura
@@ -186,11 +215,13 @@ Výhody:
 # 🧠 Pojmenované oblasti
 
 Místo:
+
 ```excel
 =SUMA(B2:B5000)
 ```
 
 lepší:
+
 ```excel
 =SUMA(trzby_q1)
 ```
@@ -200,6 +231,185 @@ Výhody:
 - rychlejší práce
 - menší chybovost
 - business význam přímo ve vzorci
+
+---
+
+# 🧩 Vnořování funkcí
+
+Vnořování znamená, že výsledek jedné funkce slouží jako vstup pro jinou funkci.
+
+Příklad:
+
+```excel
+=ZAOKROUHLIT(PRŮMĚR(A1:A5);0)
+```
+
+Excel počítá:
+1. `PRŮMĚR(A1:A5)`
+2. `ZAOKROUHLIT(...)`
+
+Princip:
+
+```text
+Excel vyhodnocuje vzorce zevnitř ven
+```
+
+---
+
+# 🔀 KDYŽ vs IFS
+
+## Klasické KDYŽ
+
+```excel
+=KDYŽ(B2>10000;"HIGH";"LOW")
+```
+
+## Vnořené KDYŽ
+
+```excel
+=KDYŽ(B2<10000;"LOW";KDYŽ(B2<50000;"MEDIUM";"HIGH"))
+```
+
+Nevýhody:
+- horší čitelnost
+- složitější debugging
+- vyšší riziko chyby
+
+## IFS
+
+```excel
+=IFS(B2<10000;"LOW";B2<50000;"MEDIUM";B2>=50000;"HIGH")
+```
+
+Výhody:
+- přehlednější zápis
+- lepší údržba
+- vhodné pro více podmínek
+
+---
+
+# ⚖️ Operátory
+
+## Relační operátory
+
+| Operátor | Význam |
+|---|---|
+| `>` | větší než |
+| `<` | menší než |
+| `=` | rovná se |
+| `>=` | větší nebo rovno |
+| `<=` | menší nebo rovno |
+| `<>` | nerovná se |
+
+---
+
+## Funkční operátory
+
+| Operátor | Význam | Příklad |
+|---|---|---|
+| `:` | oblast | `A1:A10` |
+| `;` | oddělení argumentů | `=SUMA(A1;A3;A5)` |
+| mezera | průnik oblastí | `=SUMA(A2:C2 B1:B3)` |
+
+---
+
+## Textový operátor
+
+```excel
+=A1&" "&B1
+```
+
+Použití:
+- spojení jména a příjmení
+- tvorba kódů
+- spojování textů
+- tvorba popisků v reportech
+
+---
+
+# 🔍 Zástupné znaky
+
+| Znak | Význam |
+|---|---|
+| `*` | libovolný počet znaků |
+| `?` | právě jeden znak |
+
+Příklad:
+
+```excel
+=COUNTIF(A:A;"Praha*")
+```
+
+Najde:
+- Praha
+- Praha 1
+- Praha-západ
+
+---
+
+# 📊 Maticové vzorce
+
+Maticový vzorec zpracovává více hodnot nebo oblastí najednou.
+
+Příklad:
+
+```excel
+=B2:B6*C2:C6
+```
+
+Excel provede:
+
+```text
+B2*C2
+B3*C3
+B4*C4
+B5*C5
+B6*C6
+```
+
+Moderní Excel 365 používá dynamická pole, takže výsledek se rozlije do více buněk automaticky.
+
+---
+
+# 🔄 TRANSPOZICE
+
+```excel
+=TRANSPOZICE(A1:A5)
+```
+
+Použití:
+- převod sloupce na řádek
+- převod řádku na sloupec
+
+Rozdíl:
+
+| Přístup | Chování |
+|---|---|
+| `TRANSPOZICE()` | dynamické propojení se zdrojem |
+| Vložit jinak → Transponovat | statický výsledek |
+
+---
+
+# 📈 Kumulativní výpočty
+
+Příklad running total:
+
+```excel
+=SUMA($C$3:C3)
+```
+
+| Část | Význam |
+|---|---|
+| `$C$3` | fixní začátek |
+| `C3` | pohyblivý konec |
+
+Použití:
+- YTD revenue
+- kumulativní tržby
+- cash flow
+- budget tracking
+- forecast progression
+- running totals
 
 ---
 
@@ -240,6 +450,7 @@ Výhody:
 ## Riziko
 
 Když vidíš:
+
 ```text
 [Skupina]
 ```
@@ -292,6 +503,9 @@ Výhoda:
 ✅ hlídat režim `[Skupina]`  
 ✅ používat centrální parametry  
 ✅ nechat v sešitu jen relevantní viditelné listy  
+✅ používat smíšené adresování při kopírování dolů i doprava  
+✅ pro více podmínek preferovat čitelnější logiku  
+✅ u kumulativních výpočtů fixovat začátek oblasti  
 
 ---
 
@@ -307,27 +521,34 @@ Výhoda:
 - špatně nastavené absolutní adresy
 - zapomenutá skupina listů
 - mazání helper listů místo jejich skrytí
+- příliš dlouhé vnořené KDYŽ()
+- nepochopení rozdílu mezi `*` a `?`
+- používání statických výstupů tam, kde má být dynamika
 
 ---
 
 # 🔥 Důležité koncepty
 
 ## ETL mindset
+
 ```text
 Extract → Transform → Load
 ```
 
 ## Reporting mindset
+
 ```text
 Data → Informace → Decision making
 ```
 
 ## BI mindset
+
 ```text
 Automatizace > manuální práce
 ```
 
 ## Robustní Excel model
+
 ```text
 1 správný vzorec
 ↓
@@ -336,4 +557,11 @@ správná adresace
 škálovatelné kopírování
 ↓
 udržitelný reporting
+```
+
+## Škálovatelnost
+
+```text
+Řešení funguje nejen pro 10 řádků,
+ale i pro 10 000+ řádků bez ruční práce.
 ```
