@@ -1,7 +1,7 @@
 # 📊 Excel Advanced Cheatsheet
-## Klávesové zkratky • Vzorce • Formátování • Produktivita
+## Klávesové zkratky • Vzorce • Listy • Produktivita • BI mindset
 
-> 🎯 Praktický cheatsheet k prvním 4 lekcím kurzu Excel pro pokročilé  
+> 🎯 Praktický cheatsheet k prvním 5 lekcím kurzu Excel pro pokročilé  
 > Zaměřeno na efektivní workflow datového analytika.
 
 ---
@@ -21,10 +21,11 @@
 | `Ctrl + šipka` | Přesun na konec dat |
 | `Ctrl + Backspace` | Návrat k aktivní buňce |
 | `PgUp / PgDown` | Posun obrazovky |
+| `Ctrl + ;` | Vloží aktuální datum |
 
 ---
 
-## 🔹 Výběr buněk
+# 🔹 Výběr buněk
 
 | Zkratka | Funkce |
 |---|---|
@@ -165,7 +166,7 @@ Domů → Schránka → Kopírovat formát
 
 ---
 
-## 🔹 Vložit jinak
+# 🔹 Vložit jinak
 
 | Zkratka | Funkce |
 |---|---|
@@ -258,28 +259,157 @@ nová data
 
 ---
 
-# 📑 6. Práce s listy
+# 📑 6. Typy listů a viditelnost
 
 ---
+
+# 🔹 Typy listů
+
+| Typ listu | Použití |
+|---|---|
+| Datový list | tabulky, výpočty, dashboardy |
+| Grafický list | jeden graf přes celý list |
+| Historické listy | staré typy (dnes nepoužívané) |
+
+---
+
+# 🔹 Datový list
+
+Klasický pracovní list:
+- data
+- vzorce
+- kontingenčky
+- dashboardy
+- reporting
+
+👉 hlavní pracovní prostor analytika
+
+---
+
+# 🔹 Grafický list
+
+Obsahuje:
+📊 pouze jeden graf
+
+Použití:
+- prezentace
+- management reporting
+- export grafů
+
+---
+
+# 🔹 Viditelnost listů
+
+| Typ | Chování |
+|---|---|
+| Viditelný | běžně dostupný |
+| Skrytý | lze obnovit v Excelu |
+| Very Hidden | pouze přes VBA |
+
+---
+
+# 🔹 Skrytý list
+
+Použití:
+- helper tabulky
+- RAW data
+- staré reporty
+- pomocné výpočty
+
+---
+
+# 🔹 Very Hidden list
+
+Použití:
+- lookup tabulky
+- technická logika
+- interní propojení
+- enterprise reporting
+
+---
+
+# 🔹 VBA editor
 
 | Zkratka | Funkce |
 |---|---|
-| `Ctrl + PgUp` | Předchozí list |
-| `Ctrl + PgDown` | Další list |
-| `Ctrl + ;` | Aktuální datum |
+| `Alt + F11` | Otevře VBA editor |
 
 ---
 
-## 🔹 Best Practices
+# 🔹 VBA objekty
 
-✅ krátké názvy listů  
-✅ bez diakritiky  
-✅ logická struktura  
-✅ oddělení RAW dat / reportů / dashboardů
+| Objekt | Použití |
+|---|---|
+| Module | VBA kód a makra |
+| UserForm | formuláře |
+| Class Module | pokročilé aplikace |
 
 ---
 
-# 💼 7. Best Practices pro datového analytika
+# 🔹 Důležité pravidlo
+
+❌ Nelze skrýt všechny listy  
+✅ Excel musí mít alespoň 1 viditelný list
+
+---
+
+# 🏗️ 7. Profesionální struktura analytického souboru
+
+---
+
+# 🔹 Typický BI workflow
+
+```text
+RAW_DATA
+   ↓
+TRANSFORM
+   ↓
+MODEL
+   ↓
+PIVOTS
+   ↓
+DASHBOARD
+   ↓
+EXPORT
+```
+
+---
+
+# 🔹 Doporučené listy
+
+| List | Účel |
+|---|---|
+| RAW_DATA | import dat |
+| CLEAN_DATA | očištěná data |
+| LOOKUPS | číselníky |
+| CALCULATIONS | pomocné výpočty |
+| PIVOTS | kontingenční tabulky |
+| DASHBOARD | vizualizace |
+| EXPORT | finální výstupy |
+
+---
+
+# 🧠 Separation of Concerns
+
+❌ Všechno na jednom listu
+
+✅ Oddělení:
+- zdrojových dat
+- transformace
+- výpočtů
+- dashboardu
+- exportu
+
+Výhody:
+- přehlednost
+- jednodušší debugging
+- menší chybovost
+- lepší maintenance
+- enterprise standard
+
+---
+
+# 💼 8. Best Practices pro datového analytika
 
 ---
 
@@ -289,6 +419,7 @@ nová data
 - ruční kopírování
 - rozbité formáty
 - chaotické listy
+- vše na jednom sheetu
 - pevné adresy všude
 
 ---
@@ -302,6 +433,7 @@ nová data
 - klávesové zkratky
 - automatizace
 - konzistentní formátování
+- oddělení RAW vs REPORT
 
 ---
 
@@ -318,6 +450,7 @@ nová data
 | `Ctrl + PgDown` | Přepínání listů |
 | `Ctrl + Alt + V` | Vložit jinak |
 | `Ctrl + F3` | Správce názvů |
+| `Alt + F11` | VBA editor |
 
 ---
 
