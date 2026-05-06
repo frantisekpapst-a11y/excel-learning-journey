@@ -389,3 +389,238 @@ Ale:
 ✅ přípravu na Power BI
 ✅ junior data analyst skillset
 
+
+📄 formulas/logic_and_or.xlsx
+Zadání
+
+Vyhodnoť nárok na bonus.
+
+Bonus získá zaměstnanec, který:
+
+má tržbu alespoň 100 000 Kč
+a zároveň marži alespoň 20 %
+Zaměstnanec	Tržba	Marže	Bonus
+Novák	120000	0,25	?
+Svoboda	95000	0,30	?
+Dvořák	150000	0,18	?
+Malá	180000	0,22	?
+Řešení
+=KDYŽ((B2>=100000)*(C2>=0,2);"BONUS";"NO BONUS")
+Co se učíš
+
+✅ logický operátor AND
+✅ více podmínek ve vzorci
+✅ business pravidla
+✅ bonus logic
+
+📄 formulas/or_conditions.xlsx
+Zadání
+
+Označ zákazníka jako PRIORITY, pokud:
+
+utratil více než 50 000 Kč
+nebo měl více než 10 objednávek
+Zákazník	Tržba	Objednávky	Segment
+Alfa s.r.o.	40000	12	?
+Beta s.r.o.	60000	5	?
+Gamma s.r.o.	30000	3	?
+Řešení
+=KDYŽ((B2>50000)+(C2>10)>0;"PRIORITY";"STANDARD")
+Co se učíš
+
+✅ logický operátor OR
+✅ více cest ke splnění podmínky
+✅ analytická segmentace
+✅ business logika
+
+📄 formulas/xor_logic.xlsx
+Zadání
+
+Zkontroluj benefit policy.
+
+Zaměstnanec:
+
+musí mít vybraný právě jeden benefit
+nesmí mít oba
+nesmí mít žádný
+Zaměstnanec	Stravenky	Multisport	Status
+Novák	ano	ne	?
+Svoboda	ano	ano	?
+Dvořák	ne	ne	?
+Malá	ne	ano	?
+Řešení
+=KDYŽ((B2="ano")+(C2="ano")=1;"OK";"INVALID")
+Co se učíš
+
+✅ XOR logika
+✅ validace vstupů
+✅ kontrola business pravidel
+✅ logické součty
+
+📄 formulas/ifs_grading.xlsx
+Zadání
+
+Převeď skóre na hodnocení.
+
+Student	Body	Hodnocení
+Jan	92	?
+Petra	75	?
+Tomáš	58	?
+Eva	83	?
+Řešení
+=IFS(B2>=90;"A";B2>=80;"B";B2>=70;"C";B2>=60;"D";B2<60;"F")
+Co se učíš
+
+✅ funkce IFS
+✅ více podmínek
+✅ modernější alternativa ke KDYŽ
+✅ grading systems
+
+📄 formulas/switch_departments.xlsx
+Zadání
+
+Přelož kód oddělení na název.
+
+Kód	Oddělení
+HR	?
+FIN	?
+IT	?
+MKT	?
+Řešení
+=SWITCH(A2;"HR";"Human Resources";"FIN";"Finance";"IT";"IT Department";"MKT";"Marketing";"Unknown")
+Co se učíš
+
+✅ funkce SWITCH
+✅ mapování hodnot
+✅ náhrada dlouhých KDYŽ
+✅ business lookup logic
+
+📄 formulas/choose_quarters.xlsx
+Zadání
+
+Převeď číslo kvartálu na název.
+
+Kvartál	Název
+1	?
+2	?
+3	?
+4	?
+Řešení
+=ZVOLIT(A2;"Q1";"Q2";"Q3";"Q4")
+Ošetření chyby
+=KDYŽCHYBHODN(ZVOLIT(A2;"Q1";"Q2";"Q3";"Q4");"Invalid quarter")
+Co se učíš
+
+✅ funkce ZVOLIT
+✅ indexování
+✅ IFERROR / KDYŽCHYBHODN
+✅ bezpečné vzorce
+
+📄 formulas/iferror_division.xlsx
+Zadání
+
+Spočítej ROI.
+
+ROI:
+
+zisk / náklady
+
+Pokud jsou náklady 0, zobraz:
+
+"N/A"
+Projekt	Zisk	Náklady	ROI
+A	50000	10000	?
+B	30000	0	?
+C	12000	4000	?
+Řešení
+=IFERROR(B2/C2;"N/A")
+Co se učíš
+
+✅ ošetření chyb
+✅ robustní reporting
+✅ ochrana dashboardů
+✅ enterprise best practices
+
+📄 formulas/vlookup_products.xlsx
+Zadání
+
+Doplň cenu produktu podle názvu.
+
+Produkt	Cena
+Notebook	25000
+Myš	500
+Klávesnice	1200
+
+Vyhledávání:
+
+Hledaný produkt	Cena
+Myš	?
+Řešení
+=SVYHLEDAT(E2;$A$2:$B$4;2;0)
+Modernější varianta
+=XLOOKUP(E2;A2:A4;B2:B4)
+Co se učíš
+
+✅ lookup logika
+✅ práce s tabulkami
+✅ exact match
+✅ business lookup workflow
+
+📄 formulas/approximate_lookup.xlsx
+Zadání
+
+Najdi cenu podle množstevní slevy.
+
+Min ks	Cena
+1	20
+10	18
+20	16
+50	14
+
+Objednávka:
+
+Ks	Cena
+35	?
+Řešení
+=SVYHLEDAT(E2;$A$2:$B$5;2;1)
+Co se děje
+
+Excel:
+
+hledá nejbližší nižší hodnotu
+pro 35 najde hranici 20
+vrátí cenu 16
+Co se učíš
+
+✅ approximate match
+✅ intervalové lookupy
+✅ pricing tables
+✅ enterprise pricing logic
+
+📄 formulas/customer_segmentation.xlsx
+Zadání
+
+Segmentuj zákazníky podle tržby.
+
+Zákazník	Tržba	Segment
+Alfa	15000	?
+Beta	70000	?
+Gamma	140000	?
+
+Pravidla:
+
+nad 100k → VIP
+nad 50k → MID
+jinak → LOW
+Řešení
+Varianta KDYŽ()
+=KDYŽ(B2>100000;"VIP";KDYŽ(B2>50000;"MID";"LOW"))
+Varianta IFS()
+=IFS(B2>100000;"VIP";B2>50000;"MID";B2<=50000;"LOW")
+Co se učíš
+
+✅ customer segmentation
+✅ nested IF
+✅ IFS
+✅ business classification
+
