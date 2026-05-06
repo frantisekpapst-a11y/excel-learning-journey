@@ -1,6 +1,6 @@
 SQL → Excel mapování
-SQL	      Excel
-SELECT	  Výběr dat
+SQL	        Excel
+  SELECT	  Výběr dat
 WHERE	    Filtr
 GROUP BY	Kontingenční tabulka
 SUM()	    SUMA()
