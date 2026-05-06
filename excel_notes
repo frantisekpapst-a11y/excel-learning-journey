@@ -1,8 +1,212 @@
-SQL → Excel mapování
-SQL	        Excel
-SELECT	    Výběr dat
-WHERE	    Filtr
-GROUP BY	Kontingenční tabulka
-SUM()	    SUMA()
-CASE WHEN	KDYŽ()
-JOIN	    SVYHLEDAT / INDEX + POZVYHLEDAT
+# 🧠 Excel Notes & Best Practices
+
+---
+
+# 📌 SQL → Excel mapování
+
+| SQL | Excel |
+|---|---|
+| SELECT | Výběr dat |
+| WHERE | Filtr |
+| GROUP BY | Kontingenční tabulka |
+| SUM() | SUMA() |
+| CASE WHEN | KDYŽ() |
+| JOIN | SVYHLEDAT / INDEX + POZVYHLEDAT |
+
+---
+
+# 📊 Excel = mini BI platforma
+
+Excel není jen tabulka.
+
+Použití:
+- reporting
+- dashboardy
+- ad-hoc analýzy
+- transformace dat
+- KPI tracking
+- business analýza
+- automatizace
+
+---
+
+# 🚀 Profesionální struktura Excel souboru
+
+```text
+RAW_DATA
+↓
+TRANSFORM
+↓
+MODEL
+↓
+PIVOTS
+↓
+DASHBOARD
+↓
+EXPORT
+```
+
+---
+
+# 📑 Doporučené listy
+
+| List | Účel |
+|---|---|
+| RAW_DATA | zdrojová data |
+| CLEAN_DATA | očištěná data |
+| LOOKUPS | pomocné tabulky |
+| CALCULATIONS | pomocné výpočty |
+| PIVOTS | kontingenční tabulky |
+| DASHBOARD | vizualizace |
+| EXPORT | finální výstupy |
+
+---
+
+# 🎯 Separation of Concerns
+
+❌ Všechno na jednom listu
+
+✅ Oddělení:
+- zdrojových dat
+- transformací
+- výpočtů
+- dashboardu
+- exportu
+
+Výhody:
+- přehlednost
+- jednodušší debugging
+- menší chybovost
+- lepší maintenance
+- enterprise standard
+
+---
+
+# ⚡ Nejčastější zkratky analytika
+
+| Zkratka | Použití |
+|---|---|
+| Ctrl + T | Excel tabulka |
+| Ctrl + Shift + šipka | výběr dat |
+| Ctrl + Enter | vyplnění více buněk |
+| Ctrl + A | výběr tabulky/listu |
+| Ctrl + PgDown | další list |
+| Ctrl + PgUp | předchozí list |
+| F2 | editace buňky |
+| F4 | zamčení adres |
+| Ctrl + Alt + V | vložit jinak |
+| Ctrl + F3 | správce názvů |
+| Alt + F11 | VBA editor |
+
+---
+
+# 📐 Typy adresace
+
+| Typ | Příklad |
+|---|---|
+| Relativní | A1 |
+| Absolutní | $A$1 |
+| Zamčený sloupec | $A1 |
+| Zamčený řádek | A$1 |
+
+---
+
+# 🟩 Fill Handle vs Ctrl + Enter
+
+| Metoda | Chování |
+|---|---|
+| Fill Handle | kopíruje vzorec + formát |
+| Ctrl + Enter | kopíruje jen vzorec |
+
+---
+
+# 📌 Důležitý mindset
+
+Junior:
+```text
+ruční práce
+kopírování myší
+všechno na jednom listu
+```
+
+Analytik:
+```text
+automatizace
+struktura
+škálovatelnost
+oddělení dat a reportu
+```
+
+---
+
+# 📊 Excel tabulky (Ctrl + T)
+
+Výhody:
+- automatické rozšíření vzorců
+- filtry
+- dynamické rozsahy
+- lepší čitelnost
+- méně chyb
+- lepší kompatibilita s Power Query
+
+---
+
+# 🧠 Pojmenované oblasti
+
+Místo:
+```excel
+=SUMA(B2:B5000)
+```
+
+lepší:
+```excel
+=SUMA(trzby_q1)
+```
+
+Výhody:
+- přehlednější vzorce
+- rychlejší práce
+- menší chybovost
+
+---
+
+# 📌 Best Practices
+
+✅ používat Excel tabulky  
+✅ oddělovat RAW data od dashboardů  
+✅ používat pojmenované oblasti  
+✅ minimalizovat ruční práci  
+✅ používat klávesové zkratky  
+✅ psát čitelné vzorce  
+✅ vytvářet škálovatelné reporty
+
+---
+
+# 🚫 Nejčastější chyby juniorů
+
+- všechno na jednom listu
+- ruční kopírování vzorců
+- nepoužívání tabulek
+- pevné rozsahy
+- chaos v listech
+- nečitelné vzorce
+- rozbité formátování
+
+---
+
+# 🔥 Důležité koncepty
+
+## ETL mindset
+```text
+Extract → Transform → Load
+```
+
+## Reporting mindset
+```text
+Data → Informace → Decision making
+```
+
+## BI mindset
+```text
+Automatizace > manuální práce
+```
