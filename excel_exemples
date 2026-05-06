@@ -1,315 +1,391 @@
-# 📁 examples/ – praktické ukázky
+📁 examples/ – praktické ukázky
 
-Složka `examples/` slouží pro malé praktické ukázky, mini business scénáře a cvičné soubory.
+Složka examples/ slouží pro malé praktické ukázky, mini business scénáře a cvičné soubory.
 
 Cíl:
-- procvičit Excel funkce na realistických datech
-- ukládat vlastní řešení
-- budovat portfolio pro data analytiku
-- připravit se na Power BI workflow
 
----
-
-# 📂 Doporučená struktura
-
-```text
+procvičit Excel funkce na realistických datech
+ukládat vlastní řešení
+budovat portfolio pro data analytiku
+připravit se na Power BI workflow
+učit se analytické myšlení
+vytvářet škálovatelné workflow
+📂 Doporučená struktura
 examples/
 │
 ├── formulas/
+│   ├── basic_formulas.xlsx
+│   ├── absolute_references.xlsx
+│   ├── mixed_references.xlsx
+│   ├── conditional_formulas.xlsx
+│   ├── nested_functions.xlsx
+│   └── cumulative_totals.xlsx
+│
 ├── tables/
+│   ├── excel_tables.xlsx
+│   ├── dynamic_ranges.xlsx
+│   └── ctrl_enter_examples.xlsx
+│
 ├── named_ranges/
+│   ├── named_ranges_example.xlsx
+│   └── lookup_example.xlsx
+│
 ├── dashboards/
+│   ├── sales_dashboard.xlsx
+│   └── kpi_dashboard.xlsx
+│
 ├── pivots/
+│   ├── pivot_sales.xlsx
+│   └── pivot_customers.xlsx
+│
+├── arrays/
+│   ├── array_formulas.xlsx
+│   └── transpose_example.xlsx
+│
 └── raw_vs_clean/
-```
-
----
-
-# 📄 formulas/basic_formulas.xlsx
-
-## Zadání
+    ├── raw_data_example.xlsx
+    └── cleaned_data_example.xlsx
+📄 formulas/basic_formulas.xlsx
+Zadání
 
 Vypočítej tržbu pro každý produkt.
 
-| Produkt | Cena | Ks | Tržba |
-|---|---:|---:|---:|
-| Notebook | 25000 | 2 | ? |
-| Myš | 500 | 10 | ? |
-| Klávesnice | 1200 | 5 | ? |
-
-## Řešení
-
-```excel
+Produkt	Cena	Ks	Tržba
+Notebook	25000	2	?
+Myš	500	10	?
+Klávesnice	1200	5	?
+Řešení
 =B2*C2
-```
+Výsledek
+Produkt	Tržba
+Notebook	50000
+Myš	5000
+Klávesnice	6000
+📄 formulas/absolute_references.xlsx
+Zadání
 
-Výsledek:
+Spočítej cenu po slevě. Sleva je centrální parametr v buňce E1.
 
-| Produkt | Tržba |
-|---|---:|
-| Notebook | 50000 |
-| Myš | 5000 |
-| Klávesnice | 6000 |
-
----
-
-# 📄 formulas/absolute_references.xlsx
-
-## Zadání
-
-Spočítej cenu po slevě. Sleva je centrální parametr v buňce `E1`.
-
-| Produkt | Cena | Sleva | Cena po slevě |
-|---|---:|---:|---:|
-| Notebook | 25000 | 10 % | ? |
-| Myš | 500 | 10 % | ? |
-| Klávesnice | 1200 | 10 % | ? |
-
-## Řešení
-
-```excel
+Produkt	Cena	Sleva	Cena po slevě
+Notebook	25000	10 %	?
+Myš	500	10 %	?
+Klávesnice	1200	10 %	?
+Řešení
 =B2*(1-$E$1)
-```
 
-Pokud je buňka `E1` pojmenovaná jako `sleva`:
+Pokud je buňka E1 pojmenovaná jako:
 
-```excel
+sleva
+
+můžeš použít:
+
 =B2*(1-sleva)
-```
+Co se učíš
 
----
+✅ absolutní adresace
+✅ fixace parametrů
+✅ škálovatelný výpočet
+✅ čitelnější vzorce
 
-# 📄 formulas/conditional_formulas.xlsx
+📄 formulas/mixed_references.xlsx
+Zadání
 
-## Zadání
+Vytvoř násobící matici.
 
-Označ objednávky nad 10 000 Kč jako `HIGH`, ostatní jako `LOW`.
+	B	C	D
+	1	2	3
+10	?	?	?
+20	?	?	?
+30	?	?	?
+Řešení
 
-| Objednávka | Tržba | Segment |
-|---|---:|---|
-| O001 | 5000 | ? |
-| O002 | 15000 | ? |
-| O003 | 8000 | ? |
+Do buňky B2:
 
-## Řešení
+=$A2*B$1
 
-```excel
+Pak rozkopírovat do celé oblasti.
+
+Co se děje
+Část vzorce	Význam
+$A2	fixní sloupec
+B$1	fixní řádek
+Výsledek
+	1	2	3
+10	10	20	30
+20	20	40	60
+30	30	60	90
+📄 formulas/conditional_formulas.xlsx
+Zadání
+
+Označ objednávky nad 10 000 Kč jako HIGH, ostatní jako LOW.
+
+Objednávka	Tržba	Segment
+O001	5000	?
+O002	15000	?
+O003	8000	?
+Řešení
 =KDYŽ(B2>10000;"HIGH";"LOW")
-```
+Výsledek
+Objednávka	Segment
+O001	LOW
+O002	HIGH
+O003	LOW
+📄 formulas/nested_functions.xlsx
+Zadání
 
-Výsledek:
+Zaokrouhli průměr tržeb na celé číslo.
 
-| Objednávka | Segment |
-|---|---|
-| O001 | LOW |
-| O002 | HIGH |
-| O003 | LOW |
+Tržba
+10500
+9800
+11300
+10200
+Řešení
+=ZAOKROUHLIT(PRŮMĚR(A2:A5);0)
+Co se děje
+PRŮMĚR(A2:A5)
+ZAOKROUHLIT(...)
 
----
+Excel vyhodnocuje funkce:
 
-# 📄 tables/excel_tables.xlsx
+zevnitř ven
+📄 formulas/cumulative_totals.xlsx
+Zadání
 
-## Zadání
+Vytvoř kumulativní součet tržeb.
 
-Převeď běžný rozsah dat na Excel tabulku a přidej sloupec `Tržba`.
+Den	Tržba	Kumulativně
+1	1000	?
+2	2000	?
+3	1500	?
+4	3000	?
+Řešení
+=SUMA($B$2:B2)
 
-| Produkt | Cena | Ks |
-|---|---:|---:|
-| Notebook | 25000 | 2 |
-| Myš | 500 | 10 |
+Kopírovat dolů.
 
-## Postup
+Co se učíš
 
-1. Klikni do dat.
-2. Použij:
+✅ running totals
+✅ smíšené adresování
+✅ fixní začátek oblasti
+✅ BI/reporting pattern
 
-```text
+📄 tables/excel_tables.xlsx
+Zadání
+
+Převeď běžný rozsah dat na Excel tabulku a přidej sloupec Tržba.
+
+Produkt	Cena	Ks
+Notebook	25000	2
+Myš	500	10
+Postup
+Klikni do dat.
+Použij:
 Ctrl + T
-```
-
-3. Přidej sloupec `Tržba`.
-4. Zadej vzorec:
-
-```excel
+Přidej sloupec Tržba.
+Zadej vzorec:
 =[@Cena]*[@Ks]
-```
+Výhoda
 
-## Výhoda
+✅ automatické rozkopírování vzorců
+✅ dynamické rozšiřování
+✅ filtry
+✅ připraveno pro Power Query
 
-Vzorec se automaticky zkopíruje do celého sloupce.
+📄 tables/ctrl_enter_examples.xlsx
+Zadání
 
----
+Vyplň oblast:
 
-# 📄 named_ranges/named_ranges_example.xlsx
+D2:D1000
 
-## Zadání
+vztahem:
+
+=B2*C2
+
+bez rozbití formátu.
+
+Řešení
+Označit oblast
+Napsat vzorec
+Použít:
+Ctrl + Enter
+Výhoda
+
+✅ zachování formátu
+✅ rychlost
+✅ enterprise workflow
+✅ menší chybovost
+
+📄 named_ranges/named_ranges_example.xlsx
+Zadání
 
 Sečti tržby pomocí pojmenované oblasti.
 
-| Měsíc | Tržba |
-|---|---:|
-| Leden | 100000 |
-| Únor | 120000 |
-| Březen | 90000 |
-
-## Postup
-
-1. Označ hodnoty tržeb.
-2. Pojmenuj oblast jako:
-
-```text
+Měsíc	Tržba
+Leden	100000
+Únor	120000
+Březen	90000
+Postup
+Označ hodnoty tržeb.
+Pojmenuj oblast:
 trzby_q1
-```
-
-3. Použij vzorec:
-
-```excel
+Použij vzorec:
 =SUMA(trzby_q1)
-```
-
-## Výsledek
-
-```text
+Výsledek
 310000
-```
+📄 named_ranges/lookup_example.xlsx
+Zadání
 
----
+Najdi cenu produktu podle názvu.
 
-# 📄 pivots/pivot_sales.xlsx
+Produkt	Cena
+Notebook	25000
+Myš	500
+Klávesnice	1200
 
-## Zadání
+Vyhledávaný produkt:
+
+Myš
+Řešení
+=SVYHLEDAT(E2;A2:B4;2;0)
+
+nebo moderněji:
+
+=XLOOKUP(E2;A2:A4;B2:B4)
+📄 pivots/pivot_sales.xlsx
+Zadání
 
 Zjisti celkové tržby podle regionu.
 
-| Datum | Region | Produkt | Tržba |
-|---|---|---|---:|
-| 1.1.2026 | Praha | Notebook | 50000 |
-| 2.1.2026 | Brno | Myš | 5000 |
-| 3.1.2026 | Praha | Klávesnice | 6000 |
-
-## Řešení
+Datum	Region	Produkt	Tržba
+1.1.2026	Praha	Notebook	50000
+2.1.2026	Brno	Myš	5000
+3.1.2026	Praha	Klávesnice	6000
+Řešení
 
 Kontingenční tabulka:
 
-- Řádky: `Region`
-- Hodnoty: `Součet z Tržba`
+Řádky → Region
+Hodnoty → Součet z Tržba
+Výsledek
+Region	Tržba
+Praha	56000
+Brno	5000
+📄 arrays/array_formulas.xlsx
+Zadání
 
-Výsledek:
+Spočítej tržby jedním maticovým vzorcem.
 
-| Region | Tržba |
-|---|---:|
-| Praha | 56000 |
-| Brno | 5000 |
+Ks	Cena
+2	100
+3	150
+5	200
+Řešení
+=B2:B4*C2:C4
+Co Excel udělá
+B2*C2
+B3*C3
+B4*C4
 
----
+automaticky najednou.
 
-# 📄 dashboards/sales_dashboard.xlsx
+📄 arrays/transpose_example.xlsx
+Zadání
 
-## Zadání
+Převeď sloupec na řádek.
+
+Řešení
+=TRANSPOZICE(A1:A5)
+Výhoda
+
+✅ dynamická vazba na zdrojová data
+✅ automatická aktualizace
+✅ práce s dynamickými poli
+
+📄 dashboards/sales_dashboard.xlsx
+Zadání
 
 Vytvoř jednoduchý sales dashboard.
 
-## Dataset
-
-| Měsíc | Tržba | Náklady | Zisk |
-|---|---:|---:|---:|
-| Leden | 100000 | 70000 | ? |
-| Únor | 120000 | 85000 | ? |
-| Březen | 90000 | 60000 | ? |
-
-## Řešení
-
-### Zisk
-
-```excel
+Dataset
+Měsíc	Tržba	Náklady	Zisk
+Leden	100000	70000	?
+Únor	120000	85000	?
+Březen	90000	60000	?
+Řešení
+Zisk
 =B2-C2
-```
-
-### KPI
+KPI
 
 Celkové tržby:
 
-```excel
 =SUMA(B2:B4)
-```
 
 Celkový zisk:
 
-```excel
 =SUMA(D2:D4)
-```
 
 Marže:
 
-```excel
 =SUMA(D2:D4)/SUMA(B2:B4)
-```
-
-## Dashboard prvky
-
-- KPI karta: Total Revenue
-- KPI karta: Total Profit
-- KPI karta: Profit Margin
-- sloupcový graf: Tržby podle měsíce
-- spojnicový graf: Vývoj zisku
-
----
-
-# 📄 raw_vs_clean/raw_data_example.xlsx
-
-## Zadání
+Dashboard prvky
+KPI karta → Total Revenue
+KPI karta → Total Profit
+KPI karta → Profit Margin
+sloupcový graf → Tržby podle měsíce
+spojnicový graf → Vývoj zisku
+📄 raw_vs_clean/raw_data_example.xlsx
+Zadání
 
 Vyčisti špinavá data.
 
-| Order ID | Customer | Date | Revenue |
-|---|---|---|---:|
-| 001 | Jan Novak | 2026/01/01 | 5000 |
-| 002 |  Petra Svoboda  | 01-02-2026 | 8000 |
-| 002 | Petra Svoboda | 01-02-2026 | 8000 |
-| 003 | Karel Dvorak |  | 3000 |
+Order ID	Customer	Date	Revenue
+001	Jan Novak	2026/01/01	5000
+002	Petra Svoboda	01-02-2026	8000
+002	Petra Svoboda	01-02-2026	8000
+003	Karel Dvorak		3000
+Problémy
+duplicita objednávky
+mezery ve jméně
+různé formáty datumu
+chybějící datum
+Řešení
+odstranit duplicity
+použít:
+=PROČISTIT()
 
-## Problémy
+nebo Power Query Trim
 
-- duplicita objednávky `002`
-- mezery ve jméně
-- různé formáty datumu
-- chybějící datum
-
-## Řešení
-
-- odstranit duplicity
-- použít `PROČISTIT()` / Power Query Trim
-- sjednotit datum
-- doplnit nebo označit chybějící hodnoty
-
-Výsledná tabulka:
-
-| Order ID | Customer | Date | Revenue |
-|---|---|---|---:|
-| 001 | Jan Novak | 1.1.2026 | 5000 |
-| 002 | Petra Svoboda | 2.1.2026 | 8000 |
-| 003 | Karel Dvorak | Missing | 3000 |
-
----
-
-# 🚀 Portfolio nápad
+sjednotit datum
+doplnit Missing values
+Výsledná tabulka
+Order ID	Customer	Date	Revenue
+001	Jan Novak	1.1.2026	5000
+002	Petra Svoboda	2.1.2026	8000
+003	Karel Dvorak	Missing	3000
+🚀 Portfolio nápad
 
 Přidej složku:
 
-```text
 before_after/
-```
 
-Ukázka:
+Například:
 
-```text
 raw_sales_data.xlsx
 ↓
 clean_sales_dashboard.xlsx
-```
+🧠 Co tím buduješ
 
-To ukazuje:
-- cleaning
-- analytické myšlení
-- reporting
-- schopnost vytvořit výstup z nepořádných dat
+Ne jen poznámky.
+
+Ale:
+
+✅ praktické portfolio
+✅ business thinking
+✅ analytický workflow
+✅ reporting mindset
+✅ přípravu na Power BI
+✅ junior data analyst skillset
+
