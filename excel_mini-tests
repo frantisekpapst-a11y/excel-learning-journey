@@ -1,5 +1,5 @@
 # 🧠 Excel Advanced – Mini Tests
-## Lekce 1–5 + BI mindset
+## Lekce 1–7 + BI mindset
 
 ---
 
@@ -51,7 +51,7 @@ Jak Excel souvisí s Power BI a SQL?
 Import, čištění a transformace dat z webu, databází, API apod.
 
 ### 2.
-Řešitel (Solver)
+Řešitel / Solver.
 
 ### 3.
 Automatizace opakovaných činností → úspora času a méně chyb.
@@ -60,7 +60,7 @@ Automatizace opakovaných činností → úspora času a méně chyb.
 Pokročilé využití zahrnuje analýzu dat, automatizaci, Power Query, makra, dashboardy apod.
 
 ### 5.
-.xlsm nebo .xlsb
+`.xlsm` nebo `.xlsb`
 
 ### 6.
 VBA = klasické desktop makro.  
@@ -88,23 +88,15 @@ Power BI = reporting a dashboardy
 
 ---
 
----
-
 # 📘 Lekce 2 – Klávesové zkratky a výběr buněk
 
 ## ❓ Otázky
 
 ### 1.
-Co udělá:
-```text
-Ctrl + šipka dolů
-```
+Co udělá `Ctrl + šipka dolů`?
 
 ### 2.
-Co udělá:
-```text
-Ctrl + Shift + šipka dolů
-```
+Co udělá `Ctrl + Shift + šipka dolů`?
 
 ### 3.
 Jak se přesuneš na začátek listu?
@@ -119,10 +111,7 @@ Jak vybereš celý řádek?
 Jak vybereš celý list?
 
 ### 7.
-Co udělá:
-```text
-Ctrl + PgDown
-```
+Co udělá `Ctrl + PgDown`?
 
 ### 8.
 Jak otevřeš úpravu aktivní buňky?
@@ -132,6 +121,7 @@ K čemu slouží absolutní adresa?
 
 ### 10.
 Jaký je rozdíl mezi:
+
 ```excel
 $A$1
 A$1
@@ -146,10 +136,7 @@ Jak rychle zkopíruješ vzorec dolů v tabulce?
 Kdy použiješ absolutní adresu?
 
 ### 13.
-Co dělá:
-```text
-Ctrl + End
-```
+Co dělá `Ctrl + End`?
 
 ### 14.
 Jak funguje klávesa F4 ve vzorcích?
@@ -165,22 +152,22 @@ Přesun na konec souvislého bloku dat.
 Vybere oblast až na konec dat.
 
 ### 3.
-Ctrl + Home
+`Ctrl + Home`
 
 ### 4.
-Ctrl + Space
+`Ctrl + Space`
 
 ### 5.
-Shift + Space
+`Shift + Space`
 
 ### 6.
-Ctrl + A dvakrát nebo Ctrl + Shift + Space.
+`Ctrl + A` dvakrát nebo `Ctrl + Shift + Space`.
 
 ### 7.
 Přepnutí na další list.
 
 ### 8.
-F2
+`F2`
 
 ### 9.
 Uzamčení odkazu při kopírování vzorců.
@@ -205,8 +192,6 @@ Přepíná typy adresace.
 
 ---
 
----
-
 # 📘 Lekce 3 – Rozšiřování vzorců a formátů
 
 ## ❓ Otázky
@@ -221,10 +206,7 @@ Co udělá dvojklik na fill handle?
 Proč někdy není vhodné používat fill handle?
 
 ### 4.
-Co dělá:
-```text
-Ctrl + Enter
-```
+Co dělá `Ctrl + Enter`?
 
 ### 5.
 Jaký je rozdíl mezi fill handle a Ctrl + Enter?
@@ -239,7 +221,7 @@ Kde najdeš Kopírovat formát?
 Jak otevřeš nabídku Vložit jinak?
 
 ### 9.
-Co je hlavní výhoda Excel tabulky (Ctrl + T)?
+Co je hlavní výhoda Excel tabulky (`Ctrl + T`)?
 
 ### 10.
 Co se děje se vzorci v Excel tabulce při přidání nového řádku?
@@ -257,9 +239,7 @@ Proč je Ctrl + Enter užitečné u velkých datasetů?
 Jak ukončíš režim Kopírovat formát po dvojkliku?
 
 ### 15.
-Jaký je rozdíl mezi:
-- ručním kopírováním
-- Excel tabulkou
+Jaký je rozdíl mezi ručním kopírováním a Excel tabulkou?
 
 ### 16.
 Proč analytici preferují Ctrl + T?
@@ -291,7 +271,7 @@ Pomocí Kopírovat formát nebo Vložit jinak → Formáty.
 Domů → Schránka → štěteček.
 
 ### 8.
-Ctrl + Alt + V
+`Ctrl + Alt + V`
 
 ### 9.
 Automatické rozšiřování vzorců, filtrování, strukturované odkazy.
@@ -300,7 +280,7 @@ Automatické rozšiřování vzorců, filtrování, strukturované odkazy.
 Automaticky se rozšíří do nových řádků.
 
 ### 11.
-Ctrl + Shift + Space
+`Ctrl + Shift + Space`
 
 ### 12.
 Klik na levý horní roh mezi řádky a sloupci.
@@ -309,15 +289,13 @@ Klik na levý horní roh mezi řádky a sloupci.
 Rychlé vyplnění bez narušení formátování.
 
 ### 14.
-Esc
+`Esc`
 
 ### 15.
 Excel tabulka automatizuje práci se vzorci a rozsahem.
 
 ### 16.
 Kvůli škálovatelnosti, automatizaci a menší chybovosti.
-
----
 
 ---
 
@@ -341,10 +319,7 @@ Jak otevřeš Správce názvů?
 Co dělá klávesa F3 ve vzorcích?
 
 ### 6.
-Proč není vhodný název:
-```text
-2025_data
-```
+Proč není vhodný název `2025_data`?
 
 ### 7.
 Proč nejsou vhodné mezery a české znaky?
@@ -356,10 +331,7 @@ Kdy se pojmenované oblasti nejvíce vyplatí?
 Jak přepínáš mezi listy klávesnicí?
 
 ### 10.
-Co vloží:
-```text
-Ctrl + ;
-```
+Co vloží `Ctrl + ;`?
 
 ### 11.
 Jaké operace lze dělat ve Správci názvů?
@@ -368,11 +340,14 @@ Jaké operace lze dělat ve Správci názvů?
 Jaký je přínos pojmenovaných oblastí ve vzorcích?
 
 ### 13.
-Proč je:
+Proč je lepší:
+
 ```excel
 =SUMA(trzby_q1)
 ```
-lepší než:
+
+než:
+
 ```excel
 =SUMA(B2:B5000)
 ```
@@ -403,7 +378,7 @@ Vybereš oblast → pole názvu → zadáš název → Enter.
 Přehlednost, rychlost, méně chyb.
 
 ### 4.
-Ctrl + F3
+`Ctrl + F3`
 
 ### 5.
 Zobrazí seznam pojmenovaných oblastí.
@@ -418,7 +393,7 @@ Kvůli kompatibilitě a přehlednosti.
 U velkých a složitých tabulek.
 
 ### 9.
-Ctrl + PgUp / PgDown
+`Ctrl + PgUp / PgDown`
 
 ### 10.
 Aktuální datum.
@@ -446,8 +421,6 @@ Nemusíš ručně vybírat obrovské rozsahy buněk.
 
 ---
 
----
-
 # 📘 Lekce 5 – Typy listů a jejich viditelnost
 
 ## ❓ Otázky
@@ -459,18 +432,13 @@ Jaký je rozdíl mezi datovým a grafickým listem?
 K čemu se používají skryté listy?
 
 ### 3.
-Jaký je rozdíl mezi:
-- Skrytý list
-- Very Hidden list
+Jaký je rozdíl mezi skrytým listem a Very Hidden listem?
 
 ### 4.
 Jak otevřeš VBA editor?
 
 ### 5.
-Co obsahuje:
-```text
-Module
-```
+Co obsahuje Module?
 
 ### 6.
 Jak přepínáš mezi listy klávesnicí?
@@ -494,10 +462,7 @@ Jaký typ listu použiješ pro:
 K čemu slouží UserForm?
 
 ### 12.
-Jaké jsou hlavní výhody oddělení:
-- RAW_DATA
-- TRANSFORM
-- DASHBOARD
+Jaké jsou hlavní výhody oddělení RAW_DATA, TRANSFORM a DASHBOARD?
 
 ### 13.
 Proč firmy často skryjí helper listy místo jejich smazání?
@@ -506,11 +471,7 @@ Proč firmy často skryjí helper listy místo jejich smazání?
 Které listy obvykle vidí management user?
 
 ### 15.
-Co znamená:
-```text
-separation of concerns
-```
-v Excelu?
+Co znamená separation of concerns v Excelu?
 
 ---
 
@@ -528,13 +489,13 @@ Skrytý list lze obnovit běžně v Excelu.
 Very Hidden pouze přes VBA.
 
 ### 4.
-Alt + F11
+`Alt + F11`
 
 ### 5.
 Makra a VBA kód.
 
 ### 6.
-Ctrl + PgUp / PgDown
+`Ctrl + PgUp / PgDown`
 
 ### 7.
 Nepřehlednost, chaos, horší maintenance.
@@ -563,11 +524,240 @@ Mohou být stále zdrojem pro vzorce, pivoty nebo dashboardy.
 Dashboard a exportní listy.
 
 ### 15.
-Oddělení:
-- zdrojových dat
-- transformací
-- výpočtů
-- výstupů
+Oddělení zdrojových dat, transformací, výpočtů a výstupů.
+
+---
+
+# 📘 Lekce 6 – Hromadné úpravy a formátování listů
+
+## ❓ Otázky
+
+### 1.
+Jak vybereš nesousedící listy?
+
+### 2.
+Jak vybereš sousedící listy?
+
+### 3.
+Jak vybereš všechny listy v sešitu?
+
+### 4.
+Jak poznáš, že pracuješ se skupinou listů?
+
+### 5.
+Jaké riziko má práce ve skupině listů?
+
+### 6.
+Co se stane, když zapíšeš hodnotu do buňky A1 při vybrané skupině listů?
+
+### 7.
+Co znamená vzorec:
+
+```excel
+=SUMA('Leden:Prosinec'!B2)
+```
+
+### 8.
+Co je 3D reference?
+
+### 9.
+Kdy je výhodné použít 3D referenci?
+
+### 10.
+Co se stane, když vložíš nový list mezi první a poslední list ve 3D referenci?
+
+### 11.
+Jaký je rozdíl mezi 3D vzorcem a nástrojem Sloučit?
+
+### 12.
+Kde najdeš nástroj Sloučit?
+
+### 13.
+Proč je důležité po hromadné úpravě zrušit výběr skupiny listů?
+
+### 14.
+Jaký typ reportingu se hodí pro práci s více listy?
+
+---
+
+# ✅ Odpovědi
+
+### 1.
+Držím `Ctrl` a klikám na jednotlivá ouška listů.
+
+### 2.
+Kliknu na první list, držím `Shift` a kliknu na poslední list.
+
+### 3.
+Pravé tlačítko na ouško listu → Vybrat všechny listy.
+
+### 4.
+V horní části Excelu se zobrazí `[Skupina]`.
+
+### 5.
+Změny se zapisují na všechny vybrané listy, i omylem.
+
+### 6.
+Hodnota se vloží do A1 na všech vybraných listech.
+
+### 7.
+Sečte hodnotu B2 ze všech listů mezi Leden a Prosinec.
+
+### 8.
+Odkaz napříč více listy.
+
+### 9.
+Když mají listy stejnou strukturu, například měsíční nebo pobočkové reporty.
+
+### 10.
+Automaticky se zahrne do výpočtu.
+
+### 11.
+3D vzorec je dynamický.  
+Sloučit vytvoří statický výsledek.
+
+### 12.
+Data → Datové nástroje → Sloučit.
+
+### 13.
+Abych omylem neupravoval více listů najednou.
+
+### 14.
+Měsíční, regionální, pobočkový nebo forecast reporting.
+
+---
+
+# 📘 Lekce 7 – Adresování buněk a práce se vzorci
+
+## ❓ Otázky
+
+### 1.
+Co znamená relativní odkaz?
+
+### 2.
+Co znamená absolutní odkaz?
+
+### 3.
+Co se stane, když zkopíruješ vzorec:
+
+```excel
+=A1*2
+```
+
+o jeden řádek dolů?
+
+### 4.
+Co se stane, když stejný vzorec zkopíruješ o jeden řádek dolů a dva sloupce doprava?
+
+### 5.
+Co způsobuje chyba `#ODKAZ!`?
+
+### 6.
+Jaký znak se používá pro ukotvení odkazu?
+
+### 7.
+Co znamená:
+
+```excel
+$C$3
+```
+
+### 8.
+Co znamená:
+
+```excel
+C$3
+```
+
+### 9.
+Co znamená:
+
+```excel
+$C3
+```
+
+### 10.
+Kdy použiješ absolutní adresu?
+
+### 11.
+Jak bys napsal výpočet ceny se slevou, pokud je sleva v B2 jako centrální parametr?
+
+### 12.
+Jak bys to napsal, pokud je B2 pojmenovaná oblast `sleva`?
+
+### 13.
+Proč může být pojmenovaná oblast lepší než absolutní adresa?
+
+### 14.
+Co dělá F4 při editaci odkazu?
+
+### 15.
+Proč je adresování důležité pro robustní Excel modely?
+
+---
+
+# ✅ Odpovědi
+
+### 1.
+Odkaz, který se při kopírování mění podle nové pozice.
+
+### 2.
+Odkaz, který se při kopírování nemění.
+
+### 3.
+Změní se na:
+
+```excel
+=A2*2
+```
+
+### 4.
+Změní se na:
+
+```excel
+=C2*2
+```
+
+### 5.
+Odkaz na neexistující buňku nebo oblast.
+
+### 6.
+Znak `$`.
+
+### 7.
+Fixní sloupec i řádek.
+
+### 8.
+Fixní řádek.
+
+### 9.
+Fixní sloupec.
+
+### 10.
+Když používáš centrální parametr: DPH, kurz, sleva, target apod.
+
+### 11.
+Například:
+
+```excel
+=A2*$B$2
+```
+
+### 12.
+Například:
+
+```excel
+=A2*sleva
+```
+
+### 13.
+Je čitelnější a lépe popisuje business význam hodnoty.
+
+### 14.
+Přepíná relativní, absolutní a smíšené odkazy.
+
+### 15.
+Protože zabraňuje chybám při kopírování vzorců a zvyšuje udržovatelnost modelu.
 
 ---
 
@@ -590,10 +780,7 @@ Při velkých datech, enterprise reportingu a automatizaci.
 ---
 
 ## ❓ 3.
-Jak spolu souvisí:
-- Excel
-- SQL
-- Power BI
+Jak spolu souvisí Excel, SQL a Power BI?
 
 ### ✅
 SQL = storage a dotazy  
@@ -606,6 +793,7 @@ Power BI = dashboardy a reporting
 Co je typický workflow datového analytika?
 
 ### ✅
+
 ```text
 RAW DATA
 → TRANSFORM
@@ -618,15 +806,7 @@ RAW DATA
 ---
 
 ## ❓ 5.
-Proč firmy oddělují:
-- transformaci
-- dashboard
-- export
+Proč firmy oddělují transformaci, dashboard a export?
 
 ### ✅
-Kvůli:
-- přehlednosti
-- maintenance
-- bezpečnosti
-- škálovatelnosti
-- nižší chybovosti
+Kvůli přehlednosti, maintenance, bezpečnosti, škálovatelnosti a nižší chybovosti.
