@@ -1,13 +1,12 @@
-# 📁 examples/ – návrh obsahu
+# 📁 examples/ – praktické ukázky
 
-Do `examples/` si začni ukládat:
-- malé praktické ukázky
-- mini business scénáře
-- často používané vzorce
-- dashboard prototypy
-- cvičné datasety
+Složka `examples/` slouží pro malé praktické ukázky, mini business scénáře a cvičné soubory.
 
-Tohle je později skvělé portfolio.
+Cíl:
+- procvičit Excel funkce na realistických datech
+- ukládat vlastní řešení
+- budovat portfolio pro data analytiku
+- připravit se na Power BI workflow
 
 ---
 
@@ -17,205 +16,300 @@ Tohle je později skvělé portfolio.
 examples/
 │
 ├── formulas/
-│   ├── basic_formulas.xlsx
-│   ├── absolute_references.xlsx
-│   └── conditional_formulas.xlsx
-│
 ├── tables/
-│   ├── excel_tables.xlsx
-│   └── dynamic_ranges.xlsx
-│
 ├── named_ranges/
-│   ├── named_ranges_example.xlsx
-│   └── lookup_example.xlsx
-│
 ├── dashboards/
-│   ├── sales_dashboard.xlsx
-│   └── kpi_dashboard.xlsx
-│
 ├── pivots/
-│   ├── pivot_sales.xlsx
-│   └── pivot_customers.xlsx
-│
 └── raw_vs_clean/
-    ├── raw_data_example.xlsx
-    └── cleaned_data_example.xlsx
 ```
 
 ---
 
-# 📘 Co do jednotlivých souborů
+# 📄 formulas/basic_formulas.xlsx
 
----
+## Zadání
 
-# 📄 basic_formulas.xlsx
+Vypočítej tržbu pro každý produkt.
 
-Obsah:
-- SUMA()
-- PRŮMĚR()
-- MAX()
-- MIN()
-- KDYŽ()
-
-Příklad:
 | Produkt | Cena | Ks | Tržba |
-|---|---|---|---|
-| Notebook | 25000 | 2 | =B2*C2 |
+|---|---:|---:|---:|
+| Notebook | 25000 | 2 | ? |
+| Myš | 500 | 10 | ? |
+| Klávesnice | 1200 | 5 | ? |
+
+## Řešení
+
+```excel
+=B2*C2
+```
+
+Výsledek:
+
+| Produkt | Tržba |
+|---|---:|
+| Notebook | 50000 |
+| Myš | 5000 |
+| Klávesnice | 6000 |
 
 ---
 
-# 📄 absolute_references.xlsx
+# 📄 formulas/absolute_references.xlsx
 
-Ukázka:
-- relativní adresace
-- absolutní adresace
-- smíšená adresace
+## Zadání
 
-Příklad:
+Spočítej cenu po slevě. Sleva je centrální parametr v buňce `E1`.
+
+| Produkt | Cena | Sleva | Cena po slevě |
+|---|---:|---:|---:|
+| Notebook | 25000 | 10 % | ? |
+| Myš | 500 | 10 % | ? |
+| Klávesnice | 1200 | 10 % | ? |
+
+## Řešení
+
 ```excel
-=B2*(1-$C$2)
+=B2*(1-$E$1)
+```
+
+Pokud je buňka `E1` pojmenovaná jako `sleva`:
+
+```excel
+=B2*(1-sleva)
 ```
 
 ---
 
-# 📄 conditional_formulas.xlsx
+# 📄 formulas/conditional_formulas.xlsx
 
-Obsah:
+## Zadání
+
+Označ objednávky nad 10 000 Kč jako `HIGH`, ostatní jako `LOW`.
+
+| Objednávka | Tržba | Segment |
+|---|---:|---|
+| O001 | 5000 | ? |
+| O002 | 15000 | ? |
+| O003 | 8000 | ? |
+
+## Řešení
+
 ```excel
-=KDYŽ(D2>1000;"HIGH";"LOW")
+=KDYŽ(B2>10000;"HIGH";"LOW")
 ```
 
-nebo:
-```excel
-=KDYŽ(A2="ANO";1;0)
+Výsledek:
+
+| Objednávka | Segment |
+|---|---|
+| O001 | LOW |
+| O002 | HIGH |
+| O003 | LOW |
+
+---
+
+# 📄 tables/excel_tables.xlsx
+
+## Zadání
+
+Převeď běžný rozsah dat na Excel tabulku a přidej sloupec `Tržba`.
+
+| Produkt | Cena | Ks |
+|---|---:|---:|
+| Notebook | 25000 | 2 |
+| Myš | 500 | 10 |
+
+## Postup
+
+1. Klikni do dat.
+2. Použij:
+
+```text
+Ctrl + T
 ```
 
----
+3. Přidej sloupec `Tržba`.
+4. Zadej vzorec:
 
-# 📄 excel_tables.xlsx
+```excel
+=[@Cena]*[@Ks]
+```
 
-Ukázka:
-- Ctrl + T
-- automatické vzorce
-- filtry
-- dynamické rozšiřování
+## Výhoda
 
----
-
-# 📄 dynamic_ranges.xlsx
-
-Ukázka:
-- přidání nového řádku
-- automatické rozšíření tabulky
-- vzorce bez ručního kopírování
+Vzorec se automaticky zkopíruje do celého sloupce.
 
 ---
 
-# 📄 named_ranges_example.xlsx
+# 📄 named_ranges/named_ranges_example.xlsx
 
-Obsah:
-- pojmenované oblasti
-- práce s F3
-- Správce názvů
+## Zadání
 
-Příklad:
+Sečti tržby pomocí pojmenované oblasti.
+
+| Měsíc | Tržba |
+|---|---:|
+| Leden | 100000 |
+| Únor | 120000 |
+| Březen | 90000 |
+
+## Postup
+
+1. Označ hodnoty tržeb.
+2. Pojmenuj oblast jako:
+
+```text
+trzby_q1
+```
+
+3. Použij vzorec:
+
 ```excel
 =SUMA(trzby_q1)
 ```
 
----
+## Výsledek
 
-# 📄 lookup_example.xlsx
-
-Ukázka:
-- SVYHLEDAT()
-- INDEX + POZVYHLEDAT()
-
-Příklad:
-```excel
-=SVYHLEDAT(A2;produkty;2;0)
+```text
+310000
 ```
 
 ---
 
-# 📄 sales_dashboard.xlsx
+# 📄 pivots/pivot_sales.xlsx
 
-Mini business case:
-- měsíční tržby
-- top produkty
-- KPI
-- grafy
-- filtry
+## Zadání
 
----
+Zjisti celkové tržby podle regionu.
 
-# 📄 kpi_dashboard.xlsx
+| Datum | Region | Produkt | Tržba |
+|---|---|---|---:|
+| 1.1.2026 | Praha | Notebook | 50000 |
+| 2.1.2026 | Brno | Myš | 5000 |
+| 3.1.2026 | Praha | Klávesnice | 6000 |
 
-Obsah:
-- revenue
-- growth
-- marže
-- počet objednávek
-- KPI cards
+## Řešení
 
----
+Kontingenční tabulka:
 
-# 📄 pivot_sales.xlsx
+- Řádky: `Region`
+- Hodnoty: `Součet z Tržba`
 
-Ukázka:
-- kontingenční tabulka
-- seskupení dat
-- filtry
-- agregace
+Výsledek:
+
+| Region | Tržba |
+|---|---:|
+| Praha | 56000 |
+| Brno | 5000 |
 
 ---
 
-# 📄 raw_data_example.xlsx
+# 📄 dashboards/sales_dashboard.xlsx
 
-Chaotická data:
-- duplicity
-- špatné datumy
-- prázdné hodnoty
+## Zadání
+
+Vytvoř jednoduchý sales dashboard.
+
+## Dataset
+
+| Měsíc | Tržba | Náklady | Zisk |
+|---|---:|---:|---:|
+| Leden | 100000 | 70000 | ? |
+| Únor | 120000 | 85000 | ? |
+| Březen | 90000 | 60000 | ? |
+
+## Řešení
+
+### Zisk
+
+```excel
+=B2-C2
+```
+
+### KPI
+
+Celkové tržby:
+
+```excel
+=SUMA(B2:B4)
+```
+
+Celkový zisk:
+
+```excel
+=SUMA(D2:D4)
+```
+
+Marže:
+
+```excel
+=SUMA(D2:D4)/SUMA(B2:B4)
+```
+
+## Dashboard prvky
+
+- KPI karta: Total Revenue
+- KPI karta: Total Profit
+- KPI karta: Profit Margin
+- sloupcový graf: Tržby podle měsíce
+- spojnicový graf: Vývoj zisku
 
 ---
 
-# 📄 cleaned_data_example.xlsx
+# 📄 raw_vs_clean/raw_data_example.xlsx
 
-Vyčištěná data:
-- správné formáty
-- validní hodnoty
-- připraveno pro reporting
+## Zadání
+
+Vyčisti špinavá data.
+
+| Order ID | Customer | Date | Revenue |
+|---|---|---|---:|
+| 001 | Jan Novak | 2026/01/01 | 5000 |
+| 002 |  Petra Svoboda  | 01-02-2026 | 8000 |
+| 002 | Petra Svoboda | 01-02-2026 | 8000 |
+| 003 | Karel Dvorak |  | 3000 |
+
+## Problémy
+
+- duplicita objednávky `002`
+- mezery ve jméně
+- různé formáty datumu
+- chybějící datum
+
+## Řešení
+
+- odstranit duplicity
+- použít `PROČISTIT()` / Power Query Trim
+- sjednotit datum
+- doplnit nebo označit chybějící hodnoty
+
+Výsledná tabulka:
+
+| Order ID | Customer | Date | Revenue |
+|---|---|---|---:|
+| 001 | Jan Novak | 1.1.2026 | 5000 |
+| 002 | Petra Svoboda | 2.1.2026 | 8000 |
+| 003 | Karel Dvorak | Missing | 3000 |
 
 ---
 
-# 🚀 Bonus – super nápad do portfolia
+# 🚀 Portfolio nápad
 
-Později přidej:
+Přidej složku:
+
 ```text
 before_after/
 ```
 
-Například:
+Ukázka:
+
 ```text
 raw_sales_data.xlsx
 ↓
 clean_sales_dashboard.xlsx
 ```
 
-To je přesně typ věcí, které:
-- ukazují analytické myšlení
-- vypadají dobře v GitHubu
-- působí profesionálně
-
----
-
-# 🧠 Co tím buduješ
-
-Ne jen poznámky.
-
-Ale:
-✅ praktické portfolio  
-✅ analytický workflow  
-✅ business thinking  
-✅ přípravu na Power BI  
-✅ junior data analyst skillset
+To ukazuje:
+- cleaning
+- analytické myšlení
+- reporting
+- schopnost vytvořit výstup z nepořádných dat
