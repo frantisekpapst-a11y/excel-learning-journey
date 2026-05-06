@@ -1,112 +1,347 @@
-1. Klávesové zkratky a pohyb
+# 📊 Excel Advanced Cheatsheet
+## Klávesové zkratky • Vzorce • Formátování • Produktivita
 
-Pohyb po listu
-Ctrl + Home	Přesun na A1
-Ctrl + End	Poslední použitá buňka
-Ctrl + PgDown	Další list
-Ctrl + PgUp	Předchozí list
-Ctrl + šipka	Přesun na konec dat
-Ctrl + Backspace	Návrat k aktivní buňce
+> 🎯 Praktický cheatsheet k prvním 4 lekcím kurzu Excel pro pokročilé  
+> Zaměřeno na efektivní workflow datového analytika.
 
-Výběr buněk
-Ctrl + Space	Celý sloupec
-Shift + Space	Celý řádek
-Ctrl + A	Označí tabulku
-Ctrl + A (2×)	Celý list
-Ctrl + Shift + Space	Souvislá oblast dat
-Ctrl + Shift + šipka	Rozšíření výběru
+---
 
-Praktické poznámky
-Ctrl + A
+# 🚀 1. Klávesové zkratky a pohyb
+
+---
+
+## 🔹 Pohyb po listu
+
+| Zkratka | Funkce |
+|---|---|
+| `Ctrl + Home` | Přesun na A1 |
+| `Ctrl + End` | Poslední použitá buňka |
+| `Ctrl + PgDown` | Další list |
+| `Ctrl + PgUp` | Předchozí list |
+| `Ctrl + šipka` | Přesun na konec dat |
+| `Ctrl + Backspace` | Návrat k aktivní buňce |
+| `PgUp / PgDown` | Posun obrazovky |
+
+---
+
+## 🔹 Výběr buněk
+
+| Zkratka | Funkce |
+|---|---|
+| `Ctrl + Space` | Celý sloupec |
+| `Shift + Space` | Celý řádek |
+| `Ctrl + A` | Označí tabulku |
+| `Ctrl + A (2×)` | Celý list |
+| `Ctrl + Shift + Space` | Souvislá oblast dat |
+| `Ctrl + Shift + šipka` | Rozšíření výběru |
+| `Ctrl + klik myší` | Nesouvislé oblasti |
+
+---
+
+## 🔹 Praktické poznámky
+
+### `Ctrl + A`
+```text
 1× → aktuální tabulka
 2× → celý list
-Fill Handle
+```
+
+---
+
+# 🟩 Fill Handle (zelený čtvereček)
 
 Malý zelený čtvereček v pravém dolním rohu buňky.
 
-Použití:
-rozkopírování vzorců
-rozšíření řad
-kopírování hodnot
+## ✅ Použití
+- rozkopírování vzorců
+- rozšíření řad
+- kopírování hodnot
 
-POZOR:
-kopíruje i formát
-může rozbít design tabulky
+## ⚠️ POZOR
+Fill Handle:
+- kopíruje i formát
+- může rozbít design tabulky
 
-2. Vzorce a adresace
+---
 
-Typy adres
-Relativní	A1	Mění řádek i sloupec
-Absolutní	$A$1	Nemění nic
-Smíšená	$A1	Zamkne sloupec
-Smíšená	A$1	Zamkne řádek
-Klávesa F4
+# 📐 2. Vzorce a adresace
+
+---
+
+# 🔹 Typy adres
+
+| Typ | Příklad | Chování |
+|---|---|---|
+| Relativní | `A1` | Mění řádek i sloupec |
+| Absolutní | `$A$1` | Nemění nic |
+| Smíšená | `$A1` | Zamkne sloupec |
+| Smíšená | `A$1` | Zamkne řádek |
+
+---
+
+## 🔹 Klávesa F4
 
 Při editaci vzorce:
+
+```excel
 A1 → $A$1 → A$1 → $A1
+```
 
-Příklady vzorců
-Výpočet tržby
+---
+
+# 🔹 Příklady vzorců
+
+## Výpočet tržby
+```excel
 =B2*C2
+```
 
-Sleva
+## Sleva
+```excel
 =B2*(1-$C$2)
+```
 
-Součet
+## Součet
+```excel
 =SUMA(A1:A10)
+```
 
-Maximum
+## Maximum
+```excel
 =MAX(D2:D10)
+```
 
-Podmínka
+## Průměr
+```excel
+=PRŮMĚR(D2:D10)
+```
+
+## Podmínka
+```excel
 =KDYŽ(D2>1000;"HIGH";"LOW")
+```
 
-3. Rozšiřování vzorců a formátů
+---
 
-Fill Handle vs Ctrl + Enter
-Fill Handle	Vzorec + formát
-Ctrl + Enter	Jen vzorec
-Ctrl + Enter
+# 📊 3. Rozšiřování vzorců a formátů
 
-Použití:
-označit více buněk
-napsat / upravit vzorec
-Ctrl + Enter
-Výsledek:
+---
 
-vzorec se vloží do všech buněk
-formát zůstane zachovaný
-Kopírovat formát
+# 🔹 Fill Handle vs Ctrl + Enter
 
-Umístění:
+| Metoda | Co kopíruje |
+|---|---|
+| Fill Handle | Vzorec + formát |
+| Ctrl + Enter | Jen vzorec |
+
+---
+
+# 🔹 Ctrl + Enter
+
+## Použití
+1. Označit více buněk
+2. Napsat/upravit vzorec
+3. `Ctrl + Enter`
+
+## Výsledek
+✅ vzorec ve všech buňkách  
+✅ zachovaný formát tabulky
+
+---
+
+# 🎨 Kopírovat formát
+
+## Umístění
+```text
 Domů → Schránka → Kopírovat formát
+```
+
+## Přenáší
+- barvy
+- ohraničení
+- font
+- zarovnání
+- styl buněk
+
+---
+
+## 🔹 Vložit jinak
+
+| Zkratka | Funkce |
+|---|---|
+| `Ctrl + Alt + V` | Vložit jinak |
 
 Použití:
-přenos stylu
-barvy
-ohraničení
-fontu
-zarovnání
-Best Practices pro analytika
-Vždy používej tabulky
-Ctrl + T
+- pouze hodnoty
+- pouze formáty
+- transpozice
+- vzorce bez formátu
 
-Výhody:
-automatické kopírování vzorců
-dynamické rozšiřování
-lepší čitelnost
-méně chyb
-jednodušší reporting
-Profesionální workflow
+---
 
-❌ Junior:
-tahání vzorců myší
-ruční kopírování
-rozbité formáty
+# 📋 4. Excel tabulky (Ctrl + T)
 
-✅ Analytik:
-Ctrl + T
-Ctrl + Enter
-správná adresace
-pojmenované oblasti
-automatizace
+---
+
+# 🔹 Vytvoření tabulky
+
+| Zkratka | Funkce |
+|---|---|
+| `Ctrl + T` | Vytvoří Excel tabulku |
+
+---
+
+# 🔹 Výhody tabulek
+
+✅ automatické kopírování vzorců  
+✅ dynamické rozšiřování  
+✅ filtry a řazení  
+✅ lepší čitelnost  
+✅ méně chyb  
+✅ jednodušší reporting  
+✅ připravené pro Power Query / Power BI
+
+---
+
+# 🧠 5. Pojmenované oblasti
+
+---
+
+# 🔹 Co jsou pojmenované oblasti?
+
+Místo:
+```excel
+=SUMA(B2:B5000)
+```
+
+můžeš použít:
+```excel
+=SUMA(trzby_q1)
+```
+
+---
+
+# 🔹 Výhody
+
+✅ přehlednější vzorce  
+✅ rychlejší práce  
+✅ méně chyb  
+✅ snadnější správa velkých datasetů
+
+---
+
+# 🔹 Pravidla pojmenování
+
+## ✅ Správně
+```text
+sales_region
+prodej_2025
+zakaznici_praha
+```
+
+## ❌ Špatně
+```text
+2025_data
+tabulka
+DPH19
+nová data
+```
+
+---
+
+# 🔹 Správce názvů
+
+| Zkratka | Funkce |
+|---|---|
+| `Ctrl + F3` | Otevře Správce názvů |
+| `F3` | Seznam pojmenovaných oblastí |
+
+---
+
+# 📑 6. Práce s listy
+
+---
+
+| Zkratka | Funkce |
+|---|---|
+| `Ctrl + PgUp` | Předchozí list |
+| `Ctrl + PgDown` | Další list |
+| `Ctrl + ;` | Aktuální datum |
+
+---
+
+## 🔹 Best Practices
+
+✅ krátké názvy listů  
+✅ bez diakritiky  
+✅ logická struktura  
+✅ oddělení RAW dat / reportů / dashboardů
+
+---
+
+# 💼 7. Best Practices pro datového analytika
+
+---
+
+# ❌ Junior workflow
+
+- tahání vzorců myší
+- ruční kopírování
+- rozbité formáty
+- chaotické listy
+- pevné adresy všude
+
+---
+
+# ✅ Analytik workflow
+
+- `Ctrl + T`
+- `Ctrl + Enter`
+- správná adresace
+- pojmenované oblasti
+- klávesové zkratky
+- automatizace
+- konzistentní formátování
+
+---
+
+# 🔥 Nejvíc používané zkratky analytika
+
+| Zkratka | Použití |
+|---|---|
+| `Ctrl + T` | Tabulka |
+| `F4` | Zamčení adres |
+| `F2` | Editace buňky |
+| `Ctrl + Shift + šipka` | Výběr dat |
+| `Ctrl + Enter` | Hromadné vyplnění |
+| `Ctrl + A` | Výběr tabulky/listu |
+| `Ctrl + PgDown` | Přepínání listů |
+| `Ctrl + Alt + V` | Vložit jinak |
+| `Ctrl + F3` | Správce názvů |
+
+---
+
+# 🎯 Mindset datového analytika
+
+Excel není jen tabulka.
+
+Excel je:
+- analytický nástroj
+- reporting tool
+- ETL mini platforma
+- rychlý prototyping
+- bridge mezi SQL → Power BI
+
+---
+
+# 🚀 Cíl
+
+Nepracovat:
+```text
+víc
+```
+
+Ale:
+```text
+chytřeji
+```
