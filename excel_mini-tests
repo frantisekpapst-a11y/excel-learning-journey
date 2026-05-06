@@ -1,11 +1,426 @@
-Otázky
-Co dělá Ctrl + Space?
-Rozdíl mezi A1 a $A$1?
-Co kopíruje Fill Handle?
-K čemu slouží Ctrl + Enter?
-Jak vytvoříš tabulku?
-Co dělá Ctrl + A podruhé?
-Jak zamkneš pouze řádek?
-Jak zamkneš pouze sloupec?
-Jak otevřeš editaci vzorce?
-Jaký je rozdíl mezi funkcí a vzorcem?
+# 🧠 Excel Advanced – Mini Tests
+
+---
+
+# 📘 Lekce 1 – Úvod do pokročilého Excelu
+
+## ❓ Otázky
+
+### 1.
+K čemu slouží Power Query?
+
+### 2.
+Jaký doplněk Excelu slouží k optimalizačním úlohám?
+
+### 3.
+Co je hlavní výhodou maker?
+
+### 4.
+Jaký je rozdíl mezi běžným používáním Excelu a pokročilým využitím?
+
+### 5.
+Jaký typ souboru podporuje makra?
+
+### 6.
+Jaký je rozdíl mezi VBA a Office Scripts?
+
+### 7.
+Proč firmy stále používají Excel i vedle Power BI nebo SQL?
+
+### 8.
+Co dokáže Nahrávač maker?
+
+### 9.
+Kde najdeš možnost „Zaznamenat makro“?
+
+### 10.
+Jaké jsou hlavní přínosy automatizace v Excelu?
+
+---
+
+# ✅ Odpovědi
+
+### 1.
+Import, čištění a transformace dat z webu, databází, API apod.
+
+### 2.
+Řešitel (Solver)
+
+### 3.
+Automatizace opakovaných činností → úspora času a méně chyb.
+
+### 4.
+Pokročilé využití zahrnuje analýzu dat, automatizaci, Power Query, makra, dashboardy apod.
+
+### 5.
+.xlsm nebo .xlsb
+
+### 6.
+VBA = klasické desktop makro.
+Office Scripts = moderní cloudová automatizace v Excel Online.
+
+### 7.
+Je univerzální, rychlý, flexibilní a snadno sdílitelný.
+
+### 8.
+Zaznamená kroky uživatele a vytvoří automatizovaný postup.
+
+### 9.
+Na kartě Zobrazení → Makra → Zaznamenat makro.
+
+### 10.
+Úspora času, nižší chybovost, standardizace práce.
+
+---
+
+---
+
+# 📘 Lekce 2 – Klávesové zkratky a výběr buněk
+
+## ❓ Otázky
+
+### 1.
+Co udělá:
+```text
+Ctrl + šipka dolů
+```
+
+### 2.
+Co udělá:
+```text
+Ctrl + Shift + šipka dolů
+```
+
+### 3.
+Jak se přesuneš na začátek listu?
+
+### 4.
+Jak vybereš celý sloupec?
+
+### 5.
+Jak vybereš celý řádek?
+
+### 6.
+Jak vybereš celý list?
+
+### 7.
+Co udělá:
+```text
+Ctrl + PgDown
+```
+
+### 8.
+Jak otevřeš úpravu aktivní buňky?
+
+### 9.
+K čemu slouží absolutní adresa?
+
+### 10.
+Jaký je rozdíl mezi:
+```excel
+$A$1
+A$1
+$A1
+A1
+```
+
+### 11.
+Jak rychle zkopíruješ vzorec dolů v tabulce?
+
+### 12.
+Kdy použiješ absolutní adresu?
+
+---
+
+# ✅ Odpovědi
+
+### 1.
+Přesun na konec souvislého bloku dat.
+
+### 2.
+Vybere oblast až na konec dat.
+
+### 3.
+Ctrl + Home
+
+### 4.
+Ctrl + Space
+
+### 5.
+Shift + Space
+
+### 6.
+Ctrl + A dvakrát nebo Ctrl + Shift + Space.
+
+### 7.
+Přepnutí na další list.
+
+### 8.
+F2
+
+### 9.
+Uzamčení odkazu při kopírování vzorců.
+
+### 10.
+- `$A$1` → zamčený řádek i sloupec
+- `A$1` → zamčený řádek
+- `$A1` → zamčený sloupec
+- `A1` → vše relativní
+
+### 11.
+Dvojklik na fill handle (zelený čtvereček).
+
+### 12.
+Když používáš konstantu nebo pevnou hodnotu ve vzorcích.
+
+---
+
+---
+
+# 📘 Lekce 3 – Rozšiřování vzorců a formátů
+
+## ❓ Otázky
+
+### 1.
+Co je fill handle?
+
+### 2.
+Co udělá dvojklik na fill handle?
+
+### 3.
+Proč někdy není vhodné používat fill handle?
+
+### 4.
+Co dělá:
+```text
+Ctrl + Enter
+```
+
+### 5.
+Jaký je rozdíl mezi fill handle a Ctrl + Enter?
+
+### 6.
+Jak zkopíruješ pouze formát?
+
+### 7.
+Kde najdeš Kopírovat formát?
+
+### 8.
+Jak otevřeš nabídku Vložit jinak?
+
+### 9.
+Co je hlavní výhoda Excel tabulky (Ctrl + T)?
+
+### 10.
+Co se děje se vzorci v Excel tabulce při přidání nového řádku?
+
+### 11.
+Jak vybereš souvislý blok buněk?
+
+### 12.
+Jak vybereš celý list pomocí myši?
+
+### 13.
+Proč je Ctrl + Enter užitečné u velkých datasetů?
+
+### 14.
+Jak ukončíš režim Kopírovat formát po dvojkliku?
+
+---
+
+# ✅ Odpovědi
+
+### 1.
+Malý zelený čtvereček pro rozšíření obsahu buněk.
+
+### 2.
+Automaticky zkopíruje vzorec dolů podle sousedních dat.
+
+### 3.
+Kopíruje i formát a může rozbít vzhled tabulky.
+
+### 4.
+Vyplní všechny vybrané buňky stejným vzorcem/obsahem.
+
+### 5.
+Fill handle kopíruje i formát.
+Ctrl + Enter kopíruje jen obsah/vzorec.
+
+### 6.
+Pomocí Kopírovat formát nebo Vložit jinak → Formáty.
+
+### 7.
+Domů → Schránka → štěteček.
+
+### 8.
+Ctrl + Alt + V
+
+### 9.
+Automatické rozšiřování vzorců, filtrování, strukturované odkazy.
+
+### 10.
+Automaticky se rozšíří do nových řádků.
+
+### 11.
+Ctrl + Shift + Space
+
+### 12.
+Klik na levý horní roh mezi řádky a sloupci.
+
+### 13.
+Rychlé vyplnění bez narušení formátování.
+
+### 14.
+Esc
+
+---
+
+---
+
+# 📘 Lekce 4 – Pojmenované oblasti a práce s listy
+
+## ❓ Otázky
+
+### 1.
+Co je pojmenovaná oblast?
+
+### 2.
+Jak vytvoříš pojmenovanou oblast?
+
+### 3.
+Jaké jsou výhody pojmenovaných oblastí?
+
+### 4.
+Jak otevřeš Správce názvů?
+
+### 5.
+Co dělá klávesa F3 ve vzorcích?
+
+### 6.
+Proč není vhodný název:
+```text
+2025_data
+```
+
+### 7.
+Proč nejsou vhodné mezery a české znaky?
+
+### 8.
+Kdy se pojmenované oblasti nejvíce vyplatí?
+
+### 9.
+Jak přepínáš mezi listy klávesnicí?
+
+### 10.
+Co vloží:
+```text
+Ctrl + ;
+```
+
+### 11.
+Jaké operace lze dělat ve Správci názvů?
+
+### 12.
+Jaký je přínos pojmenovaných oblastí ve vzorcích?
+
+### 13.
+Proč je:
+```excel
+=SUMA(trzby_q1)
+```
+lepší než:
+```excel
+=SUMA(B2:B5000)
+```
+
+### 14.
+Může být pojmenovaná oblast nesouvislá?
+
+### 15.
+Jak přejmenuješ list?
+
+### 16.
+Proč je důležité dobře organizovat listy?
+
+---
+
+# ✅ Odpovědi
+
+### 1.
+Pojmenovaný rozsah buněk.
+
+### 2.
+Vybereš oblast → klik do pole názvu → zadáš název → Enter.
+
+### 3.
+Přehlednost, rychlost, méně chyb.
+
+### 4.
+Ctrl + F3
+
+### 5.
+Zobrazí seznam pojmenovaných oblastí.
+
+### 6.
+Název nesmí začínat číslem.
+
+### 7.
+Kvůli kompatibilitě a přehlednosti.
+
+### 8.
+U velkých a složitých tabulek.
+
+### 9.
+Ctrl + PgUp / PgDown
+
+### 10.
+Aktuální datum.
+
+### 11.
+Vytváření, úprava, mazání a změna rozsahu názvů.
+
+### 12.
+Vzorce jsou čitelnější a lépe spravovatelné.
+
+### 13.
+Je přehlednější a méně náchylný k chybám.
+
+### 14.
+Ano.
+
+### 15.
+Dvojklik na název listu.
+
+### 16.
+Lepší orientace a správa souboru.
+
+---
+
+# 🚀 Bonus – Business mindset otázky
+
+## ❓ 1.
+Proč je Excel stále důležitý pro data analytiky?
+
+### ✅
+Je rychlý, univerzální, dobře propojitelný s dalšími nástroji a ideální pro ad-hoc analýzy.
+
+---
+
+## ❓ 2.
+Kdy už Excel nestačí a je lepší SQL nebo Power BI?
+
+### ✅
+Při práci s velmi velkými daty, automatizovaným reportingem nebo enterprise BI.
+
+---
+
+## ❓ 3.
+Jak spolu souvisí:
+- Excel
+- SQL
+- Power BI
+
+### ✅
+SQL = zdroj dat  
+Excel = analýza a práce s daty  
+Power BI = vizualizace a dashboardy
