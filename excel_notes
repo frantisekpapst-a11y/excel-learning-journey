@@ -1,4 +1,5 @@
 # 🧠 Excel Notes & Best Practices
+## SQL mindset • Excel workflow • BI struktura • Robustní modely
 
 ---
 
@@ -10,8 +11,13 @@
 | WHERE | Filtr |
 | GROUP BY | Kontingenční tabulka |
 | SUM() | SUMA() |
+| AVG() | PRŮMĚR() |
+| MAX() | MAX() |
+| MIN() | MIN() |
 | CASE WHEN | KDYŽ() |
 | JOIN | SVYHLEDAT / INDEX + POZVYHLEDAT |
+| CTE | Pomocný list / mezivýpočet |
+| Window functions | Pokročilé výpočty / dynamické reporty |
 
 ---
 
@@ -27,6 +33,7 @@ Použití:
 - KPI tracking
 - business analýza
 - automatizace
+- prototypování reportů
 
 ---
 
@@ -54,7 +61,8 @@ EXPORT
 |---|---|
 | RAW_DATA | zdrojová data |
 | CLEAN_DATA | očištěná data |
-| LOOKUPS | pomocné tabulky |
+| LOOKUPS | pomocné číselníky |
+| PARAMETERS | centrální parametry |
 | CALCULATIONS | pomocné výpočty |
 | PIVOTS | kontingenční tabulky |
 | DASHBOARD | vizualizace |
@@ -86,28 +94,51 @@ Výhody:
 
 | Zkratka | Použití |
 |---|---|
-| Ctrl + T | Excel tabulka |
-| Ctrl + Shift + šipka | výběr dat |
-| Ctrl + Enter | vyplnění více buněk |
-| Ctrl + A | výběr tabulky/listu |
-| Ctrl + PgDown | další list |
-| Ctrl + PgUp | předchozí list |
-| F2 | editace buňky |
-| F4 | zamčení adres |
-| Ctrl + Alt + V | vložit jinak |
-| Ctrl + F3 | správce názvů |
-| Alt + F11 | VBA editor |
+| `Ctrl + T` | Excel tabulka |
+| `Ctrl + Shift + šipka` | výběr dat |
+| `Ctrl + Enter` | vyplnění více buněk |
+| `Ctrl + A` | výběr tabulky/listu |
+| `Ctrl + PgDown` | další list |
+| `Ctrl + PgUp` | předchozí list |
+| `F2` | editace buňky |
+| `F4` | zamčení adres |
+| `Ctrl + Alt + V` | vložit jinak |
+| `Ctrl + F3` | správce názvů |
+| `Alt + F11` | VBA editor |
 
 ---
 
 # 📐 Typy adresace
 
-| Typ | Příklad |
-|---|---|
-| Relativní | A1 |
-| Absolutní | $A$1 |
-| Zamčený sloupec | $A1 |
-| Zamčený řádek | A$1 |
+| Typ | Příklad | Chování |
+|---|---|---|
+| Relativní | `A1` | mění řádek i sloupec |
+| Absolutní | `$A$1` | nemění nic |
+| Zamčený sloupec | `$A1` | mění se jen řádek |
+| Zamčený řádek | `A$1` | mění se jen sloupec |
+
+---
+
+# 🔒 Kdy používat absolutní adresu
+
+Použít pro:
+- DPH
+- kurz měny
+- slevu
+- target
+- bonus %
+- konstanty modelu
+- centrální parametry
+
+Příklad:
+```excel
+=A2*$B$2
+```
+
+Lepší varianta s pojmenovanou oblastí:
+```excel
+=A2*sleva
+```
 
 ---
 
@@ -139,7 +170,7 @@ oddělení dat a reportu
 
 ---
 
-# 📊 Excel tabulky (Ctrl + T)
+# 📊 Excel tabulky (`Ctrl + T`)
 
 Výhody:
 - automatické rozšíření vzorců
@@ -148,6 +179,7 @@ Výhody:
 - lepší čitelnost
 - méně chyb
 - lepší kompatibilita s Power Query
+- základ pro škálovatelný reporting
 
 ---
 
@@ -167,6 +199,84 @@ Výhody:
 - přehlednější vzorce
 - rychlejší práce
 - menší chybovost
+- business význam přímo ve vzorci
+
+---
+
+# 📑 Práce s listy
+
+## Typy listů
+
+| Typ | Použití |
+|---|---|
+| Datový list | data, vzorce, dashboardy |
+| Grafický list | jeden graf přes celý list |
+| Historické listy | staré typy, dnes téměř nepoužívané |
+
+---
+
+## Viditelnost listů
+
+| Typ | Popis |
+|---|---|
+| Viditelný | běžně dostupný |
+| Skrytý | lze zobrazit v Excelu |
+| Very Hidden | pouze přes VBA |
+
+---
+
+# 🏗️ Hromadná práce s listy
+
+## Výběr listů
+
+| Akce | Postup |
+|---|---|
+| Nesousedící listy | `Ctrl + klik` |
+| Sousedící listy | `Shift + klik` |
+| Všechny listy | pravé tlačítko → Vybrat všechny listy |
+
+---
+
+## Riziko
+
+Když vidíš:
+```text
+[Skupina]
+```
+
+pozor:
+- upravuješ více listů současně
+- změny se zapisují na všechny vybrané listy
+
+---
+
+# 📚 3D reference
+
+Vzorec napříč listy:
+
+```excel
+=SUMA('Leden:Prosinec'!B2)
+```
+
+Použití:
+- měsíční reporty
+- pobočkové reporty
+- regionální reporting
+- forecasty
+
+Výhoda:
+- dynamický výpočet
+- kratší zápis
+- lepší udržovatelnost
+
+---
+
+# 🔁 Sloučit vs 3D vzorec
+
+| Přístup | Výsledek |
+|---|---|
+| 3D reference | dynamický |
+| Data → Sloučit | statický |
 
 ---
 
@@ -178,7 +288,10 @@ Výhody:
 ✅ minimalizovat ruční práci  
 ✅ používat klávesové zkratky  
 ✅ psát čitelné vzorce  
-✅ vytvářet škálovatelné reporty
+✅ vytvářet škálovatelné reporty  
+✅ hlídat režim `[Skupina]`  
+✅ používat centrální parametry  
+✅ nechat v sešitu jen relevantní viditelné listy  
 
 ---
 
@@ -191,6 +304,9 @@ Výhody:
 - chaos v listech
 - nečitelné vzorce
 - rozbité formátování
+- špatně nastavené absolutní adresy
+- zapomenutá skupina listů
+- mazání helper listů místo jejich skrytí
 
 ---
 
@@ -209,4 +325,15 @@ Data → Informace → Decision making
 ## BI mindset
 ```text
 Automatizace > manuální práce
+```
+
+## Robustní Excel model
+```text
+1 správný vzorec
+↓
+správná adresace
+↓
+škálovatelné kopírování
+↓
+udržitelný reporting
 ```
