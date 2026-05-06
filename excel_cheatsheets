@@ -1,1 +1,112 @@
+1. Klávesové zkratky a pohyb
 
+Pohyb po listu
+Ctrl + Home	Přesun na A1
+Ctrl + End	Poslední použitá buňka
+Ctrl + PgDown	Další list
+Ctrl + PgUp	Předchozí list
+Ctrl + šipka	Přesun na konec dat
+Ctrl + Backspace	Návrat k aktivní buňce
+
+Výběr buněk
+Ctrl + Space	Celý sloupec
+Shift + Space	Celý řádek
+Ctrl + A	Označí tabulku
+Ctrl + A (2×)	Celý list
+Ctrl + Shift + Space	Souvislá oblast dat
+Ctrl + Shift + šipka	Rozšíření výběru
+
+Praktické poznámky
+Ctrl + A
+1× → aktuální tabulka
+2× → celý list
+Fill Handle
+
+Malý zelený čtvereček v pravém dolním rohu buňky.
+
+Použití:
+rozkopírování vzorců
+rozšíření řad
+kopírování hodnot
+
+POZOR:
+kopíruje i formát
+může rozbít design tabulky
+
+2. Vzorce a adresace
+
+Typy adres
+Relativní	A1	Mění řádek i sloupec
+Absolutní	$A$1	Nemění nic
+Smíšená	$A1	Zamkne sloupec
+Smíšená	A$1	Zamkne řádek
+Klávesa F4
+
+Při editaci vzorce:
+A1 → $A$1 → A$1 → $A1
+
+Příklady vzorců
+Výpočet tržby
+=B2*C2
+
+Sleva
+=B2*(1-$C$2)
+
+Součet
+=SUMA(A1:A10)
+
+Maximum
+=MAX(D2:D10)
+
+Podmínka
+=KDYŽ(D2>1000;"HIGH";"LOW")
+
+3. Rozšiřování vzorců a formátů
+
+Fill Handle vs Ctrl + Enter
+Fill Handle	Vzorec + formát
+Ctrl + Enter	Jen vzorec
+Ctrl + Enter
+
+Použití:
+označit více buněk
+napsat / upravit vzorec
+Ctrl + Enter
+Výsledek:
+
+vzorec se vloží do všech buněk
+formát zůstane zachovaný
+Kopírovat formát
+
+Umístění:
+Domů → Schránka → Kopírovat formát
+
+Použití:
+přenos stylu
+barvy
+ohraničení
+fontu
+zarovnání
+Best Practices pro analytika
+Vždy používej tabulky
+Ctrl + T
+
+Výhody:
+automatické kopírování vzorců
+dynamické rozšiřování
+lepší čitelnost
+méně chyb
+jednodušší reporting
+Profesionální workflow
+
+❌ Junior:
+tahání vzorců myší
+ruční kopírování
+rozbité formáty
+
+✅ Analytik:
+Ctrl + T
+Ctrl + Enter
+správná adresace
+pojmenované oblasti
+automatizace
