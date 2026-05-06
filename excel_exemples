@@ -1,1 +1,221 @@
+# 📁 examples/ – návrh obsahu
 
+Do `examples/` si začni ukládat:
+- malé praktické ukázky
+- mini business scénáře
+- často používané vzorce
+- dashboard prototypy
+- cvičné datasety
+
+Tohle je později skvělé portfolio.
+
+---
+
+# 📂 Doporučená struktura
+
+```text
+examples/
+│
+├── formulas/
+│   ├── basic_formulas.xlsx
+│   ├── absolute_references.xlsx
+│   └── conditional_formulas.xlsx
+│
+├── tables/
+│   ├── excel_tables.xlsx
+│   └── dynamic_ranges.xlsx
+│
+├── named_ranges/
+│   ├── named_ranges_example.xlsx
+│   └── lookup_example.xlsx
+│
+├── dashboards/
+│   ├── sales_dashboard.xlsx
+│   └── kpi_dashboard.xlsx
+│
+├── pivots/
+│   ├── pivot_sales.xlsx
+│   └── pivot_customers.xlsx
+│
+└── raw_vs_clean/
+    ├── raw_data_example.xlsx
+    └── cleaned_data_example.xlsx
+```
+
+---
+
+# 📘 Co do jednotlivých souborů
+
+---
+
+# 📄 basic_formulas.xlsx
+
+Obsah:
+- SUMA()
+- PRŮMĚR()
+- MAX()
+- MIN()
+- KDYŽ()
+
+Příklad:
+| Produkt | Cena | Ks | Tržba |
+|---|---|---|---|
+| Notebook | 25000 | 2 | =B2*C2 |
+
+---
+
+# 📄 absolute_references.xlsx
+
+Ukázka:
+- relativní adresace
+- absolutní adresace
+- smíšená adresace
+
+Příklad:
+```excel
+=B2*(1-$C$2)
+```
+
+---
+
+# 📄 conditional_formulas.xlsx
+
+Obsah:
+```excel
+=KDYŽ(D2>1000;"HIGH";"LOW")
+```
+
+nebo:
+```excel
+=KDYŽ(A2="ANO";1;0)
+```
+
+---
+
+# 📄 excel_tables.xlsx
+
+Ukázka:
+- Ctrl + T
+- automatické vzorce
+- filtry
+- dynamické rozšiřování
+
+---
+
+# 📄 dynamic_ranges.xlsx
+
+Ukázka:
+- přidání nového řádku
+- automatické rozšíření tabulky
+- vzorce bez ručního kopírování
+
+---
+
+# 📄 named_ranges_example.xlsx
+
+Obsah:
+- pojmenované oblasti
+- práce s F3
+- Správce názvů
+
+Příklad:
+```excel
+=SUMA(trzby_q1)
+```
+
+---
+
+# 📄 lookup_example.xlsx
+
+Ukázka:
+- SVYHLEDAT()
+- INDEX + POZVYHLEDAT()
+
+Příklad:
+```excel
+=SVYHLEDAT(A2;produkty;2;0)
+```
+
+---
+
+# 📄 sales_dashboard.xlsx
+
+Mini business case:
+- měsíční tržby
+- top produkty
+- KPI
+- grafy
+- filtry
+
+---
+
+# 📄 kpi_dashboard.xlsx
+
+Obsah:
+- revenue
+- growth
+- marže
+- počet objednávek
+- KPI cards
+
+---
+
+# 📄 pivot_sales.xlsx
+
+Ukázka:
+- kontingenční tabulka
+- seskupení dat
+- filtry
+- agregace
+
+---
+
+# 📄 raw_data_example.xlsx
+
+Chaotická data:
+- duplicity
+- špatné datumy
+- prázdné hodnoty
+
+---
+
+# 📄 cleaned_data_example.xlsx
+
+Vyčištěná data:
+- správné formáty
+- validní hodnoty
+- připraveno pro reporting
+
+---
+
+# 🚀 Bonus – super nápad do portfolia
+
+Později přidej:
+```text
+before_after/
+```
+
+Například:
+```text
+raw_sales_data.xlsx
+↓
+clean_sales_dashboard.xlsx
+```
+
+To je přesně typ věcí, které:
+- ukazují analytické myšlení
+- vypadají dobře v GitHubu
+- působí profesionálně
+
+---
+
+# 🧠 Co tím buduješ
+
+Ne jen poznámky.
+
+Ale:
+✅ praktické portfolio  
+✅ analytický workflow  
+✅ business thinking  
+✅ přípravu na Power BI  
+✅ junior data analyst skillset
