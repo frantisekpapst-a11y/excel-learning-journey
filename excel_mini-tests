@@ -338,3 +338,320 @@ Používají se například pro:
 - budget tracking
 - forecast progression
 - running totals
+
+📘 Lekce 10 – Podmíněné výpočty a logika v Excelu
+❓ Otázky
+1.
+
+K čemu slouží funkce KDYŽ()?
+
+2.
+
+Jak vypadá základní syntaxe funkce KDYŽ()?
+
+3.
+
+Co je logický test?
+
+4.
+
+Co vrátí výraz:
+
+=A1=B1
+
+pokud jsou hodnoty stejné?
+
+5.
+
+Proč může Excel vrátit NEPRAVDA, i když buňky vypadají stejně?
+
+6.
+
+Co vrátí výraz:
+
+="Adam"<"Bohuslav"
+7.
+
+Kdy je vhodné použít funkci IFS()?
+
+8.
+
+Kdy je vhodná funkce SWITCH()?
+
+9.
+
+Kdy je vhodná funkce ZVOLIT()?
+
+10.
+
+Co se stane, když je index ve funkci ZVOLIT() mimo rozsah?
+
+11.
+
+Jak lze ošetřit chybu ve funkci ZVOLIT()?
+
+12.
+
+Jaký je rozdíl mezi:
+
+obsahem buňky
+zobrazením buňky
+13.
+
+Co udělá vzorec:
+
+=KDYŽ(A2>0;"kladné";"nekladné")
+
+pokud je v A2 hodnota -5?
+
+14.
+
+Jaký je hlavní problém dlouhých vnořených KDYŽ()?
+
+15.
+
+Napiš vzorec, který:
+
+vrátí "VIP" pokud je tržba > 100000
+"MID" pokud je > 50000
+jinak "LOW"
+
+pomocí:
+
+vnořeného KDYŽ()
+IFS()
+✅ Odpovědi
+1.
+
+Slouží k rozhodování podle podmínky.
+
+2.
+=KDYŽ(podmínka;hodnota_když_ano;hodnota_když_ne)
+3.
+
+Výraz, který Excel vyhodnotí jako:
+
+PRAVDA
+NEPRAVDA
+4.
+PRAVDA
+5.
+
+Protože Excel porovnává skutečný obsah buněk, ne jen jejich vizuální zobrazení.
+
+6.
+PRAVDA
+
+Protože "Adam" je v abecedě před "Bohuslav".
+
+7.
+
+Když potřebujeme vyhodnotit více podmínek přehledněji než pomocí vnořených KDYŽ().
+
+8.
+
+Když porovnáváme jednu hodnotu s více konkrétními variantami.
+
+9.
+
+Když vybíráme hodnotu podle číselného indexu nebo pořadí.
+
+10.
+
+Excel vrátí chybu:
+
+#HODNOTA!
+11.
+
+Například pomocí:
+
+=KDYŽCHYBHODN(ZVOLIT(...);"výchozí hodnota")
+
+nebo:
+
+=IFERROR(ZVOLIT(...);"výchozí hodnota")
+12.
+Typ	Význam
+Obsah buňky	skutečná uložená hodnota
+Zobrazení buňky	formátovaná vizuální podoba
+13.
+nekladné
+14.
+
+Vzorce jsou:
+
+nepřehledné
+těžko debugovatelné
+náchylné k chybám
+15.
+Vnořené KDYŽ()
+=KDYŽ(A1>100000;"VIP";KDYŽ(A1>50000;"MID";"LOW"))
+IFS()
+=IFS(A1>100000;"VIP";A1>50000;"MID";A1<=50000;"LOW")
+📘 Lekce 11 – Logické operátory v Excelu
+❓ Otázky
+1.
+
+Co znamená logický operátor A (AND)?
+
+2.
+
+Kdy vrátí logika A hodnotu PRAVDA?
+
+3.
+
+Co znamená logický operátor NEBO (OR)?
+
+4.
+
+Kdy vrátí logika NEBO hodnotu PRAVDA?
+
+5.
+
+Co znamená XOR logika?
+
+6.
+
+Kdy vrátí XOR hodnotu PRAVDA?
+
+7.
+
+Proč se používají logické operátory místo dlouhého vnořování?
+
+8.
+
+Co vrátí IFERROR(), pokud vzorec skončí chybou?
+
+9.
+
+Jaký je rozdíl mezi:
+
+IFS()
+IFERROR()
+10.
+
+Proč je důležité ošetřovat chyby v reportech?
+
+11.
+
+Napiš vzorec, který vrátí:
+
+"BONUS" pokud:
+tržba > 100000
+a marže > 20 %
+jinak "NO BONUS"
+12.
+
+Co znamená tento zápis?
+
+(B2>100000)*(C2>0,2)
+13.
+
+Proč u logiky OR používáme:
+
+>0
+14.
+
+Jak poznáš ve vzorci XOR logiku?
+
+15.
+
+Jaký je rozdíl mezi:
+
+=1
+
+a
+
+>0
+
+u logických součtů?
+
+✅ Odpovědi
+1.
+
+Že musí být splněny všechny podmínky současně.
+
+2.
+
+Pouze když jsou všechny podmínky pravdivé.
+
+3.
+
+Že stačí splnit alespoň jednu podmínku.
+
+4.
+
+Když je pravdivá:
+
+první podmínka
+druhá podmínka
+nebo obě současně
+5.
+
+Že musí být splněna právě jedna podmínka.
+
+6.
+
+Když je splněna:
+
+podmínka 1
+nebo podmínka 2
+ale ne obě současně
+7.
+
+Protože:
+
+zkracují vzorce
+zvyšují přehlednost
+zjednodušují debugging
+8.
+
+Vrátí náhradní hodnotu místo chyby.
+
+Například:
+
+=IFERROR(B2/C2;"chyba")
+9.
+Funkce	Použití
+IFS()	více podmínek
+IFERROR()	ošetření chyb
+10.
+
+Protože:
+
+chyby kazí reporting
+rozbíjí dashboardy
+zhoršují čitelnost dat
+11.
+=KDYŽ((B2>100000)*(C2>0,2);"BONUS";"NO BONUS")
+12.
+
+Excel:
+
+vyhodnotí obě podmínky
+PRAVDA = 1
+NEPRAVDA = 0
+
+Násobení tedy funguje jako logické AND.
+
+13.
+
+Protože:
+
+OR může vrátit:
+1
+nebo 2
+potřebujeme tedy ověřit, že výsledek je větší než 0
+14.
+
+Součet podmínek musí být přesně:
+
+=1
+
+Například:
+
+(A1>0)+(B1>0)=1
+15.
+Zápis	Význam
+=1	právě jedna podmínka
+>0	alespoň jedna podmínka
