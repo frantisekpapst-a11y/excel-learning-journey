@@ -1,15 +1,11 @@
-# 📊 excel-learning-journey
+📊 excel-learning-journey
 
 Tento repozitář dokumentuje moji cestu učením Microsoft Excelu — od základů až po pokročilou práci s daty, reporting, filtrování, analytické workflow a přípravu na Power BI.
 
-🎯 Cíl:  
+🎯 Cíl:
 Vybudovat praktické portfolio a dostat se na úroveň junior data analytika.
 
----
-
-# 📁 Struktura repozitáře
-
-```text
+📁 Struktura repozitáře
 excel-learning-journey/
 │
 ├── README.md
@@ -20,26 +16,27 @@ excel-learning-journey/
 ├── mini-tests/
 │   └── excel_advanced_mini_tests.md
 │
-├── case-studies/
-│   ├── sales_analysis/
-│   ├── inventory_tracking/
-│   ├── employee_filtering/
-│   └── reporting_tasks/
+├── case-study-1.md
+├── case-study-2.md
+├── case-study-3.md
+├── case-study-4.md
+├── case-study-5.md
 │
-├── examples/
+├── excel_examples/
 │   ├── formulas_examples.xlsx
 │   ├── lookup_examples.xlsx
 │   ├── filtering_examples.xlsx
 │   ├── advanced_filter_examples.xlsx
 │   └── dashboard_examples.xlsx
 │
-└── notes/
+└── excel_notes/
     ├── excel_shortcuts.md
     ├── excel_best_practices.md
     ├── excel_vs_sql.md
     └── filtering_and_lookup_notes.md
 
 🧠 Co se v repozitáři učím
+
 📗 Excel základy
 formátování buněk
 vzorce a funkce
@@ -47,6 +44,7 @@ grafy
 filtry
 kontingenční tabulky
 základy reportingu
+
 📘 Excel pro pokročilé
 klávesové zkratky
 efektivní práce bez myši
@@ -60,10 +58,12 @@ SVYHLEDAT / XLOOKUP
 INDEX + POZVYHLEDAT
 automatické a rozšířené filtry
 výpočtová kritéria
-průřezy
+databázové funkce
+logické funkce
 podmíněné formátování
 dynamické reporty
-📙 Data analytika
+
+📙 Data analytika mindset
 reporting
 KPI
 dashboardy
@@ -74,7 +74,9 @@ automatizace práce
 Power Query mindset
 Power BI mindset
 SQL → Excel → Power BI workflow
+
 ✅ Aktuální progress
+
 Excel základy
 
 ✅ prostředí Excelu
@@ -103,6 +105,63 @@ Excel pro pokročilé
 ✅ Lekce 14: Jednoduché filtrování dat
 ✅ Lekce 15: Rozšířený filtr
 ✅ Lekce 16: Pokročilé možnosti rozšířeného filtru
+✅ Lekce 17–18: Skalární součin a podmíněné výpočty
+✅ Lekce 19–22: Databázové funkce a pokročilá logika
+✅ Lekce 23–24: Logické funkce a business pravidla
+🔄 Podmíněné formátování (aktuálně)
+
+📊 Case Studies
+
+📦 Case Study 01 — Sales Analysis
+
+Procvičení:
+
+analytických výpočtů
+filtrování dat
+práce s tržbami
+business logiky
+reporting workflow
+
+📦 Case Study 02 — Inventory Management
+
+Procvičení:
+
+Excel Tables (Ctrl + T)
+XLOOKUP()
+KDYŽ()
+structured references
+filtrování produktů
+business logiky skladu
+
+📦 Case Study 03 — Advanced Filtering
+
+Procvičení:
+
+automatického filtru
+rozšířeného filtru
+AND / OR logiky
+výpočtových kritérií
+unikátních hodnot
+databázového přístupu k datům
+
+📦 Case Study 04 — Logical Access Rules
+
+Procvičení:
+
+funkcí A() a NEBO()
+vnořené logiky
+převodu logických výsledků
+business pravidel
+rozhodovacích workflow
+
+📦 Case Study 05 — Conditional Analytics
+
+Procvičení:
+
+pokročilé logiky podmínek
+kombinace funkcí
+analytického myšlení
+simulace reálných business scénářů
 
 🛠️ Praktické dovednosti
 
@@ -118,6 +177,7 @@ tvorbu analytických workflow
 oddělení RAW dat, transformací a dashboardů
 analytické myšlení podobné SQL
 přípravu na Power BI
+
 🧩 Excel jako analytický nástroj
 
 Excel zde nepoužívám jen jako tabulkový editor, ale jako nástroj pro:
@@ -129,6 +189,7 @@ přípravu dat
 filtrování a transformace
 prototypování dashboardů
 analytické workflow
+
 🔗 SQL → Excel → Power BI mindset
 SQL	Excel	Power BI
 SELECT	výběr dat	datový model
@@ -138,6 +199,7 @@ CASE WHEN	KDYŽ	DAX IF / SWITCH
 JOIN	SVYHLEDAT / XLOOKUP	relace
 DISTINCT	odebrání duplicit	dimenze
 ETL	Power Query	Power Query / model
+
 📌 Best practices
 používat Ctrl + T pro Excel tabulky
 oddělovat RAW data od výstupů
@@ -147,16 +209,22 @@ psát čitelné vzorce
 automatizovat rutinní práci
 tvořit škálovatelné workflow
 stavět reporty tak, aby byly udržovatelné
-🚀 Cíl repozitáře
 
-Vybudovat praktické portfolio, které ukazuje:
+🚀 Další směr
 
-konzistentní learning journey
-schopnost pracovat s daty
-analytické myšlení
-orientaci v Excelu
-přípravu na Power BI
-směr k junior data analyst roli
+Další krok v learning journey:
+
+dokončení Excel Advanced
+Power Query
+Power BI
+Python fundamentals
+pandas & EDA
+dashboarding
+business analytics
+AI-assisted analytics workflow
+
 📌 Stav
 
 Repozitář je průběžně aktualizován podle studia kurzu, mini testů, business case studies a praktických cvičení.
+
+Cílem není jen naučit se syntaxe funkcí, ale budovat analytické myšlení a schopnost řešit reálné business problémy pomocí dat.
