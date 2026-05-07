@@ -8,7 +8,6 @@
 ---
 
 # 🚀 1. Klávesové zkratky
-
 | Zkratka | Funkce |
 |---|---|
 | `Ctrl + Home` | Přesun na A1 |
@@ -34,7 +33,6 @@
 ---
 
 # 📐 2. Adresace buněk
-
 | Typ | Příklad | Chování |
 |---|---|---|
 | Relativní | `A1` | mění řádek i sloupec |
@@ -61,6 +59,7 @@ centrální parametr
 Lepší varianta:
 
 =A2*sleva
+
 🧮 3. Smíšené adresování
 =$A2*B$1
 Část	Význam
@@ -73,6 +72,7 @@ sazebníky
 matice cen
 forecasty
 scénáře
+
 📊 4. Rozšiřování vzorců
 Metoda	Co kopíruje
 Fill Handle	vzorec + formát
@@ -86,6 +86,7 @@ Výhody:
 zachování formátu
 rychlost
 menší chybovost
+
 📋 5. Excel tabulky (Ctrl + T)
 
 Výhody:
@@ -98,6 +99,7 @@ lepší kompatibilita s Power Query / Power BI
 Structured references
 =[@Ks]*[@Cena]
 =KDYŽ([@Tržba]>20000;"HIGH";"STANDARD")
+
 🧠 6. Pojmenované oblasti
 
 Místo:
@@ -110,12 +112,14 @@ lepší:
 Zkratka	Funkce
 Ctrl + F3	Správce názvů
 F3	Vložení názvu
+
 📑 7. Listy a viditelnost
 Typ	Použití
 Datový list	data, výpočty, dashboardy
 Grafický list	jeden graf
 Skrytý list	lze zobrazit v Excelu
 Very Hidden	pouze přes VBA
+
 🏗️ 8. Hromadná práce s listy
 Akce	Postup
 Nesousedící listy	Ctrl + klik
@@ -129,6 +133,7 @@ Použití:
 měsíční reporting
 regionální reporting
 pobočky
+
 🧩 9. Vnořování funkcí
 =ZAOKROUHLIT(PRŮMĚR(A1:A5);0)
 
@@ -140,6 +145,7 @@ KDYŽ()
 =KDYŽ(B2>10000;"HIGH";"LOW")
 IFS()
 =IFS(B2<10000;"LOW";B2<50000;"MEDIUM";B2>=50000;"HIGH")
+
 ⚖️ 10. Operátory
 Operátor	Význam
 >	větší než
@@ -150,11 +156,13 @@ Operátor	Význam
 <>	nerovná se
 Textový operátor
 =A1&" "&B1
+
 🔍 11. Zástupné znaky
 Znak	Význam
 *	libovolný počet znaků
 ?	právě jeden znak
 =COUNTIF(A:A;"Praha*")
+
 📊 12. Maticové vzorce
 =B2:B6*C2:C6
 
@@ -167,6 +175,7 @@ Použití:
 
 řádek → sloupec
 sloupec → řádek
+
 📈 14. Kumulativní výpočty
 =SUMA($C$3:C3)
 Část	Význam
@@ -179,6 +188,7 @@ running totals
 YTD
 cash flow
 budget tracking
+
 🔍 15. SVYHLEDAT
 =SVYHLEDAT(hledat;tabulka;sloupec;typ)
 Přesná shoda
@@ -195,6 +205,7 @@ Limity
 hledá jen doprava
 pevné číslo sloupce
 může se rozbít při vložení sloupce
+
 🔎 16. POZVYHLEDAT
 =POZVYHLEDAT("Cena";A1:E1;0)
 
@@ -204,6 +215,7 @@ Hodnota	Význam
 0	přesná shoda
 1	nejbližší menší
 -1	nejbližší větší
+
 🔗 17. INDEX + POZVYHLEDAT
 =INDEX(B2:B10;POZVYHLEDAT(E2;A2:A10;0))
 
@@ -212,6 +224,7 @@ Výhody:
 flexibilnější než SVYHLEDAT
 lookup doleva
 stabilnější při změně pořadí sloupců
+
 🚀 18. XLOOKUP
 =XLOOKUP(co;kde_hledat;co_vratit)
 =XLOOKUP(G2;A2:A10;E2:E10;"nenalezeno")
@@ -226,6 +239,7 @@ Hodnota	Význam
 -1	přesná nebo nejbližší menší
 1	přesná nebo nejbližší větší
 2	wildcard *, ?
+
 🚨 19. IFERROR
 =IFERROR(A1/B1;"chyba")
 
@@ -234,6 +248,7 @@ Použití:
 ošetření lookupů
 stabilní dashboardy
 čisté reporty
+
 🔎 20. Jednoduchý filtr
 Zkratka	Funkce
 Ctrl + Shift + L	zapnutí/vypnutí filtru
@@ -243,6 +258,7 @@ A	musí platit obě podmínky
 NEBO	stačí jedna podmínka
 Kaskádové filtrování
 další filtr pracuje jen nad viditelnými řádky
+
 🧠 21. Rozšířený filtr
 
 Rozšířený filtr:
@@ -261,6 +277,7 @@ Příklad OR
 Bydliště
 Praha
 Brno
+
 🧮 22. Výpočtová kritéria
 Nadprůměrná hodnota
 =$E2>PRŮMĚR($E$2:$E$13)
@@ -268,6 +285,7 @@ Nejvyšší hodnota
 =$C2=MAX($C$2:$C$13)
 Nejnižší hodnota
 =$C2=MIN($C$2:$C$13)
+
 🧩 23. Průřezy
 
 Průřezy fungují nad:
@@ -283,6 +301,7 @@ Výhody:
 vizuální filtrování
 interaktivní dashboard
 rychlá analýza
+
 🧮 24. Podmíněné agregační funkce – jedna podmínka
 COUNTIF
 
@@ -313,6 +332,7 @@ Příklad:
 =AVERAGEIF(A2:A11;"pondělí";B2:B11)
 Vztah
 AVERAGEIF = SUMIF / COUNTIF
+
 🧮 25. Podmíněné agregační funkce – více kritérií
 COUNTIFS
 
@@ -340,6 +360,7 @@ Průměr hodnot splňujících více podmínek.
 MINIFS / MAXIFS
 =MINIFS(D2:D7;B2:B7;"Praha")
 =MAXIFS(D2:D7;B2:B7;"Praha")
+
 📌 26. Kritéria ve funkcích -IFS
 Pevné kritérium
 ">4"
@@ -349,6 +370,7 @@ Textový vzor
 "p*"
 Oboustranný interval
 =SUMIFS(D2:D20;D2:D20;">"&E3;D2:D20;"<"&E4)
+
 ⚠️ 27. Limity SUMIFS / COUNTIFS
 
 Funkce -IFS:
@@ -359,7 +381,215 @@ neumí sčítat více sloupců najednou v jedné oblasti součtu
 někdy vyžadují pomocný sloupec
 Alternativa
 =SOUČIN.SKALÁRNÍ()
-⌨️ 28. Speciální znaky na CZ klávesnici
+
+# 🧮 28. SOUČIN.SKALÁRNÍ – základy
+
+`SOUČIN.SKALÁRNÍ()` násobí odpovídající hodnoty v oblastech a výsledky sečte.
+
+```excel
+=SOUČIN.SKALÁRNÍ(B2:B4;C2:C4)
+
+Odpovídá logice:
+
+B2*C2 + B3*C3 + B4*C4
+
+Použití:
+
+celková tržba
+zisk
+marže
+vážený průměr
+výpočty bez pomocných sloupců
+Více činitelů
+=SOUČIN.SKALÁRNÍ(Ks;Cena;Marže)
+Vážený průměr
+=SOUČIN.SKALÁRNÍ(Hodnoty;Váhy)/SUMA(Váhy)
+
+🧮 29. SOUČIN.SKALÁRNÍ jako COUNTIF / SUMIF
+Počet podle podmínky
+=SOUČIN.SKALÁRNÍ((A2:A10="Praha")*1)
+
+PRAVDA/NEPRAVDA se převede na 1/0.
+
+Součet podle podmínky
+=SOUČIN.SKALÁRNÍ((A2:A10="Praha")*(C2:C10))
+Porovnání dvou sloupců
+=SOUČIN.SKALÁRNÍ((Skutečnost>Plán)*1)
+
+Výhoda:
+
+není potřeba pomocný sloupec
+umí porovnat hodnoty řádek po řádku
+
+🧠 30. Logika ve skalárním součinu
+AND logika
+=SOUČIN.SKALÁRNÍ((A2:A10="Praha")*(B2:B10="Notebook")*(C2:C10))
+
+* znamená:
+
+A ZÁROVEŇ
+OR logika
+=SOUČIN.SKALÁRNÍ(((A2:A10="Praha")+(A2:A10="Brno")>0)*(C2:C10))
+
++ znamená:
+
+NEBO
+
+>0 zajistí, že se řádek splňující více OR podmínek započítá jen jednou.
+
+Kombinace OR + AND
+=SOUČIN.SKALÁRNÍ((((Kanál="Ads")+(Kanál="Organic"))>0)*(Marže>0,2)*(Vráceno=0)*(Tržba))
+
+Čtení:
+
+(Kanál = Ads NEBO Organic)
+A ZÁROVEŇ
+Marže > 20 %
+A ZÁROVEŇ
+Vráceno = 0
+
+🧩 31. SOUČIN.SKALÁRNÍ nad maticí
+
+Skalární součin může pracovat i s oblastí více řádků a sloupců.
+
+Výběr řádků
+=SOUČIN.SKALÁRNÍ((A3:A26<=6)*(B3:D26))
+
+Sečte hodnoty z matice jen pro vybrané řádky.
+
+Výběr sloupců
+=SOUČIN.SKALÁRNÍ((B1:D1="CIO")*(B3:D26))
+
+Sečte hodnoty jen z vybraných sloupců.
+
+Výběr řádků i sloupců
+=SOUČIN.SKALÁRNÍ((A3:A26<=6)*(B1:D1="CIO")*(B3:D26))
+Vyhledání hodnoty v průsečíku
+=SOUČIN.SKALÁRNÍ((A2:A5=G2)*(B1:E1=H2)*(B2:E5))
+
+Použití:
+
+matice vzdáleností
+ceníky
+sazebníky
+výběr hodnoty podle řádku a sloupce
+
+🗄️ 32. Databázové funkce
+
+Databázové funkce pracují s celou tabulkou a samostatnou oblastí kritérií.
+
+Syntaxe
+=DFUNKCE(databáze;pole;kritéria)
+Nejčastější funkce
+Funkce	Význam
+DSUMA()	podmíněný součet
+DPRŮMĚR()	podmíněný průměr
+DPOČET()	počet číselných hodnot
+DPOČET2()	počet neprázdných hodnot
+DMAX()	nejvyšší hodnota
+DMIN()	nejnižší hodnota
+Příklad DSUMA
+=DSUMA(A1:C6;"Tržba";A8:B10)
+
+nebo:
+
+=DSUMA(A1:C6;3;A8:B10)
+Kritéria
+Rozložení	Význam
+Vedle sebe	AND
+Pod sebou	OR
+
+Příklad:
+
+Město	Produkt
+Praha	A
+Brno	A
+
+Znamená:
+
+(Praha A Produkt A)
+NEBO
+(Brno A Produkt A)
+
+🧠 33. Logické funkce A() a NEBO()
+A()
+=A(B2>10000;C2>5)
+
+Vrátí PRAVDA, pouze pokud platí všechny podmínky.
+
+NEBO()
+=NEBO(B2>10000;C2>5)
+
+Vrátí PRAVDA, pokud platí alespoň jedna podmínka.
+
+Kombinace s KDYŽ()
+=KDYŽ(NEBO(A(B2>10000;C2>5);D2="ano");"VIP";"STANDARD")
+
+Čtení:
+
+VIP pokud:
+(útrata > 10000 A objednávky > 5)
+NEBO
+premium = ano
+
+🧩 34. Převod logiky na výstup
+Logický výstup
+=NEBO([@VIP]=1;[@Kredit]>0;[@Zaplaceno]>0)
+
+Vrací:
+
+PRAVDA / NEPRAVDA
+Textový výstup
+=KDYŽ(NEBO([@VIP]=1;[@Kredit]>0;[@Zaplaceno]>0);"ano";"ne")
+Číselný výstup
+=NEBO([@VIP]=1;[@Kredit]>0;[@Zaplaceno]>0)*1
+
+Vrací:
+
+1 / 0
+
+🧠 35. Další logické funkce
+Funkce	Význam
+NE()	obrací logický výsledek
+XOR()	exkluzivní NEBO
+IFS()	více podmínek bez vnořeného KDYŽ
+IFERROR()	ošetření chyby
+KDYŽ()	převod logiky na výstup
+XOR
+=XOR(A1>0;B1>0)
+
+Vrátí PRAVDA, pokud platí právě jedna z podmínek.
+
+🎯 36. Business rule mindset
+
+Při tvorbě pravidel se vždy ptej:
+
+Musí platit všechno?
+→ A()
+
+Stačí jedna možnost?
+→ NEBO()
+
+Je potřeba výjimka?
+→ NEBO() nebo vnořená logika
+
+Potřebuji textový výsledek?
+→ KDYŽ()
+
+Potřebuji počítat výsledky?
+→ *1
+
+🔗 37. SQL → Excel → Python mindset
+Koncept	SQL	Excel	Python / pandas
+Filtr	WHERE	Filtr / KDYŽ()	boolean mask
+AND	AND	A() / *	and / &
+OR	OR	NEBO() / +	or / `
+Podmínka	CASE WHEN	KDYŽ()	if / np.where()
+Agregace	SUM()	SUMIFS()	groupby().sum()
+Join	JOIN	XLOOKUP()	merge()
+Předchozí hodnota	LAG()	posun řádku	shift()
+
+⌨️ 38. Speciální znaky na CZ klávesnici
 Znak	Zkratka
 [	AltGr + F
 ]	AltGr + G
@@ -367,7 +597,8 @@ Znak	Zkratka
 }	AltGr + N
 @	AltGr + V
 $	AltGr + ů
-🧱 29. Profesionální struktura analytického souboru
+
+🧱 39. Profesionální struktura analytického souboru
 RAW_DATA
 ↓
 TRANSFORM
@@ -379,7 +610,8 @@ PIVOTS
 DASHBOARD
 ↓
 EXPORT
-🎯 30. SQL → Excel mindset
+
+🎯 40. SQL → Excel mindset
 SQL	Excel
 SELECT	výběr dat
 WHERE	filtr / rozšířený filtr
@@ -389,6 +621,7 @@ COUNT()	COUNTIF() / COUNTIFS()
 AVG()	AVERAGEIF() / AVERAGEIFS()
 JOIN	SVYHLEDAT() / XLOOKUP()
 DISTINCT	Bez duplicitních záznamů
+
 🚀 Cíl
 
 Nepracovat:
