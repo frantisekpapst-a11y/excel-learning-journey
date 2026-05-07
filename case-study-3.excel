@@ -1,0 +1,116 @@
+# 📊 Case Study 03 — Advanced Filtering in Excel
+
+## 🎯 Cíl projektu
+
+Cílem této mini case study bylo procvičit:
+
+- jednoduché filtrování
+- rozšířený filtr
+- logické podmínky AND / OR
+- export filtrovaných dat
+- výpočtová kritéria
+- práci s unikátními hodnotami
+- databázové myšlení při práci s daty
+
+---
+
+# 📁 Použitá data
+
+Tabulka zaměstnanců obsahovala:
+
+- jméno
+- oddělení
+- město
+- věk
+- plat
+
+---
+
+# ✅ Procvičené scénáře
+
+## 1. Jednoduchý filtr
+
+Filtrování zaměstnanců podle:
+
+- města
+- věku
+- oddělení
+- výše platu
+
+Použití:
+- textových filtrů
+- číselných filtrů
+- vlastních podmínek
+
+---
+
+## 2. Rozšířený filtr
+
+Použití oblasti kritérií pro složitější logiku.
+
+### AND podmínky
+Příklad:
+
+- IT oddělení
+- město Brno
+- věk > 35
+
+### OR podmínky
+Příklad:
+
+- zaměstnanci z Prahy
+- nebo zaměstnanci s platem > 70000
+
+---
+
+## 3. Výpočtová kritéria
+
+Filtrování zaměstnanců s:
+
+- nadprůměrným platem
+- nejvyšším platem
+- nejnižším věkem
+
+Použitý vzorec:
+
+```excel
+=[@Plat]>PRŮMĚR(Tabulka1[Plat])
+
+4. Export výsledků
+
+Použití možnosti:
+
+Kopírovat jinam
+
+Výsledky byly exportovány na samostatný list.
+
+5. Unikátní hodnoty
+
+Použití:
+
+Bez duplicitních záznamů
+
+Vytvořen seznam unikátních měst:
+
+Praha
+Brno
+Ostrava
+
+🧠 Co jsem se naučil
+rozdíl mezi jednoduchým a rozšířeným filtrem
+logiku AND / OR v Excelu
+práci s oblastí kritérií
+databázový přístup k filtrování dat
+podobnost s SQL (WHERE, OR, AND, DISTINCT)
+práci s dynamickými kritérii pomocí vzorců
+
+🛠 Použité funkce a nástroje
+Filtr
+Rozšířený filtr
+PRŮMĚR()
+Bez duplicitních záznamů
+Excel Tables (Ctrl + T)
+
+🚀 Výsledek
+
+Tato case study simulovala základní analytickou práci s HR daty a ukázala, jak lze v Excelu vytvářet pokročilé datové výběry bez použití SQL nebo databáze.
