@@ -1071,6 +1071,211 @@ Zápis	Význam
 6. Co vrací `MINIFS()`?
 7. Co vrací `MAXIFS()`?
 8. Co znamená tento vzorec?
+9. Jak se zapisuje intervalové kritérium, např. menší než 10?
+10. Jak spojíš operátor s odkazem na buňku?
+11. K čemu slouží zástupný znak `*`?
+12. Proč `SUMIFS()` neumí snadno sčítat podle výrazu typu `DÉLKA(text)<5`?
+13. Co je alternativa při složitějších podmínkách?
+14. Co se stane, když oblasti ve `SUMIFS()` nemají stejný rozměr?
+15. Jaký je hlavní business přínos funkcí `-IFS`?
 
-```excel
-=SUMIFS($C$2:$C$22;$A$2:$A$22;"pondělí";$B$2:$B$22;"Praha")
+## ✅ Odpovědi
+
+8. Sečte počet článků ve sloupci C pouze pro pondělí v Praze.
+9. Do uvozovek: `"<10"`.
+10. Pomocí `&`, např. `">"&E3`.
+11. Nahrazuje libovolný počet znaků.
+12. Protože `SUMIFS()` neumí přímo vyhodnocovat funkci jako kritérium bez pomocného sloupce.
+13. Pomocný sloupec nebo `SOUČIN.SKALÁRNÍ()`.
+14. Excel vrátí chybu.
+15. Umožňují rychlé podmíněné agregace podle více kritérií.
+
+---
+
+# 📘 Lekce 19 – Základy skalárního součinu
+
+## ❓ Otázky
+
+1. Co dělá `SOUČIN.SKALÁRNÍ()`?
+2. Co znamená součet součinů?
+3. Jaký je rozdíl mezi `SUMA()` a `SOUČIN.SKALÁRNÍ()`?
+4. Proč musí mít oblasti stejný rozměr?
+5. Co se stane, když je v řádku nula?
+6. Co se stane, když je v oblasti text místo čísla?
+7. Jak spočítáš celkovou tržbu z množství a ceny?
+8. Jak zapojíš do výpočtu ještě marži?
+9. K čemu slouží vážený průměr?
+10. Jak se počítá vážený průměr pomocí skalárního součinu?
+
+## ✅ Odpovědi
+
+1. Násobí odpovídající hodnoty v oblastech a výsledky sečte.
+2. Např. `B2*C2 + B3*C3 + B4*C4`.
+3. `SUMA()` jen sčítá, `SOUČIN.SKALÁRNÍ()` nejdřív násobí a pak sčítá.
+4. Excel musí vědět, které buňky se mají násobit proti sobě.
+5. Součin daného řádku bude nula.
+6. Výpočet může skončit chybou.
+7. `=SOUČIN.SKALÁRNÍ(Ks;Cena)`.
+8. `=SOUČIN.SKALÁRNÍ(Ks;Cena;Marže)`.
+9. Když různé hodnoty mají různou důležitost.
+10. `=SOUČIN.SKALÁRNÍ(Hodnoty;Váhy)/SUMA(Váhy)`.
+
+---
+
+# 📘 Lekce 20 – Skalární součin jako náhrada agregačních funkcí
+
+## ❓ Otázky
+
+1. Co vrací logický výraz typu `A2:A10>100`?
+2. Proč se používá `*1`?
+3. Co znamená násobení podmínek?
+4. Co znamená sčítání podmínek?
+5. Jak pomocí skalárního součinu spočítáš počet řádků splňujících podmínku?
+6. Jak pomocí skalárního součinu sečteš hodnoty splňující podmínku?
+7. Čím může `SOUČIN.SKALÁRNÍ()` nahradit `COUNTIF()`?
+8. Čím může nahradit `SUMIF()`?
+9. Proč je užitečný při porovnání dvou sloupců?
+10. Jaký je rozdíl mezi počítáním a sčítáním ve skalárním součinu?
+
+## ✅ Odpovědi
+
+1. Pole hodnot `PRAVDA/NEPRAVDA`.
+2. Převádí `PRAVDA/NEPRAVDA` na `1/0`.
+3. Logiku AND — všechny podmínky musí platit.
+4. Logiku OR — stačí alespoň jedna podmínka.
+5. `=SOUČIN.SKALÁRNÍ((oblast=kritérium)*1)`.
+6. `=SOUČIN.SKALÁRNÍ((oblast=kritérium)*(součet_oblast))`.
+7. Počítáním jedniček vzniklých z pravdivých podmínek.
+8. Násobením logické masky hodnotami, které se mají sčítat.
+9. Protože umí podmínku typu `Skutečnost > Plán` bez pomocného sloupce.
+10. Počítání sčítá `1/0`, sčítání násobí masku skutečnými hodnotami.
+
+---
+
+# 📘 Lekce 21 – Pokročilé použití skalárního součinu
+
+## ❓ Otázky
+
+1. Jak se ve skalárním součinu zapisuje logika AND?
+2. Jak se zapisuje logika OR?
+3. Proč se u OR často používá `>0`?
+4. Co by se stalo bez `>0`, pokud řádek splní dvě OR podmínky?
+5. Jak kombinuješ OR a AND v jednom vzorci?
+6. Může `SOUČIN.SKALÁRNÍ()` pracovat s maticí?
+7. Jak lze vybrat jen určité řádky matice?
+8. Jak lze vybrat jen určité sloupce matice?
+9. Jak lze pomocí skalárního součinu najít hodnotu v průsečíku řádku a sloupce?
+10. Co je nejčastější chyba u maticových oblastí?
+
+## ✅ Odpovědi
+
+1. Pomocí `*`.
+2. Pomocí `+`.
+3. Aby se řádek splňující více OR podmínek započítal jen jednou.
+4. Započítal by se vícenásobně.
+5. OR část dáš do závorek a převedeš přes `>0`, pak násobíš dalšími AND podmínkami.
+6. Ano.
+7. Podmínkou nad řádkovým sloupcem.
+8. Podmínkou nad záhlavím sloupců.
+9. Pomocí masky řádku `*` masky sloupce `*` hodnotové matice.
+10. Rozdílný rozměr oblastí nebo zahrnutí textu do číselné oblasti.
+
+---
+
+# 📘 Lekce 22 – Databázové funkce
+
+## ❓ Otázky
+
+1. Co jsou databázové funkce v Excelu?
+2. Jaká je základní syntaxe databázových funkcí?
+3. Co dělá `DSUMA()`?
+4. Co dělá `DPRŮMĚR()`?
+5. Co dělá `DPOČET()`?
+6. Co dělá `DPOČET2()`?
+7. Co dělá `DMAX()`?
+8. Co dělá `DMIN()`?
+9. Co znamenají kritéria vedle sebe?
+10. Co znamenají kritéria pod sebou?
+11. Jaký je hlavní rozdíl mezi `SUMIFS()` a `DSUMA()`?
+12. Proč musí názvy kritérií odpovídat záhlaví databáze?
+13. Jak lze ve funkci určit pole pro výpočet?
+14. Kdy dávají databázové funkce smysl?
+15. Jaký SQL koncept připomíná oblast kritérií?
+
+## ✅ Odpovědi
+
+1. Funkce, které počítají nad tabulkou podle externí oblasti kritérií.
+2. `=DFUNKCE(databáze;pole;kritéria)`.
+3. Podmíněný součet.
+4. Podmíněný průměr.
+5. Počet číselných hodnot.
+6. Počet všech neprázdných hodnot.
+7. Nejvyšší hodnotu podle kritérií.
+8. Nejnižší hodnotu podle kritérií.
+9. Logické AND.
+10. Logické OR.
+11. `SUMIFS()` má logiku ve vzorci, `DSUMA()` v tabulce kritérií.
+12. Excel podle nich pozná, ke kterému sloupci se kritérium vztahuje.
+13. Číslem sloupce nebo názvem pole v uvozovkách.
+14. U složitější kombinace AND/OR a přehledné business logiky.
+15. SQL `WHERE`.
+
+---
+
+# 📘 Lekce 23 – Logické funkce
+
+## ❓ Otázky
+
+1. Co dělá funkce `A()`?
+2. Kdy vrátí `A()` hodnotu `PRAVDA`?
+3. Co dělá funkce `NEBO()`?
+4. Kdy vrátí `NEBO()` hodnotu `PRAVDA`?
+5. Co vrátí `=A(5>3;10>2)`?
+6. Co vrátí `=A(5>3;1>8)`?
+7. Co vrátí `=NEBO(5>3;1>8)`?
+8. Co kontroluje `=A(MAX(A1:A5)>0;MAX(B1:B5)>0)`?
+9. Jaký je rozdíl mezi `A()` a násobením podmínek ve skalárním součinu?
+10. Jaký je rozdíl mezi `NEBO()` a sčítáním podmínek ve skalárním součinu?
+
+## ✅ Odpovědi
+
+1. Vyhodnocuje, zda platí všechny podmínky.
+2. Pouze pokud jsou všechny podmínky pravdivé.
+3. Vyhodnocuje, zda platí alespoň jedna podmínka.
+4. Pokud je pravdivá alespoň jedna podmínka.
+5. `PRAVDA`.
+6. `NEPRAVDA`.
+7. `PRAVDA`.
+8. Jestli je v obou oblastech alespoň jedno kladné číslo.
+9. Logicky odpovídají AND, jen zápis je jiný.
+10. Logicky odpovídají OR, ale u sčítání je často potřeba `>0`.
+
+---
+
+# 📘 Lekce 24 – Pokročilé použití logických funkcí
+
+## ❓ Otázky
+
+1. Proč je `NEBO()` často lepší než dlouhé vnořené `KDYŽ()`?
+2. Jak zapíšeš pravidlo: VIP nebo kredit větší než 0 nebo zaplaceno větší než 0?
+3. Jak převedeš logický výsledek na text `ano/ne`?
+4. Jak převedeš `PRAVDA/NEPRAVDA` na `1/0`?
+5. Co znamená funkce `NE()`?
+6. Co znamená funkce `XOR()`?
+7. Kdy vrací `XOR()` hodnotu `PRAVDA` u dvou podmínek?
+8. Jak zapíšeš pravidlo: útrata > 10000 a objednávky > 5 nebo premium = ano?
+9. Proč je důležité přesně definovat business pravidla?
+10. Jaký SQL koncept připomíná kombinace `KDYŽ()`, `A()` a `NEBO()`?
+
+## ✅ Odpovědi
+
+1. Je kratší, čitelnější a lépe udržovatelná.
+2. `=NEBO([@VIP]=1;[@Kredit]>0;[@Zaplaceno]>0)`.
+3. `=KDYŽ(logický_test;"ano";"ne")`.
+4. Vynásobením jedničkou: `logický_test*1`.
+5. Vrací opačnou logickou hodnotu.
+6. Exkluzivní NEBO.
+7. Když platí právě jedna z podmínek.
+8. `=KDYŽ(NEBO(A(B2>10000;C2>5);D2="ano");"VIP";"STANDARD")`.
+9. Protože bez přesných limitů může analytik vytvořit jinou interpretaci.
+10. SQL `CASE WHEN` v kombinaci s `AND` a `OR`.
