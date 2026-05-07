@@ -1,3 +1,209 @@
+# 📘 Lekce 1 – Úvod do pokročilého Excelu
+
+## ❓ Otázky
+
+1. K čemu slouží Power Query?
+2. Jaký doplněk Excelu slouží k optimalizačním úlohám?
+3. Co je hlavní výhoda maker?
+4. Jaký typ souboru podporuje makra?
+5. Jaký je rozdíl mezi VBA a Office Scripts?
+6. Proč firmy pořád používají Excel i vedle SQL a Power BI?
+7. Co dokáže Nahrávač maker?
+8. Jaké jsou hlavní přínosy automatizace v Excelu?
+
+## ✅ Odpovědi
+
+1. K importu, čištění a transformaci dat.
+2. Řešitel / Solver.
+3. Automatizace opakovaných činností.
+4. `.xlsm` nebo `.xlsb`.
+5. VBA = desktop makra, Office Scripts = cloudová automatizace v Excel Online.
+6. Je rychlý, flexibilní, univerzální a vhodný pro ad-hoc analýzy.
+7. Zaznamená kroky uživatele a vytvoří makro.
+8. Úspora času, méně chyb, standardizace práce.
+
+---
+
+# 📘 Lekce 2 – Klávesové zkratky a výběr buněk
+
+## ❓ Otázky
+
+1. Co udělá `Ctrl + šipka dolů`?
+2. Co udělá `Ctrl + Shift + šipka dolů`?
+3. Jak se přesuneš na začátek listu?
+4. Jak vybereš celý sloupec?
+5. Jak vybereš celý řádek?
+6. Jak vybereš celý list?
+7. Co udělá `Ctrl + PgDown`?
+8. Jak otevřeš editaci aktivní buňky?
+9. Co dělá `Ctrl + End`?
+10. Co dělá `Ctrl + ;`?
+
+## ✅ Odpovědi
+
+1. Přesun na konec souvislého bloku dat.
+2. Vybere oblast až na konec dat.
+3. `Ctrl + Home`.
+4. `Ctrl + Space`.
+5. `Shift + Space`.
+6. `Ctrl + A` dvakrát.
+7. Přepne na další list.
+8. `F2`.
+9. Přesun na poslední použitou buňku.
+10. Vloží aktuální datum.
+
+---
+
+# 📘 Lekce 3 – Rozšiřování vzorců a formátů
+
+## ❓ Otázky
+
+1. Co je fill handle?
+2. Co udělá dvojklik na fill handle?
+3. Proč může být fill handle rizikový?
+4. Co dělá `Ctrl + Enter`?
+5. Jaký je rozdíl mezi fill handle a `Ctrl + Enter`?
+6. Jak zkopíruješ pouze formát?
+7. Jak otevřeš Vložit jinak?
+8. Co je hlavní výhoda Excel tabulky?
+9. Co se stane se vzorci při přidání řádku do Excel tabulky?
+10. Proč analytici preferují `Ctrl + T`?
+
+## ✅ Odpovědi
+
+1. Malý zelený čtvereček pro rozšíření obsahu buněk.
+2. Automaticky zkopíruje vzorec dolů podle sousedních dat.
+3. Kopíruje i formát a může rozbít vzhled tabulky.
+4. Vyplní všechny vybrané buňky stejným vzorcem nebo obsahem.
+5. Fill handle kopíruje vzorec i formát, `Ctrl + Enter` jen obsah/vzorec.
+6. Kopírovat formát nebo Vložit jinak → Formáty.
+7. `Ctrl + Alt + V`.
+8. Automatické rozšiřování vzorců, filtry, strukturované odkazy.
+9. Vzorce se automaticky rozšíří.
+10. Kvůli škálovatelnosti, automatizaci a menší chybovosti.
+
+---
+
+# 📘 Lekce 4 – Pojmenované oblasti
+
+## ❓ Otázky
+
+1. Co je pojmenovaná oblast?
+2. Jak ji vytvoříš?
+3. Jaké jsou výhody pojmenovaných oblastí?
+4. Jak otevřeš Správce názvů?
+5. Co dělá `F3` ve vzorci?
+6. Proč není vhodný název `2025_data`?
+7. Proč nejsou vhodné mezery a diakritika?
+8. Kdy se pojmenované oblasti nejvíc vyplatí?
+9. Může být pojmenovaná oblast nesouvislá?
+10. Proč je `=SUMA(trzby_q1)` lepší než `=SUMA(B2:B5000)`?
+
+## ✅ Odpovědi
+
+1. Pojmenovaný rozsah buněk.
+2. Označit oblast → pole názvu → zadat název → Enter.
+3. Přehlednost, rychlost, méně chyb.
+4. `Ctrl + F3`.
+5. Zobrazí seznam pojmenovaných oblastí.
+6. Název nesmí začínat číslem.
+7. Kvůli kompatibilitě a přehlednosti.
+8. U velkých a složitých souborů.
+9. Ano.
+10. Je čitelnější a méně náchylný k chybám.
+
+---
+
+# 📘 Lekce 5 – Typy listů a viditelnost
+
+## ❓ Otázky
+
+1. Jaký je rozdíl mezi datovým a grafickým listem?
+2. K čemu se používají skryté listy?
+3. Jaký je rozdíl mezi skrytým a Very Hidden listem?
+4. Jak otevřeš VBA editor?
+5. Co obsahuje Module?
+6. Můžeš skrýt všechny listy v Excelu?
+7. Kde lze obnovit Very Hidden list?
+8. Proč není dobré mít vše na jednom listu?
+9. Které listy typicky vidí management?
+10. Co znamená separation of concerns?
+
+## ✅ Odpovědi
+
+1. Datový list obsahuje buňky, tabulky a vzorce; grafický list obsahuje jeden graf.
+2. Pomocná data, RAW data, lookup tabulky, staré reporty.
+3. Skrytý lze zobrazit v Excelu, Very Hidden jen přes VBA.
+4. `Alt + F11`.
+5. VBA kód a makra.
+6. Ne, Excel musí mít alespoň jeden viditelný list.
+7. Ve VBA přes Properties → Visible.
+8. Kvůli chaosu, horší údržbě a vyšší chybovosti.
+9. Dashboard a exportní listy.
+10. Oddělení zdrojových dat, výpočtů, transformací a výstupů.
+
+---
+
+# 📘 Lekce 6 – Hromadné úpravy listů
+
+## ❓ Otázky
+
+1. Jak vybereš nesousedící listy?
+2. Jak vybereš sousedící listy?
+3. Jak vybereš všechny listy?
+4. Jak poznáš režim skupiny listů?
+5. Jaké riziko má práce ve skupině?
+6. Co znamená 3D reference?
+7. Co dělá vzorec `=SUMA('Leden:Prosinec'!B2)`?
+8. Co se stane, když vložíš nový list mezi Leden a Prosinec?
+9. Jaký je rozdíl mezi 3D vzorcem a nástrojem Sloučit?
+10. Kde najdeš Sloučit?
+
+## ✅ Odpovědi
+
+1. `Ctrl + klik` na ouška listů.
+2. Klik na první list → `Shift` → klik na poslední list.
+3. Pravé tlačítko na ouško → Vybrat všechny listy.
+4. V horní části Excelu je `[Skupina]`.
+5. Změny se provedou na všech vybraných listech.
+6. Odkaz napříč více listy.
+7. Sečte buňku B2 ze všech listů mezi Leden a Prosinec.
+8. Automaticky se zahrne do výpočtu.
+9. 3D vzorec je dynamický, Sloučit vytvoří statický výsledek.
+10. Data → Datové nástroje → Sloučit.
+
+---
+
+# 📘 Lekce 7 – Adresování buněk a práce se vzorci
+
+## ❓ Otázky
+
+1. Co znamená relativní odkaz?
+2. Co znamená absolutní odkaz?
+3. Co se stane s `=A1*2`, když ho zkopíruješ o řádek dolů?
+4. Co způsobuje chyba `#ODKAZ!`?
+5. Jaký znak se používá pro ukotvení odkazu?
+6. Co znamená `$C$3`?
+7. Co znamená `C$3`?
+8. Co znamená `$C3`?
+9. Kdy použiješ absolutní adresu?
+10. Proč může být pojmenovaná oblast lepší než absolutní odkaz?
+
+## ✅ Odpovědi
+
+1. Odkaz, který se při kopírování mění podle pozice.
+2. Odkaz, který se při kopírování nemění.
+3. Změní se na `=A2*2`.
+4. Odkaz na neexistující buňku nebo oblast.
+5. `$`.
+6. Fixní sloupec i řádek.
+7. Fixní řádek.
+8. Fixní sloupec.
+9. U centrálních parametrů jako sleva, DPH, kurz, target.
+10. Je čitelnější a ukazuje business význam hodnoty.
+
+---
+
 # 📘 Lekce 8 – Relativní a smíšené adresování vzorců
 
 ## ❓ Otázky
@@ -655,3 +861,157 @@ Například:
 Zápis	Význam
 =1	právě jedna podmínka
 >0	alespoň jedna podmínka
+
+---
+
+# 📘 Lekce 12 – Vyhledávací funkce
+
+## ❓ Otázky
+
+1. K čemu slouží `SVYHLEDAT()`?
+2. Jaká je syntaxe `SVYHLEDAT()`?
+3. Co znamená poslední argument `0`?
+4. Co znamená poslední argument `1`?
+5. Proč musí být přibližné vyhledávání seřazené?
+6. Jaký je hlavní limit `SVYHLEDAT()`?
+7. Co se stane, když hledaná hodnota není nalezena?
+8. Proč je důležité zamknout oblast tabulky?
+9. Kdy použiješ přibližné vyhledávání?
+10. Co znamená lookup mindset?
+
+## ✅ Odpovědi
+
+1. K vyhledání hodnoty v prvním sloupci a vrácení hodnoty ze stejného řádku.
+2. `=SVYHLEDAT(hledat;tabulka;sloupec;typ)`.
+3. Přesná shoda.
+4. Přibližná shoda.
+5. Protože Excel hledá nejbližší nižší hodnotu.
+6. Hledá jen doprava a používá pevné číslo sloupce.
+7. Vrátí chybu `#NENÍ_K_DISPOZICI`.
+8. Aby se při kopírování neposunula.
+9. U intervalů, sazebníků, bonusů, množstevních slev.
+10. Propojování tabulek podle klíče.
+
+---
+
+# 📘 Lekce 13 – Pokročilé vyhledávací funkce
+
+## ❓ Otázky
+
+1. Co dělá `POZVYHLEDAT()`?
+2. Co vrátí `=POZVYHLEDAT("Cena";A1:E1;0)`, pokud je Cena třetí sloupec?
+3. Proč kombinovat `SVYHLEDAT()` a `POZVYHLEDAT()`?
+4. Co dělá `IFERROR()`?
+5. Jaký je rozdíl mezi `SVYHLEDAT()` a `VVYHLEDAT()`?
+6. K čemu slouží `TYP()`?
+7. Jaký je základní zápis `XLOOKUP()`?
+8. Musí být lookup array a return array vedle sebe?
+9. Co u `XLOOKUP()` musí platit pro lookup array a return array?
+10. Co znamená režim shody `-1` u `XLOOKUP()`?
+11. Co znamená režim shody `1` u `XLOOKUP()`?
+12. Co znamená režim shody `2` u `XLOOKUP()`?
+
+## ✅ Odpovědi
+
+1. Vrací pozici hledané hodnoty v oblasti.
+2. `3`.
+3. Aby se číslo sloupce určilo dynamicky podle záhlaví.
+4. Vrátí náhradní hodnotu místo chyby.
+5. `SVYHLEDAT()` hledá svisle ve sloupci, `VVYHLEDAT()` vodorovně v řádku.
+6. Vrací typ hodnoty: číslo, text, logická hodnota, chyba, pole.
+7. `=XLOOKUP(co;kde_hledat;co_vratit;[nenalezeno];[režim_shody])`.
+8. Ne.
+9. Musí mít stejnou délku.
+10. Přesná nebo nejbližší menší hodnota.
+11. Přesná nebo nejbližší větší hodnota.
+12. Wildcard hledání pomocí `*` a `?`.
+
+---
+
+# 📘 Lekce 14 – Jednoduché filtrování dat
+
+## ❓ Otázky
+
+1. Jak zapneš/vypneš automatický filtr?
+2. V jaké podobě se filtr vloží do tabulky?
+3. Maže filtr data?
+4. Co znamená kaskádové filtrování?
+5. Jaký je rozdíl mezi A a NEBO ve vlastním filtru?
+6. Co znamená `*` ve filtru?
+7. Co znamená `?` ve filtru?
+8. Co znamená položka `(Prázdné)`?
+9. Co se kopíruje při kopírování filtrovaných dat?
+10. Jaký je hlavní limit jednoduchého filtru?
+
+## ✅ Odpovědi
+
+1. `Ctrl + Shift + L`.
+2. Jako šipečky v prvním řádku / záhlaví.
+3. Ne, pouze skrývá řádky.
+4. Další filtr pracuje jen nad už viditelnými řádky.
+5. A = musí platit obě podmínky, NEBO = stačí jedna.
+6. Libovolný počet znaků.
+7. Právě jeden znak.
+8. Prázdné buňky.
+9. Jen viditelné řádky.
+10. Složitější logika napříč více sloupci.
+
+---
+
+# 📘 Lekce 15 – Rozšířený filtr
+
+## ❓ Otázky
+
+1. Co je hlavní rozdíl mezi jednoduchým a rozšířeným filtrem?
+2. Co je oblast kritérií?
+3. Proč musí záhlaví v oblasti kritérií přesně odpovídat zdrojové tabulce?
+4. Co znamenají kritéria vedle sebe?
+5. Co znamenají kritéria pod sebou?
+6. Jak zapíšeš logiku `(Praha A věk < 40) NEBO (Brno A věk > 60)`?
+7. Kdy použiješ možnost Kopírovat jinam?
+8. Co znamená regulace výstupu?
+9. Proč je dobré kopírovat všechna záhlaví?
+10. Jaký SQL koncept připomíná rozšířený filtr?
+
+## ✅ Odpovědi
+
+1. Rozšířený filtr používá samostatnou tabulku kritérií a zvládá složitější logiku.
+2. Malá tabulka, kde jsou zapsány filtrovací podmínky.
+3. Excel podle nich pozná, ke kterému sloupci se podmínka vztahuje.
+4. Logické A.
+5. Logické NEBO.
+6. Dva řádky kritérií: první Praha + `<40`, druhý Brno + `>60`.
+7. Když chci výsledek exportovat mimo zdrojová data.
+8. Výběr jen některých sloupců do výsledku.
+9. Snižuje riziko, že podmínku zadám pod špatný sloupec.
+10. SQL `WHERE`.
+
+---
+
+# 📘 Lekce 16 – Pokročilé možnosti rozšířeného filtru
+
+## ❓ Otázky
+
+1. Co dělá volba Bez duplicitních záznamů?
+2. Jaký SQL koncept připomíná Bez duplicitních záznamů?
+3. Co je výpočtové kritérium?
+4. Proč nesmí mít výpočtové kritérium záhlaví?
+5. Co vybere kritérium `=$E2>PRŮMĚR($E$2:$E$8)`?
+6. Proč se u výpočtového kritéria používá `$E2`?
+7. Co vybere kritérium `=$C2=MAX($C$2:$C$8)`?
+8. Co jsou průřezy?
+9. Nad čím lze použít průřezy?
+10. Jaký je rozdíl mezi průřezem a rozšířeným filtrem?
+
+## ✅ Odpovědi
+
+1. Vrátí unikátní hodnoty bez opakování.
+2. SQL `DISTINCT`.
+3. Kritérium založené na vzorci nebo funkci.
+4. Protože se nevztahuje k jednomu konkrétnímu záhlaví, ale k logickému výpočtu.
+5. Řádky s nadprůměrným platem.
+6. Sloupec je fixní, řádek se při vyhodnocování mění.
+7. Řádek s nejvyšší hodnotou ve sloupci C.
+8. Vizuální interaktivní filtry.
+9. Nad Excel tabulkou nebo kontingenční tabulkou.
+10. Průřez je interaktivní vizuální filtr, rozšířený filtr je pravidlový/exportní filtr.
