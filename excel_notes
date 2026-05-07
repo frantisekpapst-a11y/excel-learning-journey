@@ -1,39 +1,40 @@
 # 🧠 Excel Notes & Best Practices
-## SQL mindset • Excel workflow • BI struktura • Robustní modely
+
+## SQL mindset • Excel workflow • BI struktura • Robustní modely • Business logika
 
 ---
 
-# 📌 SQL → Excel mapování
+# 📌 SQL → Excel → Power BI → Python mapování
 
-| SQL | Excel |
-|---|---|
-| SELECT | Výběr dat |
-| WHERE | Filtr |
-| GROUP BY | Kontingenční tabulka |
-| SUM() | SUMA() |
-| AVG() | PRŮMĚR() |
-| MAX() | MAX() |
-| MIN() | MIN() |
-| CASE WHEN | KDYŽ() / IFS() |
-| JOIN | SVYHLEDAT / INDEX + POZVYHLEDAT / XLOOKUP |
-| CTE | Pomocný list / mezivýpočet |
-| Window functions | Kumulativní výpočty / dynamické reporty |
+| Koncept | SQL | Excel | Power BI | Python / pandas |
+|---|---|---|---|---|
+| Výběr dat | `SELECT` | výběr sloupců | datový model | výběr sloupců |
+| Filtr | `WHERE` | filtr / rozšířený filtr | slicer / filter | boolean mask |
+| Agregace | `GROUP BY` | kontingenční tabulka | vizualizace / measures | `groupby()` |
+| Podmínka | `CASE WHEN` | `KDYŽ()` / `IFS()` | `IF()` / `SWITCH()` | `if` / `np.where()` |
+| AND | `AND` | `A()` / `*` | `&&` | `and` / `&` |
+| OR | `OR` | `NEBO()` / `+` | `||` | `or` / `|` |
+| Join | `JOIN` | `SVYHLEDAT()` / `XLOOKUP()` | relace | `merge()` |
+| Distinct | `DISTINCT` | bez duplicit | dimenzní tabulka | `drop_duplicates()` |
+| Předchozí hodnota | `LAG()` | posun řádku | DAX time logic | `shift()` |
+| ETL | CTE / views | Power Query mindset | Power Query | pandas pipeline |
 
 ---
 
 # 📊 Excel = mini BI platforma
 
-Excel není jen tabulka.
+Excel nepoužívám jen jako tabulkový editor, ale jako nástroj pro:
 
-Použití:
 - reporting
 - dashboardy
 - ad-hoc analýzy
+- filtrování dat
 - transformace dat
 - KPI tracking
-- business analýza
-- automatizace
+- business analýzu
 - prototypování reportů
+- přípravu na Power BI
+- analytické workflow
 
 ---
 
@@ -51,505 +52,596 @@ PIVOTS
 DASHBOARD
 ↓
 EXPORT
-```
 
----
+📑 Doporučené listy
+List	Účel
+RAW_DATA	zdrojová data
+CLEAN_DATA	očištěná data
+LOOKUPS	pomocné číselníky
+PARAMETERS	centrální parametry
+CALCULATIONS	pomocné výpočty
+PIVOTS	kontingenční tabulky
+DASHBOARD	vizualizace
+EXPORT	finální výstupy
 
-# 📑 Doporučené listy
+🎯 Separation of Concerns
 
-| List | Účel |
-|---|---|
-| RAW_DATA | zdrojová data |
-| CLEAN_DATA | očištěná data |
-| LOOKUPS | pomocné číselníky |
-| PARAMETERS | centrální parametry |
-| CALCULATIONS | pomocné výpočty |
-| PIVOTS | kontingenční tabulky |
-| DASHBOARD | vizualizace |
-| EXPORT | finální výstupy |
+❌ Špatně:
 
----
+všechno na jednom listu
 
-# 🎯 Separation of Concerns
+✅ Správně oddělit:
 
-❌ Všechno na jednom listu
-
-✅ Oddělení:
-- zdrojových dat
-- transformací
-- výpočtů
-- dashboardu
-- exportu
+zdrojová data
+transformace
+výpočty
+lookup tabulky
+dashboard
+export
 
 Výhody:
-- přehlednost
-- jednodušší debugging
-- menší chybovost
-- lepší maintenance
-- enterprise standard
 
----
+přehlednost
+jednodušší debugging
+menší chybovost
+lepší údržba
+škálovatelnost
+enterprise standard
 
-# ⚡ Nejčastější zkratky analytika
+⚡ Nejčastější zkratky analytika
+Zkratka	Použití
+Ctrl + T	Excel tabulka
+Ctrl + Shift + šipka	výběr dat
+Ctrl + Enter	vyplnění více buněk
+Ctrl + A	výběr tabulky/listu
+Ctrl + PgDown	další list
+Ctrl + PgUp	předchozí list
+F2	editace buňky
+F4	změna typu adresace
+Ctrl + Shift + L	filtr
+Ctrl + Alt + V	vložit jinak
+Ctrl + F3	správce názvů
+Alt + F11	VBA editor
+Ctrl + ;	aktuální datum
 
-| Zkratka | Použití |
-|---|---|
-| `Ctrl + T` | Excel tabulka |
-| `Ctrl + Shift + šipka` | výběr dat |
-| `Ctrl + Enter` | vyplnění více buněk |
-| `Ctrl + A` | výběr tabulky/listu |
-| `Ctrl + PgDown` | další list |
-| `Ctrl + PgUp` | předchozí list |
-| `F2` | editace buňky |
-| `F4` | změna typu adresace |
-| `Ctrl + Alt + V` | vložit jinak |
-| `Ctrl + F3` | správce názvů |
-| `Alt + F11` | VBA editor |
-| `Ctrl + ;` | aktuální datum |
+📐 Typy adresace
+Typ	Příklad	Chování
+Relativní	A1	mění řádek i sloupec
+Absolutní	$A$1	nemění nic
+Zamčený sloupec	$A1	sloupec zůstává, řádek se mění
+Zamčený řádek	A$1	řádek zůstává, sloupec se mění
+F4 cyklus
+A1 → $A$1 → A$1 → $A1 → A1
 
----
+🔒 Kdy používat absolutní adresu
 
-# 📐 Typy adresace
+Použití:
 
-| Typ | Příklad | Chování |
-|---|---|---|
-| Relativní | `A1` | mění řádek i sloupec |
-| Absolutní | `$A$1` | nemění nic |
-| Zamčený sloupec | `$A1` | sloupec zůstává, řádek se mění |
-| Zamčený řádek | `A$1` | řádek zůstává, sloupec se mění |
-
----
-
-# 🔒 Kdy používat absolutní adresu
-
-Použít pro:
-- DPH
-- kurz měny
-- slevu
-- target
-- bonus %
-- konstanty modelu
-- centrální parametry
+DPH
+kurz měny
+sleva
+target
+bonus %
+centrální parametr
+hranice segmentace
+konverzní kurz
 
 Příklad:
 
-```excel
 =A2*$B$2
-```
 
 Lepší varianta s pojmenovanou oblastí:
 
-```excel
 =A2*sleva
-```
 
----
+🧮 Smíšené adresování
 
-# 🧮 Smíšené adresování
+Používá se, když je potřeba zamknout jen řádek nebo jen sloupec.
 
-Používá se, když je potřeba zamknout pouze řádek nebo pouze sloupec.
-
-## Příklad násobící matice
-
-```excel
 =$A2*B$1
-```
-
-| Část | Význam |
-|---|---|
-| `$A2` | zamčený sloupec A |
-| `B$1` | zamčený řádek 1 |
+Část	Význam
+$A2	zamčený sloupec A
+B$1	zamčený řádek 1
 
 Použití:
-- tabulky sazeb
-- matice cen
-- měnové přepočty
-- scénářové modely
-- výpočty kopírované dolů i doprava
 
----
+matice cen
+sazebníky
+scénáře
+forecasty
+měnové přepočty
+výpočty kopírované dolů i doprava
 
-# 🟩 Fill Handle vs Ctrl + Enter
+🟩 Fill Handle vs Ctrl + Enter
+Metoda	Chování
+Fill Handle	kopíruje vzorec + formát
+Ctrl + Enter	kopíruje jen vzorec / obsah do vybrané oblasti
 
-| Metoda | Chování |
-|---|---|
-| Fill Handle | kopíruje vzorec + formát |
-| Ctrl + Enter | kopíruje jen vzorec / obsah do vybrané oblasti |
+Analytický mindset:
 
----
-
-# 📌 Důležitý mindset
-
-Junior:
-
-```text
-ruční práce
-kopírování myší
-všechno na jednom listu
-```
-
-Analytik:
-
-```text
-automatizace
-struktura
-škálovatelnost
-oddělení dat a reportu
-```
-
----
-
-# 📊 Excel tabulky (`Ctrl + T`)
+nejdřív označit oblast
+pak napsat vzorec
+pak Ctrl + Enter
 
 Výhody:
-- automatické rozšíření vzorců
-- filtry
-- dynamické rozsahy
-- lepší čitelnost
-- méně chyb
-- lepší kompatibilita s Power Query
-- základ pro škálovatelný reporting
 
----
+zachování formátu
+rychlost
+menší chybovost
+profesionálnější workflow
 
-# 🧠 Pojmenované oblasti
+📊 Excel tabulky (Ctrl + T)
+
+Výhody:
+
+automatické rozšíření vzorců
+filtry
+dynamické rozsahy
+structured references
+lepší čitelnost
+méně chyb
+kompatibilita s Power Query
+základ pro reporting
+Structured references
+=[@Ks]*[@Cena]
+=KDYŽ([@Tržba]>20000;"HIGH";"STANDARD")
+
+🧠 Pojmenované oblasti
 
 Místo:
 
-```excel
 =SUMA(B2:B5000)
-```
 
 lepší:
 
-```excel
 =SUMA(trzby_q1)
-```
 
 Výhody:
-- přehlednější vzorce
-- rychlejší práce
-- menší chybovost
-- business význam přímo ve vzorci
 
----
+čitelnější vzorce
+rychlejší práce
+menší chybovost
+business význam přímo ve vzorci
 
-# 🧩 Vnořování funkcí
+🧩 Vnořování funkcí
 
 Vnořování znamená, že výsledek jedné funkce slouží jako vstup pro jinou funkci.
 
-Příklad:
-
-```excel
 =ZAOKROUHLIT(PRŮMĚR(A1:A5);0)
-```
 
-Excel počítá:
-1. `PRŮMĚR(A1:A5)`
-2. `ZAOKROUHLIT(...)`
+Excel počítá zevnitř ven:
 
-Princip:
+nejdřív PRŮMĚR()
+potom ZAOKROUHLIT()
 
-```text
-Excel vyhodnocuje vzorce zevnitř ven
-```
-
----
-
-# 🔀 KDYŽ vs IFS
-
-## Klasické KDYŽ
-
-```excel
+🔀 KDYŽ vs IFS
+KDYŽ
 =KDYŽ(B2>10000;"HIGH";"LOW")
-```
-
-## Vnořené KDYŽ
-
-```excel
+Vnořené KDYŽ
 =KDYŽ(B2<10000;"LOW";KDYŽ(B2<50000;"MEDIUM";"HIGH"))
-```
 
 Nevýhody:
-- horší čitelnost
-- složitější debugging
-- vyšší riziko chyby
 
-## IFS
-
-```excel
+horší čitelnost
+složitější debugging
+vyšší riziko chyby
+IFS
 =IFS(B2<10000;"LOW";B2<50000;"MEDIUM";B2>=50000;"HIGH")
-```
 
 Výhody:
-- přehlednější zápis
-- lepší údržba
-- vhodné pro více podmínek
 
----
+přehlednější zápis
+lepší údržba
+vhodné pro více podmínek
 
-# ⚖️ Operátory
-
-## Relační operátory
-
-| Operátor | Význam |
-|---|---|
-| `>` | větší než |
-| `<` | menší než |
-| `=` | rovná se |
-| `>=` | větší nebo rovno |
-| `<=` | menší nebo rovno |
-| `<>` | nerovná se |
-
----
-
-## Funkční operátory
-
-| Operátor | Význam | Příklad |
-|---|---|---|
-| `:` | oblast | `A1:A10` |
-| `;` | oddělení argumentů | `=SUMA(A1;A3;A5)` |
-| mezera | průnik oblastí | `=SUMA(A2:C2 B1:B3)` |
-
----
-
-## Textový operátor
-
-```excel
+⚖️ Operátory
+Operátor	Význam
+>	větší než
+<	menší než
+=	rovná se
+>=	větší nebo rovno
+<=	menší nebo rovno
+<>	nerovná se
+Textový operátor
 =A1&" "&B1
-```
 
 Použití:
-- spojení jména a příjmení
-- tvorba kódů
-- spojování textů
-- tvorba popisků v reportech
 
----
-
-# 🔍 Zástupné znaky
-
-| Znak | Význam |
-|---|---|
-| `*` | libovolný počet znaků |
-| `?` | právě jeden znak |
+spojení jména a příjmení
+tvorba kódů
+tvorba popisků
+spojování kritérií s odkazy
 
 Příklad:
 
-```excel
+">"&E3
+
+🔍 Zástupné znaky
+Znak	Význam
+*	libovolný počet znaků
+?	právě jeden znak
+
+Příklad:
+
 =COUNTIF(A:A;"Praha*")
-```
 
 Najde:
-- Praha
-- Praha 1
-- Praha-západ
 
----
+Praha
+Praha 1
+Praha-západ
 
-# 📊 Maticové vzorce
+📊 Maticové vzorce
 
-Maticový vzorec zpracovává více hodnot nebo oblastí najednou.
+Maticový vzorec zpracovává více hodnot najednou.
 
-Příklad:
-
-```excel
 =B2:B6*C2:C6
-```
 
 Excel provede:
 
-```text
 B2*C2
 B3*C3
 B4*C4
 B5*C5
 B6*C6
-```
 
-Moderní Excel 365 používá dynamická pole, takže výsledek se rozlije do více buněk automaticky.
+Moderní Excel 365 používá dynamická pole, takže se výsledek může automaticky rozlít do více buněk.
 
----
-
-# 🔄 TRANSPOZICE
-
-```excel
+🔄 TRANSPOZICE
 =TRANSPOZICE(A1:A5)
-```
 
 Použití:
-- převod sloupce na řádek
-- převod řádku na sloupec
 
-Rozdíl:
+sloupec → řádek
+řádek → sloupec
+Přístup	Chování
+TRANSPOZICE()	dynamické propojení se zdrojem
+Vložit jinak → Transponovat	statický výsledek
 
-| Přístup | Chování |
-|---|---|
-| `TRANSPOZICE()` | dynamické propojení se zdrojem |
-| Vložit jinak → Transponovat | statický výsledek |
+📈 Kumulativní výpočty
 
----
+Running total:
 
-# 📈 Kumulativní výpočty
-
-Příklad running total:
-
-```excel
 =SUMA($C$3:C3)
-```
-
-| Část | Význam |
-|---|---|
-| `$C$3` | fixní začátek |
-| `C3` | pohyblivý konec |
+Část	Význam
+$C$3	fixní začátek
+C3	pohyblivý konec
 
 Použití:
-- YTD revenue
-- kumulativní tržby
-- cash flow
-- budget tracking
-- forecast progression
-- running totals
 
----
+YTD revenue
+kumulativní tržby
+cash flow
+budget tracking
+forecast progression
 
-# 📑 Práce s listy
+🔍 Lookup mindset
 
-## Typy listů
+Lookup = propojení tabulek podle klíče.
 
-| Typ | Použití |
-|---|---|
-| Datový list | data, vzorce, dashboardy |
-| Grafický list | jeden graf přes celý list |
-| Historické listy | staré typy, dnes téměř nepoužívané |
+Funkce	Použití
+SVYHLEDAT()	klasické hledání doprava
+POZVYHLEDAT()	vrací pozici
+INDEX + POZVYHLEDAT	flexibilnější lookup
+XLOOKUP()	moderní lookup
+XLOOKUP
+=XLOOKUP([@Kategorie];Tabulka2[Kategorie];Tabulka2[Dodavatel];"neznámý";0)
 
----
+Výhody:
 
-## Viditelnost listů
+hledá vlevo i vpravo
+nepotřebuje číslo sloupce
+umí náhradní hodnotu při nenalezení
+stabilnější než SVYHLEDAT()
 
-| Typ | Popis |
-|---|---|
-| Viditelný | běžně dostupný |
-| Skrytý | lze zobrazit v Excelu |
-| Very Hidden | pouze přes VBA |
+🔎 Jednoduchý filtr
 
----
+Filtr:
 
-# 🏗️ Hromadná práce s listy
+data nemaže
+jen skrývá nevyhovující řádky
+funguje přes šipečky v záhlaví
 
-## Výběr listů
+Zkratka:
 
-| Akce | Postup |
-|---|---|
-| Nesousedící listy | `Ctrl + klik` |
-| Sousedící listy | `Shift + klik` |
-| Všechny listy | pravé tlačítko → Vybrat všechny listy |
+Ctrl + Shift + L
+Kaskádové filtrování
 
----
+Další filtr pracuje jen nad už viditelnými řádky.
 
-## Riziko
+🧠 Rozšířený filtr
+
+Rozšířený filtr používá samostatnou oblast kritérií.
+
+Rozložení kritérií	Význam
+Vedle sebe	AND
+Pod sebou	OR
+Příklad AND
+Město	Věk
+Praha	<40
+Příklad OR
+Město
+Praha
+Brno
+
+SQL mindset:
+
+WHERE mesto = 'Praha'
+OR mesto = 'Brno'
+
+🧮 Výpočtová kritéria
+
+Výpočtové kritérium používá vzorec jako podmínku.
+
+Nadprůměrná hodnota
+=$E2>PRŮMĚR($E$2:$E$13)
+Nejvyšší hodnota
+=$C2=MAX($C$2:$C$13)
+Nejnižší hodnota
+=$C2=MIN($C$2:$C$13)
+
+Důležité:
+
+výpočtové kritérium nemá běžné záhlaví
+odkaz typu $E2 fixuje sloupec, ale řádek se vyhodnocuje postupně
+
+🧩 Průřezy
+
+Průřezy jsou vizuální filtry.
+
+Fungují nad:
+
+Excel tabulkou
+kontingenční tabulkou
+
+Použití:
+
+Ctrl + T
+→ Návrh tabulky
+→ Vložit průřez
+
+Výhody:
+
+vizuální filtrování
+interaktivní dashboard
+rychlá analýza
+
+🧮Podmíněné agregační funkce
+Jedna podmínka
+Funkce	Význam
+COUNTIF()	počet podle podmínky
+SUMIF()	součet podle podmínky
+AVERAGEIF()	průměr podle podmínky
+=COUNTIF(A2:A11;"pondělí")
+=SUMIF(A2:A11;"pondělí";B2:B11)
+=AVERAGEIF(A2:A11;"pondělí";B2:B11)
+
+Vztah:
+
+AVERAGEIF = SUMIF / COUNTIF
+Více kritérií
+Funkce	Význam
+COUNTIFS()	počet podle více podmínek
+SUMIFS()	součet podle více podmínek
+AVERAGEIFS()	průměr podle více podmínek
+MINIFS()	minimum podle podmínek
+MAXIFS()	maximum podle podmínek
+=SUMIFS(D2:D20;B2:B20;"Praha";C2:C20;"Notebook")
+Kritérium s odkazem
+">"&E3
+Textový vzor
+"p*"
+
+⚠️ Limity funkcí -IFS
+
+Funkce -IFS:
+
+pracují hlavně s logikou AND
+OR logiku řeší hůř
+neumí přímo složitou vlastní logiku
+někdy vyžadují pomocný sloupec
+neumí jednoduše sčítat více sloupců najednou
+
+Alternativa:
+
+=SOUČIN.SKALÁRNÍ()
+
+🧮 SOUČIN.SKALÁRNÍ
+
+SOUČIN.SKALÁRNÍ() násobí odpovídající hodnoty v oblastech a výsledky sečte.
+
+=SOUČIN.SKALÁRNÍ(B2:B4;C2:C4)
+
+Odpovídá:
+
+B2*C2 + B3*C3 + B4*C4
+
+Použití:
+
+tržba
+zisk
+marže
+vážený průměr
+výpočty bez pomocných sloupců
+Vážený průměr
+=SOUČIN.SKALÁRNÍ(Hodnoty;Váhy)/SUMA(Váhy)
+
+🧮 SOUČIN.SKALÁRNÍ jako COUNTIF / SUMIF
+Počet podle podmínky
+=SOUČIN.SKALÁRNÍ((A2:A10="Praha")*1)
+Součet podle podmínky
+=SOUČIN.SKALÁRNÍ((A2:A10="Praha")*(C2:C10))
+Porovnání dvou sloupců
+=SOUČIN.SKALÁRNÍ((Skutečnost>Plán)*1)
+
+Výhoda:
+
+není potřeba pomocný sloupec
+umí porovnávat hodnoty řádek po řádku
+
+🧠 Logika ve skalárním součinu
+AND logika
+=SOUČIN.SKALÁRNÍ((Město="Praha")*(Produkt="Notebook")*(Tržba))
+
+* znamená:
+
+A ZÁROVEŇ
+OR logika
+=SOUČIN.SKALÁRNÍ(((Město="Praha")+(Město="Brno")>0)*(Tržba))
+
++ znamená:
+
+NEBO
+
+>0 zajistí, že se řádek započítá jen jednou.
+
+🗄️ Databázové funkce
+
+Databázové funkce pracují s celou tabulkou a externí oblastí kritérií.
+
+=DFUNKCE(databáze;pole;kritéria)
+Funkce	Význam
+DSUMA()	podmíněný součet
+DPRŮMĚR()	podmíněný průměr
+DPOČET()	počet číselných hodnot
+DPOČET2()	počet neprázdných hodnot
+DMAX()	nejvyšší hodnota
+DMIN()	nejnižší hodnota
+Příklad
+=DSUMA(A1:C6;"Tržba";A8:B10)
+
+nebo:
+
+=DSUMA(A1:C6;3;A8:B10)
+Rozložení kritérií	Význam
+Vedle sebe	AND
+Pod sebou	OR
+
+🧠 Logické funkce
+A()
+=A(B2>10000;C2>5)
+
+Vrací PRAVDA, jen pokud platí všechny podmínky.
+
+NEBO()
+=NEBO(B2>10000;C2>5)
+
+Vrací PRAVDA, pokud platí alespoň jedna podmínka.
+
+Kombinace s KDYŽ()
+=KDYŽ(NEBO(A(B2>10000;C2>5);D2="ano");"VIP";"STANDARD")
+
+Čtení:
+
+VIP pokud:
+(útrata > 10000 A objednávky > 5)
+NEBO
+premium = ano
+
+🧩 Převod logiky na výstup
+Logický výstup
+=NEBO([@VIP]=1;[@Kredit]>0;[@Zaplaceno]>0)
+
+Vrací:
+
+PRAVDA / NEPRAVDA
+Textový výstup
+=KDYŽ(NEBO([@VIP]=1;[@Kredit]>0;[@Zaplaceno]>0);"ano";"ne")
+Číselný výstup
+=NEBO([@VIP]=1;[@Kredit]>0;[@Zaplaceno]>0)*1
+
+Vrací:
+
+1 / 0
+
+🧠 Business rule mindset
+
+Při tvorbě pravidel se vždy ptej:
+
+Musí platit všechno?
+→ A()
+
+Stačí jedna možnost?
+→ NEBO()
+
+Je potřeba výjimka?
+→ NEBO() / vnořená logika
+
+Potřebuji textový výsledek?
+→ KDYŽ()
+
+Potřebuji počítat výsledky?
+→ *1
+
+📑 Práce s listy
+Typ	Použití
+Datový list	data, vzorce, dashboardy
+Grafický list	jeden graf přes celý list
+Skrytý list	pomocná data
+Very Hidden	pouze přes VBA
+Skupina listů
 
 Když vidíš:
 
-```text
 [Skupina]
-```
 
 pozor:
-- upravuješ více listů současně
-- změny se zapisují na všechny vybrané listy
 
----
+upravuješ více listů současně
+změny se zapisují na všechny vybrané listy
 
-# 📚 3D reference
-
-Vzorec napříč listy:
-
-```excel
+📚 3D reference
 =SUMA('Leden:Prosinec'!B2)
-```
 
 Použití:
-- měsíční reporty
-- pobočkové reporty
-- regionální reporting
-- forecasty
 
-Výhoda:
-- dynamický výpočet
-- kratší zápis
-- lepší udržovatelnost
+měsíční reporty
+pobočkové reporty
+regionální reporting
+forecasty
 
----
+📌 Best Practices
 
-# 🔁 Sloučit vs 3D vzorec
+✅ používat Excel tabulky
+✅ oddělovat RAW data od dashboardů
+✅ používat pojmenované oblasti
+✅ minimalizovat ruční práci
+✅ používat klávesové zkratky
+✅ psát čitelné vzorce
+✅ vytvářet škálovatelné reporty
+✅ hlídat režim [Skupina]
+✅ používat centrální parametry
+✅ nechat v sešitu jen relevantní viditelné listy
+✅ používat smíšené adresování při kopírování dolů i doprava
+✅ u kumulativních výpočtů fixovat začátek oblasti
+✅ u OR logiky hlídat vícenásobné započítání
+✅ u business pravidel definovat přesné limity
 
-| Přístup | Výsledek |
-|---|---|
-| 3D reference | dynamický |
-| Data → Sloučit | statický |
+🚫 Nejčastější chyby juniorů
+všechno na jednom listu
+ruční kopírování vzorců
+nepoužívání tabulek
+pevné rozsahy
+chaos v listech
+nečitelné vzorce
+rozbité formátování
+špatně nastavené absolutní adresy
+zapomenutá skupina listů
+příliš dlouhé vnořené KDYŽ()
+nepochopení rozdílu mezi AND / OR
+špatně zapsaná oblast kritérií
+špatně pochopené DPOČET() vs DPOČET2()
+chybějící >0 u OR logiky ve skalárním součinu
+zahrnutí textu do číselné oblasti
 
----
-
-# 📌 Best Practices
-
-✅ používat Excel tabulky  
-✅ oddělovat RAW data od dashboardů  
-✅ používat pojmenované oblasti  
-✅ minimalizovat ruční práci  
-✅ používat klávesové zkratky  
-✅ psát čitelné vzorce  
-✅ vytvářet škálovatelné reporty  
-✅ hlídat režim `[Skupina]`  
-✅ používat centrální parametry  
-✅ nechat v sešitu jen relevantní viditelné listy  
-✅ používat smíšené adresování při kopírování dolů i doprava  
-✅ pro více podmínek preferovat čitelnější logiku  
-✅ u kumulativních výpočtů fixovat začátek oblasti  
-
----
-
-# 🚫 Nejčastější chyby juniorů
-
-- všechno na jednom listu
-- ruční kopírování vzorců
-- nepoužívání tabulek
-- pevné rozsahy
-- chaos v listech
-- nečitelné vzorce
-- rozbité formátování
-- špatně nastavené absolutní adresy
-- zapomenutá skupina listů
-- mazání helper listů místo jejich skrytí
-- příliš dlouhé vnořené KDYŽ()
-- nepochopení rozdílu mezi `*` a `?`
-- používání statických výstupů tam, kde má být dynamika
-
----
-
-# 🔥 Důležité koncepty
-
-## ETL mindset
-
-```text
+🔥 Důležité koncepty
+ETL mindset
 Extract → Transform → Load
-```
-
-## Reporting mindset
-
-```text
+Reporting mindset
 Data → Informace → Decision making
-```
-
-## BI mindset
-
-```text
+BI mindset
 Automatizace > manuální práce
-```
-
-## Robustní Excel model
-
-```text
+Robustní Excel model
 1 správný vzorec
 ↓
 správná adresace
@@ -557,11 +649,6 @@ správná adresace
 škálovatelné kopírování
 ↓
 udržitelný reporting
-```
-
-## Škálovatelnost
-
-```text
+Škálovatelnost
 Řešení funguje nejen pro 10 řádků,
 ale i pro 10 000+ řádků bez ruční práce.
-```
