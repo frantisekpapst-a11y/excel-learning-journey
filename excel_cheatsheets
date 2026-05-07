@@ -1,8 +1,8 @@
 # 📊 Excel Advanced Cheatsheet
 
-## Klávesové zkratky • Vzorce • Listy • Funkce • Lookupy • Logika • Produktivita • BI mindset
+## Klávesové zkratky • Vzorce • Listy • Funkce • Lookupy • Filtry • Logika • Produktivita • BI mindset
 
-> 🎯 Praktický cheatsheet k prvním 12 lekcím kurzu Excel pro pokročilé
+> 🎯 Praktický cheatsheet k prvním 16 lekcím kurzu Excel pro pokročilé  
 > Zaměřeno na efektivní workflow datového analytika.
 
 ---
@@ -11,32 +11,32 @@
 
 ## 🔹 Pohyb po listu
 
-| Zkratka            | Funkce                 |
-| ------------------ | ---------------------- |
-| `Ctrl + Home`      | Přesun na A1           |
-| `Ctrl + End`       | Poslední použitá buňka |
-| `Ctrl + PgDown`    | Další list             |
-| `Ctrl + PgUp`      | Předchozí list         |
-| `Ctrl + šipka`     | Přesun na konec dat    |
+| Zkratka | Funkce |
+|---|---|
+| `Ctrl + Home` | Přesun na A1 |
+| `Ctrl + End` | Poslední použitá buňka |
+| `Ctrl + PgDown` | Další list |
+| `Ctrl + PgUp` | Předchozí list |
+| `Ctrl + šipka` | Přesun na konec dat |
 | `Ctrl + Backspace` | Návrat k aktivní buňce |
-| `PgUp / PgDown`    | Posun obrazovky        |
-| `Ctrl + ;`         | Vloží aktuální datum   |
-| `F2`               | Editace aktivní buňky  |
-| `F4`               | Přepínání adresace     |
+| `PgUp / PgDown` | Posun obrazovky |
+| `Ctrl + ;` | Vloží aktuální datum |
+| `F2` | Editace aktivní buňky |
+| `F4` | Přepínání adresace |
 
 ---
 
 ## 🔹 Výběr buněk
 
-| Zkratka                | Funkce              |
-| ---------------------- | ------------------- |
-| `Ctrl + Space`         | Celý sloupec        |
-| `Shift + Space`        | Celý řádek          |
-| `Ctrl + A`             | Označí tabulku      |
-| `Ctrl + A (2×)`        | Celý list           |
+| Zkratka | Funkce |
+|---|---|
+| `Ctrl + Space` | Celý sloupec |
+| `Shift + Space` | Celý řádek |
+| `Ctrl + A` | Označí tabulku |
+| `Ctrl + A (2×)` | Celý list |
 | `Ctrl + Shift + Space` | Souvislá oblast dat |
-| `Ctrl + Shift + šipka` | Rozšíření výběru    |
-| `Ctrl + klik myší`     | Nesouvislé oblasti  |
+| `Ctrl + Shift + šipka` | Rozšíření výběru |
+| `Ctrl + klik myší` | Nesouvislé oblasti |
 
 ---
 
@@ -44,12 +44,12 @@
 
 ## 🔹 Typy adres
 
-| Typ       | Příklad | Chování              |
-| --------- | ------- | -------------------- |
-| Relativní | `A1`    | mění řádek i sloupec |
-| Absolutní | `$A$1`  | nemění nic           |
-| Smíšená   | `$A1`   | zamkne sloupec       |
-| Smíšená   | `A$1`   | zamkne řádek         |
+| Typ | Příklad | Chování |
+|---|---|---|
+| Relativní | `A1` | mění řádek i sloupec |
+| Absolutní | `$A$1` | nemění nic |
+| Smíšená | `$A1` | zamkne sloupec |
+| Smíšená | `A$1` | zamkne řádek |
 
 ---
 
@@ -57,623 +57,299 @@
 
 ```excel
 A1 → $A$1 → A$1 → $A1 → A1
-```
 
----
-
-## 🔹 Kdy použít absolutní adresu
+Kdy použít absolutní adresu
 
 Použití:
 
-* DPH
-* kurz měny
-* sleva
-* target
-* bonus %
-* centrální parametr
-
-```excel
+DPH
+kurz měny
+sleva
+target
+bonus %
+centrální parametr
 =A2*$B$2
-```
 
-Lepší varianta s pojmenovanou oblastí:
+Lepší varianta:
 
-```excel
 =A2*sleva
-```
-
----
-
-# 🧮 3. Smíšené adresování
-
-Používá se, když kopíruješ vzorec **dolů i doprava**.
-
-## Příklad
-
-```excel
+🧮 3. Smíšené adresování
 =$A2*B$1
-```
-
-| Část  | Význam          |
-| ----- | --------------- |
-| `$A2` | fixní sloupec A |
-| `B$1` | fixní řádek 1   |
+Část	Význam
+$A2	fixní sloupec
+B$1	fixní řádek
 
 Použití:
 
-* sazebníky
-* matice cen
-* měnové přepočty
-* scénářové modely
-
----
-
-# 📊 4. Rozšiřování vzorců a formátů
-
-## Fill Handle vs Ctrl + Enter
-
-| Metoda         | Co kopíruje        |
-| -------------- | ------------------ |
-| Fill Handle    | vzorec + formát    |
-| `Ctrl + Enter` | jen vzorec / obsah |
-
----
-
-## Ctrl + Enter
-
-Postup:
-
-```text
-označit oblast → napsat/upravit vzorec → Ctrl + Enter
-```
-
-Výhoda:
-
-* vzorec ve všech buňkách
-* zachovaný formát tabulky
-* méně chyb
-
----
-
-# 📋 5. Excel tabulky (`Ctrl + T`)
+sazebníky
+matice cen
+forecasty
+scénáře
+📊 4. Rozšiřování vzorců
+Metoda	Co kopíruje
+Fill Handle	vzorec + formát
+Ctrl + Enter	jen obsah / vzorec
+Ctrl + Enter
+označit oblast
+→ napsat vzorec
+→ Ctrl + Enter
 
 Výhody:
 
-* automatické kopírování vzorců
-* dynamické rozšiřování
-* filtry a řazení
-* lepší čitelnost
-* méně chyb
-* jednodušší reporting
-* připraveno pro Power Query / Power BI
+zachování formátu
+rychlost
+enterprise workflow
+📋 5. Excel tabulky (Ctrl + T)
 
----
+Výhody:
 
-# 🧠 6. Pojmenované oblasti
+automatické rozkopírování vzorců
+dynamické rozsahy
+filtry
+structured references
+připraveno pro Power Query / Power BI
+🧠 6. Pojmenované oblasti
 
 Místo:
 
-```excel
 =SUMA(B2:B5000)
-```
 
 lepší:
 
-```excel
 =SUMA(trzby_q1)
-```
-
-## Výhody
-
-* přehlednější vzorce
-* rychlejší práce
-* méně chyb
-* business význam přímo ve vzorci
-
----
-
-## Správce názvů
-
-| Zkratka     | Funkce                       |
-| ----------- | ---------------------------- |
-| `Ctrl + F3` | Správce názvů                |
-| `F3`        | Seznam pojmenovaných oblastí |
-
----
-
-# 📑 7. Typy listů a viditelnost
-
-## Typy listů
-
-| Typ listu        | Použití                      |
-| ---------------- | ---------------------------- |
-| Datový list      | tabulky, výpočty, dashboardy |
-| Grafický list    | jeden graf přes celý list    |
-| Historické listy | staré typy                   |
-
----
-
-## Viditelnost listů
-
-| Typ         | Chování              |
-| ----------- | -------------------- |
-| Viditelný   | běžně dostupný       |
-| Skrytý      | lze obnovit v Excelu |
-| Very Hidden | pouze přes VBA       |
-
----
-
-## VBA
-
-| Zkratka     | Funkce     |
-| ----------- | ---------- |
-| `Alt + F11` | VBA editor |
-
----
-
-# 🏗️ 8. Hromadná práce s listy
-
-## Výběr listů
-
-| Akce              | Postup                                |
-| ----------------- | ------------------------------------- |
-| Nesousedící listy | `Ctrl + klik`                         |
-| Sousedící listy   | `Shift + klik`                        |
-| Všechny listy     | pravé tlačítko → Vybrat všechny listy |
-
----
-
-## Režim `[Skupina]`
-
-Když vidíš:
-
-```text
-[Skupina]
-```
-
-pozor:
-
-* upravuješ více listů současně
-* změny se zapisují na všechny vybrané listy
-
----
-
-## 3D reference
-
-```excel
+Správce názvů
+Zkratka	Funkce
+Ctrl + F3	Správce názvů
+F3	Vložení názvu
+📑 7. Typy listů a viditelnost
+Typ	Použití
+Datový list	data, výpočty
+Grafický list	jeden graf
+Very Hidden	pouze VBA
+VBA
+Zkratka	Funkce
+Alt + F11	VBA editor
+🏗️ 8. Hromadná práce s listy
+Výběr listů
+Akce	Postup
+Nesousedící listy	Ctrl + klik
+Sousedící listy	Shift + klik
+Všechny listy	Vybrat všechny listy
+3D reference
 =SUMA('Leden:Prosinec'!B2)
-```
 
 Použití:
 
-* měsíční reporty
-* pobočkové reporty
-* regionální reporting
-* forecasty
-
----
-
-## Sloučit vs 3D vzorec
-
-| Přístup        | Výsledek  |
-| -------------- | --------- |
-| 3D reference   | dynamický |
-| Data → Sloučit | statický  |
-
----
-
-# 🧩 9. Vnořování funkcí
-
-Vnořování = výsledek jedné funkce je vstupem pro druhou.
-
-```excel
+měsíční reporting
+regionální reporting
+pobočky
+🧩 9. Vnořování funkcí
 =ZAOKROUHLIT(PRŮMĚR(A1:A5);0)
-```
 
-Excel počítá:
+Excel vyhodnocuje:
 
-```text
 nejdřív PRŮMĚR()
 potom ZAOKROUHLIT()
-```
-
----
-
-## KDYŽ()
-
-```excel
+KDYŽ()
 =KDYŽ(B2>10000;"HIGH";"LOW")
-```
-
----
-
-## Vnořené KDYŽ()
-
-```excel
-=KDYŽ(B2<10000;"LOW";KDYŽ(B2<50000;"MEDIUM";"HIGH"))
-```
-
-Nevýhody:
-
-* nepřehlednost
-* složitější debugging
-* vyšší chybovost
-
----
-
-## IFS()
-
-```excel
+IFS()
 =IFS(B2<10000;"LOW";B2<50000;"MEDIUM";B2>=50000;"HIGH")
-```
-
-Výhody:
-
-* přehlednější
-* lépe udržovatelné
-* vhodné pro více podmínek
-
----
-
-# ⚖️ 10. Operátory
-
-## Relační operátory
-
-| Operátor | Význam           |
-| -------- | ---------------- |
-| `>`      | větší než        |
-| `<`      | menší než        |
-| `=`      | rovná se         |
-| `>=`     | větší nebo rovno |
-| `<=`     | menší nebo rovno |
-| `<>`     | nerovná se       |
-
----
-
-## Funkční operátory
-
-| Operátor | Význam             | Příklad              |
-| -------- | ------------------ | -------------------- |
-| `:`      | oblast             | `A1:A10`             |
-| `;`      | oddělení argumentů | `=SUMA(A1;A3;A5)`    |
-| mezera   | průnik oblastí     | `=SUMA(A2:C2 B1:B3)` |
-
----
-
-## Textový operátor
-
-```excel
+⚖️ 10. Operátory
+Relační operátory
+Operátor	Význam
+>	větší než
+<	menší než
+=	rovná se
+>=	větší nebo rovno
+<=	menší nebo rovno
+<>	nerovná se
+Textový operátor
 =A1&" "&B1
-```
-
-Použití:
-
-* spojení jména a příjmení
-* tvorba kódů
-* spojování textů
-* tvorba popisků
-
----
-
-# 🔍 11. Zástupné znaky
-
-| Znak | Význam                |
-| ---- | --------------------- |
-| `*`  | libovolný počet znaků |
-| `?`  | právě jeden znak      |
+🔍 11. Zástupné znaky
+Znak	Význam
+*	libovolný počet znaků
+?	jeden znak
 
 Příklad:
 
-```excel
 =COUNTIF(A:A;"Praha*")
-```
-
----
-
-# 📊 12. Maticové vzorce
-
-Maticový vzorec zpracovává více hodnot najednou.
-
-```excel
+📊 12. Maticové vzorce
 =B2:B6*C2:C6
-```
 
-Moderní Excel 365 výsledky automaticky „rozlije“ do více buněk.
+Moderní Excel automaticky rozlije výsledky.
 
----
-
-# 🔄 13. TRANSPOZICE
-
-```excel
+🔄 13. TRANSPOZICE
 =TRANSPOZICE(A1:A5)
-```
 
 Použití:
 
-* převod sloupce na řádek
-* převod řádku na sloupec
-
----
-
-# 📈 14. Kumulativní výpočty
-
-```excel
+řádek → sloupec
+sloupec → řádek
+📈 14. Kumulativní výpočty
 =SUMA($C$3:C3)
-```
-
-| Část   | Význam          |
-| ------ | --------------- |
-| `$C$3` | fixní začátek   |
-| `C3`   | pohyblivý konec |
+Část	Význam
+$C$3	fixní začátek
+C3	pohyblivý konec
 
 Použití:
 
-* YTD revenue
-* kumulativní tržby
-* cash flow
-* budget tracking
-* forecast progression
-
----
-
-# 🏗️ 15. Profesionální struktura analytického souboru
-
-```text
-RAW_DATA
-   ↓
-TRANSFORM
-   ↓
-MODEL
-   ↓
-PIVOTS
-   ↓
-DASHBOARD
-   ↓
-EXPORT
-```
-
----
-
-## Doporučené listy
-
-| List         | Účel                 |
-| ------------ | -------------------- |
-| RAW_DATA     | import dat           |
-| CLEAN_DATA   | očištěná data        |
-| LOOKUPS      | číselníky            |
-| PARAMETERS   | centrální parametry  |
-| CALCULATIONS | pomocné výpočty      |
-| PIVOTS       | kontingenční tabulky |
-| DASHBOARD    | vizualizace          |
-| EXPORT       | finální výstupy      |
-
----
-
-# 💼 16. Best Practices pro datového analytika
-
-## ❌ Junior workflow
-
-* tahání vzorců myší
-* ruční kopírování
-* rozbité formáty
-* chaotické listy
-* vše na jednom sheetu
-* pevné adresy všude
-
----
-
-## ✅ Analytik workflow
-
-* `Ctrl + T`
-* `Ctrl + Enter`
-* správná adresace
-* smíšené odkazy
-* pojmenované oblasti
-* klávesové zkratky
-* automatizace
-* konzistentní formátování
-* oddělení RAW vs REPORT
-* centrální parametry modelu
-* dynamické výpočty
-
----
-
-# 🧠 17. Podmíněná logika (`KDYŽ`, `IFS`, `SWITCH`, `ZVOLIT`)
-
-## 🔹 Funkce KDYŽ()
-
-```excel
-=KDYŽ(A2>10000;"HIGH";"LOW")
-```
-
----
-
-## 🔹 Vnořené KDYŽ()
-
-```excel
-=KDYŽ(A1<0;"NEGATIVE";KDYŽ(A1=0;"ZERO";"POSITIVE"))
-```
-
----
-
-## 🔹 IFS()
-
-```excel
-=IFS(A2<60;"FAIL";A2<80;"PASS";A2>=80;"EXCELLENT")
-```
-
----
-
-## 🔹 SWITCH()
-
-```excel
-=SWITCH(B2;"Mon";"Pracovní den";"Sat";"Víkend";"Sun";"Víkend";"Jiný den")
-```
-
----
-
-## 🔹 ZVOLIT()
-
-```excel
-=ZVOLIT(2;"LOW";"MEDIUM";"HIGH")
-```
-
----
-
-# ⚖️ 18. Logické operátory
-
-## 🔹 AND logika (`*`)
-
-```excel
-=KDYŽ((B2>100000)*(C2>0,25);"BONUS";"NO BONUS")
-```
-
----
-
-## 🔹 OR logika (`+`)
-
-```excel
-=KDYŽ((B2>100000)+(D2>5)>0;"BONUS";"NO BONUS")
-```
-
----
-
-## 🔹 XOR logika
-
-```excel
-=KDYŽ((B2>100000)+(D2>5)=1;"CHECK";"OK")
-```
-
----
-
-# 🚨 19. Ošetření chyb
-
-## 🔹 IFERROR()
-
-```excel
-=IFERROR(B2/C2;"nelze spočítat")
-```
-
----
-
-## Typické chyby Excelu
-
-| Chyba               | Význam                      |
-| ------------------- | --------------------------- |
-| `#NÁZEV?`           | neexistující funkce / název |
-| `#HODNOTA!`         | špatný datový typ           |
-| `#ODKAZ!`           | neplatný odkaz              |
-| `#DĚLENÍ_NULOU!`    | dělení nulou                |
-| `#NENÍ_K_DISPOZICI` | lookup nic nenašel          |
-
----
-
-# 🔍 20. SVYHLEDAT (`VLOOKUP`)
-
-## Základní syntaxe
-
-```excel
+running totals
+YTD
+cash flow
+🔍 15. SVYHLEDAT (VLOOKUP)
+Syntaxe
 =SVYHLEDAT(hledat;tabulka;sloupec;typ)
-```
+Přesná shoda
+=SVYHLEDAT(A2;$A$2:$B$10;2;0)
+Přibližná shoda
+=SVYHLEDAT(A2;$A$2:$B$10;2;1)
 
----
+Použití:
 
-## Přesná shoda
+ceníky
+sazebníky
+intervaly
+Limity SVYHLEDAT()
+hledá jen doprava
+pevné číslo sloupce
+rozbije se při vložení sloupce
+🔎 16. POZVYHLEDAT (MATCH)
+=POZVYHLEDAT("Cena";A1:E1;0)
 
-```excel
-=SVYHLEDAT(D11;$A$10:$B$13;2;0)
-```
+Vrací:
 
----
+pozici hodnoty
+Typy shody
+Hodnota	Význam
+0	přesná shoda
+1	nejbližší menší
+-1	nejbližší větší
+🔗 17. INDEX + POZVYHLEDAT
+=INDEX(B2:B10;POZVYHLEDAT(E2;A2:A10;0))
 
-## Přibližná shoda
+Výhody:
 
-```excel
-=SVYHLEDAT(G2;$A$2:$B$10;2;1)
-```
+flexibilnější než SVYHLEDAT
+nerozbije se po vložení sloupce
+lookup doleva
+🚀 18. XLOOKUP
+Syntaxe
+=XLOOKUP(co;v čem hledat;co vrátit)
+Příklad
+=XLOOKUP(G2;A2:A10;E2:E10;"nenalezeno")
+Výhody
+hledá vlevo i vpravo
+není potřeba číslo sloupce
+vestavěný IFERROR
+stabilnější než SVYHLEDAT
+Režimy shody
+Hodnota	Význam
+0	přesná shoda
+-1	přesná nebo nejbližší menší
+1	přesná nebo nejbližší větší
+2	wildcard (*, ?)
+🚨 19. IFERROR
+=IFERROR(A1/B1;"chyba")
 
----
+Použití:
 
-# 🧱 21. Structured References (Excel tabulky)
+ošetření lookupů
+stabilní dashboardy
+čisté reporty
+🔎 20. Jednoduchý filtr
+Zapnutí filtru
+Zkratka	Funkce
+Ctrl + Shift + L	zapnutí/vypnutí filtru
+Logika
+Typ	Význam
+A	obě podmínky
+NEBO	alespoň jedna
+Kaskádové filtrování
 
-Místo:
+Filtr na druhém sloupci pracuje:
 
-```excel
-=G17*H17
-```
+jen nad viditelnými řádky
+Zástupné znaky
+Znak	Význam
+*	libovolný počet znaků
+?	jeden znak
+🧠 21. Rozšířený filtr
 
-lepší:
+Rozšířený filtr:
 
-```excel
-=[@Ks]*[@Cena]
-```
+používá oblast kritérií
+zvládá komplexní logiku
+umí exportovat výsledky
+podporuje výpočtová kritéria
+Logika kritérií
+Rozložení	Význam
+vedle sebe	AND
+pod sebou	OR
+Příklad AND
+Věk	Bydliště
+<40	Praha
+Příklad OR
+Bydliště
+Praha
+Brno
+🧮 22. Výpočtová kritéria
+Nadprůměrná hodnota
+=$E2>PRŮMĚR($E$2:$E$13)
+Nejvyšší hodnota
+=$C2=MAX($C$2:$C$13)
+Nejnižší hodnota
+=$C2=MIN($C$2:$C$13)
+🧩 23. Průřezy (Slicers)
 
----
+Průřezy fungují:
 
-## Praktický příklad
-
-```excel
-=KDYŽ([@Tržba]>20000;"HIGH";"STANDARD")
-```
-
----
-
-# ⌨️ 22. Speciální znaky na CZ klávesnici
-
-| Znak | Zkratka   |
-| ---- | --------- |
-| `[`  | AltGr + F |
-| `]`  | AltGr + G |
-| `{`  | AltGr + B |
-| `}`  | AltGr + N |
-| `@`  | AltGr + V |
-| `$`  | AltGr + ů |
-
----
-
-# 🔥 Nejvíc používané zkratky analytika
-
-| Zkratka                | Použití             |
-| ---------------------- | ------------------- |
-| `Ctrl + T`             | Excel tabulka       |
-| `F4`                   | změna adresace      |
-| `F2`                   | editace buňky       |
-| `Ctrl + Shift + šipka` | výběr dat           |
-| `Ctrl + Enter`         | hromadné vyplnění   |
-| `Ctrl + A`             | výběr tabulky/listu |
-| `Ctrl + PgDown`        | přepínání listů     |
-| `Ctrl + Alt + V`       | vložit jinak        |
-| `Ctrl + F3`            | správce názvů       |
-| `Alt + F11`            | VBA editor          |
-
----
-
-# 🎯 Mindset datového analytika
+jen nad Excel tabulkou
+nebo kontingenční tabulkou
+Vložení
+Ctrl + T
+→ Návrh tabulky
+→ Vložit průřez
+Výhody
+vizuální filtrování
+interaktivní dashboard
+rychlá analýza
+⌨️ 24. Speciální znaky na CZ klávesnici
+Znak	Zkratka
+[	AltGr + F
+]	AltGr + G
+{	AltGr + B
+}	AltGr + N
+@	AltGr + V
+$	AltGr + ů
+🔥 Nejvíc používané zkratky analytika
+Zkratka	Použití
+Ctrl + T	Excel tabulka
+F4	změna adresace
+F2	editace buňky
+Ctrl + Shift + šipka	výběr dat
+Ctrl + Enter	hromadné vyplnění
+Ctrl + Shift + L	filtr
+Ctrl + PgDown	přepínání listů
+Ctrl + Alt + V	vložit jinak
+🎯 Mindset datového analytika
 
 Excel není jen tabulka.
 
 Excel je:
 
-* analytický nástroj
-* reporting tool
-* mini ETL platforma
-* výpočetní engine
-* rychlý prototyping
-* bridge mezi SQL → Power BI
-
----
-
-# 🚀 Cíl
+analytický nástroj
+reporting tool
+mini ETL platforma
+výpočetní engine
+dashboarding tool
+bridge mezi SQL → Power BI
+🚀 Cíl
 
 Nepracovat:
 
-```text
 víc
-```
 
 Ale:
 
-```text
 chytřeji
-```
 
