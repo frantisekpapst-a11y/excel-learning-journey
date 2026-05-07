@@ -1,0 +1,65 @@
+# 📦 Case Study 02 — Inventory Management in Excel
+
+## 🎯 Cíl projektu
+
+Cílem této mini case study bylo procvičit:
+
+- Excel tabulky (`Ctrl + T`)
+- filtrování dat
+- funkci `XLOOKUP()`
+- podmíněné výpočty pomocí `KDYŽ()`
+- structured references
+- práci s business logikou
+- kombinaci více technik v jednom workflow
+
+---
+
+# 📊 Zadání
+
+Byla vytvořena jednoduchá skladová evidence produktů.
+
+Pro každý produkt bylo potřeba:
+
+- spočítat hodnotu skladu,
+- určit stav zásob,
+- dohledat dodavatele podle kategorie,
+- filtrovat rizikové produkty.
+
+---
+
+# 🧮 Použité vzorce
+
+## Výpočet hodnoty skladu
+=[@Ks]*[@Cena]
+
+## Status skladu
+=KDYŽ([@Ks]<5;"LOW STOCK";"OK")
+
+## Dohledání dodavatele
+=XLOOKUP([@Kategorie];Tabulka2[Kategorie];Tabulka2[Dodavatel];"neznámý";0)
+
+## Filtrování dat
+Použité filtry:
+pouze produkty se statusem LOW STOCK
+filtrování podle kategorií
+
+Procvičeno:
+
+kaskádové filtrování
+práce s automatickým filtrem
+business segmentace dat
+
+🧠 Co jsem se naučil
+rozdíl mezi SVYHLEDAT() a XLOOKUP()
+proč je XLOOKUP() flexibilnější
+používání structured references v tabulkách
+propojení více tabulek pomocí lookup funkcí
+filtrování dat podle business podmínek
+práce s moderním Excel workflow
+
+🚀 Použité funkce
+XLOOKUP()
+KDYŽ()
+Excel Tables
+Filtry
+Structured References
