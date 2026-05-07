@@ -10,6 +10,7 @@ export filtrovaných dat
 výpočtová kritéria
 práci s unikátními hodnotami
 databázové myšlení při práci s daty
+
 📁 Dataset
 Tabulka zaměstnanců
 ID	Jméno	Oddělení	Město	Věk	Plat
@@ -21,7 +22,9 @@ ID	Jméno	Oddělení	Město	Věk	Plat
 1006	Marek	Sales	Brno	29	47000
 1007	Černý	Finance	Praha	39	76000
 1008	Beneš	IT	Ostrava	31	69000
+
 ✅ Procvičené scénáře
+
 1️⃣ Jednoduchý filtr
 Zadání
 
@@ -44,6 +47,7 @@ Jméno	Oddělení	Plat
 Novák	IT	65000
 Procházka	IT	92000
 Černý	Finance	76000
+
 2️⃣ Rozšířený filtr — AND logika
 Zadání
 
@@ -60,6 +64,7 @@ IT	Brno	>35
 Výsledek
 Jméno	Oddělení	Město	Věk	Plat
 Dvořák	IT	Brno	37	81000
+
 3️⃣ Rozšířený filtr — OR logika
 Zadání
 
@@ -79,6 +84,7 @@ Svoboda	Brno	72000
 Dvořák	Brno	81000
 Procházka	Praha	92000
 Černý	Praha	76000
+
 4️⃣ Výpočtová kritéria
 Zadání
 
@@ -87,6 +93,7 @@ Filtrovat zaměstnance s:
 nadprůměrným platem
 nejvyšším platem
 nejnižším věkem
+
 🔹 Nadprůměrný plat
 Kritérium
 =[@Plat]>PRŮMĚR(Tabulka1[Plat])
@@ -98,18 +105,21 @@ Svoboda	72000
 Dvořák	81000
 Procházka	92000
 Černý	76000
+
 🔹 Nejvyšší plat
 Kritérium
 =[@Plat]=MAX(Tabulka1[Plat])
 Výsledek
 Jméno	Plat
 Procházka	92000
+
 🔹 Nejnižší věk
 Kritérium
 =[@Věk]=MIN(Tabulka1[Věk])
 Výsledek
 Jméno	Věk
 Novák	28
+
 5️⃣ Export výsledků
 Použití
 
@@ -123,6 +133,7 @@ Filtrovaná data byla exportována:
 na samostatný list
 bez přepsání zdrojových dat
 s možností další analýzy
+
 6️⃣ Unikátní hodnoty
 Použití
 
@@ -135,6 +146,7 @@ Město
 Praha
 Brno
 Ostrava
+
 🧠 Co jsem se naučil
 rozdíl mezi jednoduchým a rozšířeným filtrem
 logiku AND / OR v Excelu
@@ -143,6 +155,7 @@ databázový přístup k filtrování dat
 podobnost s SQL (WHERE, OR, AND, DISTINCT)
 práci s dynamickými kritérii pomocí vzorců
 export filtrovaných dat bez zásahu do zdroje
+
 🛠 Použité funkce a nástroje
 Filtr
 Rozšířený filtr
@@ -166,6 +179,7 @@ WHERE mesto = 'Praha'
 DISTINCT logika
 SELECT DISTINCT mesto
 FROM employees;
+
 🚀 Výsledek
 
 Tato case study simulovala základní analytickou práci s HR daty a ukázala, jak lze v Excelu vytvářet pokročilé datové výběry bez použití SQL nebo databáze.
