@@ -694,6 +694,7 @@ Vnořené KDYŽ()
 =KDYŽ(A1>100000;"VIP";KDYŽ(A1>50000;"MID";"LOW"))
 IFS()
 =IFS(A1>100000;"VIP";A1>50000;"MID";A1<=50000;"LOW")
+
 📘 Lekce 11 – Logické operátory v Excelu
 ❓ Otázky
 1.
@@ -1015,3 +1016,61 @@ Zápis	Význam
 8. Vizuální interaktivní filtry.
 9. Nad Excel tabulkou nebo kontingenční tabulkou.
 10. Průřez je interaktivní vizuální filtr, rozšířený filtr je pravidlový/exportní filtr.
+
+---
+
+# 📘 Lekce 17 – Podmíněné agregační funkce
+
+## ❓ Otázky
+
+1. Kdy použiješ `COUNTIF()`?
+2. Kdy použiješ `SUMIF()`?
+3. Kdy použiješ `AVERAGEIF()`?
+4. Jaký je rozdíl mezi `COUNTIF()` a `SUMIF()`?
+5. Jak vypadá syntaxe `COUNTIF()`?
+6. Jak vypadá syntaxe `SUMIF()`?
+7. Proč je třetí argument u `SUMIF()` prakticky skoro vždy potřeba?
+8. Co znamená argument `oblast`?
+9. Co znamená argument `kritérium`?
+10. Proč se oblast často zapisuje absolutně?
+11. Co vrátí `=COUNTIF(A2:A11;"pondělí")`?
+12. Co vrátí `=SUMIF(A2:A11;"pondělí";B2:B11)`?
+13. Co vrátí `=AVERAGEIF(A2:A11;"pondělí";B2:B11)`?
+14. Jaký je vztah mezi `SUMIF()`, `COUNTIF()` a `AVERAGEIF()`?
+15. Co se stane, když u `SUMIF()` vynecháš oblast pro součet a oblast obsahuje text?
+
+## ✅ Odpovědi
+
+1. Když potřebuješ spočítat počet záznamů splňujících podmínku.
+2. Když potřebuješ sečíst hodnoty splňující podmínku.
+3. Když potřebuješ vypočítat průměr hodnot splňujících podmínku.
+4. `COUNTIF()` počítá řádky, `SUMIF()` sčítá čísla.
+5. `=COUNTIF(oblast;kritérium)`.
+6. `=SUMIF(oblast;kritérium;oblast_součtu)`.
+7. Protože většinou hledáš podle jednoho sloupce a sčítáš jiný.
+8. Rozsah buněk, ve kterém Excel hledá splnění podmínky.
+9. Podmínka, podle které Excel rozhoduje, co započítat.
+10. Aby se odkazy při kopírování neposouvaly.
+11. Počet buněk obsahujících `pondělí`.
+12. Součet hodnot ve sloupci B pro řádky, kde je ve sloupci A `pondělí`.
+13. Průměr hodnot ve sloupci B pro řádky, kde je ve sloupci A `pondělí`.
+14. `AVERAGEIF = SUMIF / COUNTIF`.
+15. Výsledek bude 0, protože Excel nemá co sčítat.
+
+---
+
+# 📘 Lekce 18 – Podmíněné agregační funkce s více kritérii
+
+## ❓ Otázky
+
+1. Jaký je rozdíl mezi `SUMIF()` a `SUMIFS()`?
+2. U funkcí s koncovkou `-IFS` je oblast pro výpočet na začátku, nebo na konci?
+3. Co počítá `COUNTIFS()`?
+4. Co počítá `SUMIFS()`?
+5. Co vrací `AVERAGEIFS()`?
+6. Co vrací `MINIFS()`?
+7. Co vrací `MAXIFS()`?
+8. Co znamená tento vzorec?
+
+```excel
+=SUMIFS($C$2:$C$22;$A$2:$A$22;"pondělí";$B$2:$B$22;"Praha")
