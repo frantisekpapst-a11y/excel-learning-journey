@@ -1,26 +1,34 @@
-📊 excel-learning-journey
+# 📊 excel-learning-journey
 
-Tento repozitář dokumentuje moji cestu učením Microsoft Excelu — od základů až po pokročilou práci s daty, reporting, filtrování, analytické workflow a přípravu na Power BI.
+Tento repozitář dokumentuje moji cestu učením Microsoft Excelu — od základů až po pokročilou práci s daty, reporting, analytické workflow a přípravu na Power BI.
 
-🎯 Cíl:
+🎯 Cíl:  
 Vybudovat praktické portfolio a dostat se na úroveň junior data analytika.
 
-📁 Struktura repozitáře
+---
+
+# 📁 Struktura repozitáře
+
+```text
 excel-learning-journey/
 │
 ├── README.md
 │
 ├── cheatsheets/
-│   └── excel_advanced_cheatsheet.md
+│   ├── excel_advanced_cheatsheet.md
+│   └── excel_notes.md
 │
 ├── mini-tests/
-│   └── excel_advanced_mini_tests.md
+│   ├── excel_advanced_mini_tests.md
+│   ├── excel_advanced_quiz_questions.md
+│   └── excel_basics_quiz_questions.md
 │
-├── case-study-1.md
-├── case-study-2.md
-├── case-study-3.md
-├── case-study-4.md
-├── case-study-5.md
+├── case-studies/
+│   ├── case-study-1-sales-analysis.md
+│   ├── case-study-2-inventory-management.md
+│   ├── case-study-3-advanced-filtering.md
+│   ├── case-study-4-logical-access-rules.md
+│   └── case-study-5-conditional-analytics.md
 │
 ├── excel_examples/
 │   ├── formulas_examples.xlsx
@@ -29,7 +37,7 @@ excel-learning-journey/
 │   ├── advanced_filter_examples.xlsx
 │   └── dashboard_examples.xlsx
 │
-└── excel_notes/
+└── notes/
     ├── excel_shortcuts.md
     ├── excel_best_practices.md
     ├── excel_vs_sql.md
@@ -54,19 +62,24 @@ vnořené funkce
 pojmenované oblasti
 typy listů a jejich viditelnost
 pokročilé vyhledávací funkce
-SVYHLEDAT / XLOOKUP
-INDEX + POZVYHLEDAT
+SVYHLEDAT()
+XLOOKUP()
+INDEX + POZVYHLEDAT()
 automatické a rozšířené filtry
 výpočtová kritéria
 databázové funkce
 logické funkce
 podmíněné formátování
+SUBTOTAL()
+AGGREGATE()
+POSUN()
+dynamické oblasti
+automatické souhrny
 dynamické reporty
 
 📙 Data analytika mindset
 reporting
-KPI
-dashboardy
+KPI dashboardy
 business case studies
 práce s datovými sadami
 analytické myšlení
@@ -76,9 +89,7 @@ Power BI mindset
 SQL → Excel → Power BI workflow
 
 ✅ Aktuální progress
-
-Excel základy
-
+📗 Excel základy
 ✅ prostředí Excelu
 ✅ formátování buněk
 ✅ vzorce a funkce
@@ -87,8 +98,7 @@ Excel základy
 ✅ kontingenční tabulky
 ✅ závěrečný test: 100 %
 
-Excel pro pokročilé
-
+📘 Excel pro pokročilé
 ✅ Lekce 1: Úvod do pokročilého Excelu
 ✅ Lekce 2: Klávesové zkratky a výběr buněk
 ✅ Lekce 3: Rozšiřování vzorců a formátů
@@ -105,10 +115,16 @@ Excel pro pokročilé
 ✅ Lekce 14: Jednoduché filtrování dat
 ✅ Lekce 15: Rozšířený filtr
 ✅ Lekce 16: Pokročilé možnosti rozšířeného filtru
-✅ Lekce 17–18: Skalární součin a podmíněné výpočty
+✅ Lekce 17–18: SOUČIN.SKALÁRNÍ a podmíněné výpočty
 ✅ Lekce 19–22: Databázové funkce a pokročilá logika
 ✅ Lekce 23–24: Logické funkce a business pravidla
-🔄 Podmíněné formátování (aktuálně)
+✅ Lekce 25–26: Podmíněné formátování
+✅ Lekce 27: ZVOLIT() a INDEX()
+✅ Lekce 28: SUBTOTAL() a AGGREGATE()
+✅ Lekce 29: Automatické souhrny dat
+✅ Lekce 30: POSUN() a dynamické oblasti
+
+🔄 Opakování + závěrečný test
 
 📊 Case Studies
 
@@ -195,26 +211,30 @@ SQL	Excel	Power BI
 SELECT	výběr dat	datový model
 WHERE	filtr / rozšířený filtr	slicer / filter
 GROUP BY	kontingenční tabulka	agregace
-CASE WHEN	KDYŽ	DAX IF / SWITCH
+CASE WHEN	KDYŽ()	DAX IF / SWITCH
 JOIN	SVYHLEDAT / XLOOKUP	relace
 DISTINCT	odebrání duplicit	dimenze
 ETL	Power Query	Power Query / model
 
-📌 Best practices
-používat Ctrl + T pro Excel tabulky
-oddělovat RAW data od výstupů
-nepoužívat vše na jednom listu
-používat pojmenované oblasti
-psát čitelné vzorce
-automatizovat rutinní práci
-tvořit škálovatelné workflow
-stavět reporty tak, aby byly udržovatelné
+📌 Best Practices
+✅ používat Ctrl + T pro Excel tabulky
+✅ oddělovat RAW data od výstupů
+✅ nepoužívat vše na jednom listu
+✅ používat pojmenované oblasti
+✅ psát čitelné vzorce
+✅ automatizovat rutinní práci
+✅ tvořit škálovatelné workflow
+✅ stavět reporty tak, aby byly udržovatelné
+✅ používat lookup mindset místo ruční práce
+✅ minimalizovat hardcoded hodnoty
+✅ používat dynamické oblasti a tabulky
 
 🚀 Další směr
 
 Další krok v learning journey:
 
 dokončení Excel Advanced
+závěrečný test
 Power Query
 Power BI
 Python fundamentals
