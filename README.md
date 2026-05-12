@@ -1,47 +1,41 @@
-# 📊 excel-learning-journey
+📊 excel-learning-journey
 
 Tento repozitář dokumentuje moji cestu učením Microsoft Excelu — od základů až po pokročilou práci s daty, reporting, analytické workflow a přípravu na Power BI.
 
-🎯 Cíl:  
+🎯 Cíl:
 Vybudovat praktické portfolio a dostat se na úroveň junior data analytika.
 
----
+📁 Struktura repozitáře
 
-# 📁 Struktura repozitáře
-
-```text
 excel-learning-journey/
 │
 ├── README.md
 │
-├── cheatsheets/
-│   ├── excel_advanced_cheatsheet.md
-│   └── excel_notes.md
+├── case-study-1.md
+├── case-study-2.md
+├── case-study-3.md
+├── case-study-4.md
+├── case-study-5.md
+├── case-study-6.md
+├── case-study-7.md
 │
-├── mini-tests/
-│   ├── excel_advanced_mini_tests.md
-│   ├── excel_advanced_quiz_questions.md
-│   └── excel_basics_quiz_questions.md
+├── excel-certificates-basic.pdf
+├── excel-tahak-itnetwork-advanced.pdf
+├── excel-tahak-itnetwork-basic.pdf
 │
-├── case-studies/
-│   ├── case-study-1-sales-analysis.md
-│   ├── case-study-2-inventory-management.md
-│   ├── case-study-3-advanced-filtering.md
-│   ├── case-study-4-logical-access-rules.md
-│   └── case-study-5-conditional-analytics.md
+├── excel-cheatsheet/
 │
-├── excel_examples/
-│   ├── formulas_examples.xlsx
-│   ├── lookup_examples.xlsx
-│   ├── filtering_examples.xlsx
-│   ├── advanced_filter_examples.xlsx
-│   └── dashboard_examples.xlsx
+├── excel-exemples/
 │
-└── notes/
-    ├── excel_shortcuts.md
-    ├── excel_best_practices.md
-    ├── excel_vs_sql.md
-    └── filtering_and_lookup_notes.md
+├── excel-mini-tests-advanced excel/
+│
+├── excel-mini-tests-basic excel/
+│
+├── excel-mini-tests-itnetwork-advanced/
+│
+├── excel-mini-tests-itnetwork-basic/
+│
+└── excel-notes/
 
 🧠 Co se v repozitáři učím
 
@@ -64,7 +58,7 @@ typy listů a jejich viditelnost
 pokročilé vyhledávací funkce
 SVYHLEDAT()
 XLOOKUP()
-INDEX + POZVYHLEDAT()
+INDEX() + POZVYHLEDAT()
 automatické a rozšířené filtry
 výpočtová kritéria
 databázové funkce
@@ -76,6 +70,8 @@ POSUN()
 dynamické oblasti
 automatické souhrny
 dynamické reporty
+lookup dashboardy
+parametrické výpočty
 
 📙 Data analytika mindset
 reporting
@@ -89,7 +85,9 @@ Power BI mindset
 SQL → Excel → Power BI workflow
 
 ✅ Aktuální progress
+
 📗 Excel základy
+
 ✅ prostředí Excelu
 ✅ formátování buněk
 ✅ vzorce a funkce
@@ -99,6 +97,7 @@ SQL → Excel → Power BI workflow
 ✅ závěrečný test: 100 %
 
 📘 Excel pro pokročilé
+
 ✅ Lekce 1: Úvod do pokročilého Excelu
 ✅ Lekce 2: Klávesové zkratky a výběr buněk
 ✅ Lekce 3: Rozšiřování vzorců a formátů
@@ -179,6 +178,33 @@ kombinace funkcí
 analytického myšlení
 simulace reálných business scénářů
 
+📦 Case Study 06 — Conditional Formatting for KPI Monitoring
+
+Procvičení:
+
+podmíněného formátování
+KPI alertů
+zvýraznění celých řádků
+business pravidel
+logiky A() a NEBO()
+vizuálního reportingu
+
+📦 Case Study 07 — Dynamic KPI Reporting & Lookup Dashboard
+
+Procvičení:
+
+INDEX() + POZVYHLEDAT()
+lookup dashboardů
+IFS()
+SUBTOTAL()
+AGGREGATE()
+SOUČIN.SKALÁRNÍ()
+POSUN()
+dynamických oblastí
+parametrických výpočtů
+KPI reportingu
+structured references
+
 🛠️ Praktické dovednosti
 
 V repozitáři procvičuji hlavně:
@@ -193,6 +219,9 @@ tvorbu analytických workflow
 oddělení RAW dat, transformací a dashboardů
 analytické myšlení podobné SQL
 přípravu na Power BI
+tvorbu dynamických dashboardů
+parametrické reporty
+KPI monitoring
 
 🧩 Excel jako analytický nástroj
 
@@ -205,6 +234,8 @@ přípravu dat
 filtrování a transformace
 prototypování dashboardů
 analytické workflow
+KPI reporting
+lookup dashboardy
 
 🔗 SQL → Excel → Power BI mindset
 SQL	Excel	Power BI
@@ -212,11 +243,12 @@ SELECT	výběr dat	datový model
 WHERE	filtr / rozšířený filtr	slicer / filter
 GROUP BY	kontingenční tabulka	agregace
 CASE WHEN	KDYŽ()	DAX IF / SWITCH
-JOIN	SVYHLEDAT / XLOOKUP	relace
+JOIN	SVYHLEDAT() / XLOOKUP()	relace
 DISTINCT	odebrání duplicit	dimenze
 ETL	Power Query	Power Query / model
 
 📌 Best Practices
+
 ✅ používat Ctrl + T pro Excel tabulky
 ✅ oddělovat RAW data od výstupů
 ✅ nepoužívat vše na jednom listu
@@ -228,6 +260,8 @@ ETL	Power Query	Power Query / model
 ✅ používat lookup mindset místo ruční práce
 ✅ minimalizovat hardcoded hodnoty
 ✅ používat dynamické oblasti a tabulky
+✅ používat structured references
+✅ používat parametrické výpočty místo ručních změn
 
 🚀 Další směr
 
