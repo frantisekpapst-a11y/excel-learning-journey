@@ -573,6 +573,245 @@ Potřebuji textový výsledek?
 Potřebuji počítat výsledky?
 → *1
 
+# 🎨 Podmíněné formátování jako KPI alerting
+
+Podmíněné formátování není jen vizuální úprava.
+
+Je to způsob, jak v reportu automaticky zvýraznit:
+
+- rizikové hodnoty
+- výjimky
+- KPI problémy
+- nejlepší / nejhorší výsledky
+- celé řádky podle business pravidel
+
+## Základní princip
+
+```text
+Oblast = co se bude formátovat
+Vzorec = podle čeho se rozhoduje
+Zvýraznění celého řádku
+=$C2>20000
+
+Sloupec je zamčený, řádek se posouvá.
+
+Kombinace podmínek
+=A($D2<0,2;$E2>3)
+
+Znamená:
+
+marže < 20 %
+A ZÁROVEŇ
+reklamace > 3
+OR logika
+=NEBO($B2="IT";$C2>30000)
+
+Znamená:
+
+kategorie = IT
+NEBO
+tržba > 30000
+Best practice
+
+V podmíněném formátování většinou nepoužívat KDYŽ().
+
+Stačí logický výraz:
+
+=$C2>20000
+🔢 INDEX(), ZVOLIT() a dynamický výběr hodnot
+ZVOLIT()
+
+Používá se pro výběr z pevného seznamu.
+
+=ZVOLIT(2;"LOW";"MEDIUM";"HIGH")
+
+Výsledek:
+
+MEDIUM
+INDEX()
+
+Používá se pro výběr hodnoty z oblasti.
+
+=INDEX(A1:C10;3;2)
+
+Vrátí hodnotu ze 3. řádku a 2. sloupce oblasti.
+
+INDEX vrací celý sloupec
+=INDEX(B2:D20;0;2)
+
+0 v argumentu řádek znamená celý sloupec.
+
+INDEX vrací celý řádek
+=INDEX(B2:D20;3;0)
+
+0 v argumentu sloupec znamená celý řádek.
+
+INDEX + POZVYHLEDAT mindset
+=INDEX(B2:B10;POZVYHLEDAT(E2;A2:A10;0))
+
+Princip:
+
+POZVYHLEDAT = najde pozici
+INDEX = vrátí hodnotu na této pozici
+
+To je robustnější lookup logika než klasické SVYHLEDAT().
+
+🧮 SUBTOTAL() a AGGREGATE()
+SUMA()
+=SUMA(C2:C20)
+
+Počítá běžný součet.
+
+SUBTOTAL()
+=SUBTOTAL(9;C2:C20)
+
+Reaguje na filtr.
+
+Konstanta	Význam
+1	PRŮMĚR
+4	MAX
+5	MIN
+9	SUMA
+109	SUMA bez ručně skrytých řádků
+AGGREGATE()
+=AGGREGATE(9;7;C2:C20)
+
+Význam:
+
+9 = SUMA
+7 = ignoruj skryté řádky a chyby
+
+Použití:
+
+nečistá data
+chyby v oblasti
+robustní reporting
+dashboardy
+Rozdíl
+Funkce	Kdy použít
+SUMA()	běžný součet
+SUBTOTAL()	filtrované reporty
+AGGREGATE()	reporty s chybami a skrytými řádky
+📑 Automatické souhrny
+
+Automatické souhrny vytváří Excel přes:
+
+Data → Přehled → Souhrn
+
+Excel automaticky:
+
+vloží mezisoučty
+použije SUBTOTAL()
+vytvoří hierarchii
+umožní sbalování a rozbalování detailu
+Důležité
+
+Data musí být před vytvořením souhrnů seskupena podle kategorie.
+
+Špatně:
+
+Materiál
+Energie
+Materiál
+
+Správně:
+
+Materiál
+Materiál
+Energie
+Energie
+Proč SUBTOTAL nepočítá duplicitně
+
+SUBTOTAL() ignoruje jiné SUBTOTAL() funkce uvnitř oblasti.
+
+Tím se zabrání:
+
+double counting
+Ověření dat jako parametr reportu
+Data → Ověření dat → Seznam
+
+Použití:
+
+výběr metriky
+výběr regionu
+výběr měsíce
+interaktivní reporting
+POZVYHLEDAT v souhrnech
+=POZVYHLEDAT(H1;A18:A28;0)
+
+Vrátí pozici vybrané metody v seznamu.
+
+🔄 POSUN() a dynamické oblasti
+POSUN()
+=POSUN(odkaz;řádky;sloupce;výška;šířka)
+
+Funkce POSUN() vrací odkaz na oblast.
+
+Jednoduchý příklad
+=POSUN(A1;2;1)
+
+Vrátí odkaz na buňku:
+
+B3
+Dynamická oblast
+=POSUN(C1;0;0;POČET2(C:C);1)
+
+Význam:
+
+začni v C1
+neposouvej se
+výška = počet neprázdných buněk
+šířka = 1 sloupec
+
+Oblast se automaticky rozšiřuje při přidání nových dat.
+
+Součet posledních X hodnot
+=SUMA(POSUN(B1;POČET2(B:B)-E1;0;E1;1))
+
+Použití:
+
+poslední 3 měsíce
+rolling total
+posledních X záznamů
+dynamické reporty
+Volatilní funkce
+
+POSUN() je volatilní funkce.
+
+To znamená:
+
+přepočítává se při každé změně sešitu
+
+U velkých souborů může zpomalovat Excel.
+
+Modernější alternativy:
+
+Excel tabulky
+INDEX()
+dynamická pole
+Power Query
+🧠 Moderní Excel workflow
+
+Starší přístup:
+
+pevné rozsahy
+ruční úpravy
+POSUN()
+ruční souhrny
+
+Modernější přístup:
+
+Excel Tables
+structured references
+Power Query
+XLOOKUP
+INDEX + POZVYHLEDAT
+Power BI model
+
+Cíl:
+
+report se přizpůsobuje datům automaticky
+
 📑 Práce s listy
 Typ	Použití
 Datový list	data, vzorce, dashboardy
