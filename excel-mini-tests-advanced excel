@@ -1339,3 +1339,107 @@ Zápis	Význam
 8. Zvýrazní řádek, pokud je marže menší než 20 % a reklamace větší než 3.
 9. $E3 má fixní sloupec, $E$3 má fixní sloupec i řádek.
 10. Protože umožňuje rychle vizuálně identifikovat důležité informace a problémy.
+
+---
+
+📘 Lekce 27 – Funkce ZVOLIT() a INDEX()
+
+❓ Otázky
+
+1. Co dělá funkce ZVOLIT()?
+2. Co vrátí vzorec =INDEX(A1:B4;3;1)?
+3. Jaký je hlavní rozdíl mezi ZVOLIT() a INDEX()?
+4. Co znamená argument 0 ve vzorci =INDEX(A1:D10;0;2)?
+5. Kdy je vhodnější použít INDEX() místo ZVOLIT()?
+6. Co vrátí vzorec =INDEX(B2:D5;2;3)?
+7. Jaký BI mindset představuje funkce INDEX()?
+8. Proč je INDEX() flexibilnější než SVYHLEDAT()?
+
+✅ Odpovědi
+
+1. Vrací hodnotu ze seznamu podle pořadového čísla.
+2. Hodnotu ze 3. řádku a 1. sloupce oblasti A1:B4.
+3. ZVOLIT() vybírá ze seznamu argumentů, INDEX() pracuje s oblastí buněk.
+4. Vrátí celý 2. sloupec oblasti.
+5. Při práci s tabulkami a dynamickými oblastmi.
+6. Hodnotu z 2. řádku a 3. sloupce oblasti B2:D5.
+7. Dynamický výběr dat bez ručního přepisování vzorců.
+8. Protože není závislý na pořadí sloupců a umí vracet data z libovolného sloupce.
+
+---
+
+📘 Lekce 28 – SUBTOTAL() a AGGREGATE()
+
+❓ Otázky
+
+1. Jaký je hlavní rozdíl mezi SUMA() a SUBTOTAL()?
+2. Co znamená konstanta 9 ve funkci SUBTOTAL()?
+3. Co znamená konstanta 109?
+4. Co dělá vzorec =AGGREGATE(9;7;C2:C20)?
+5. Kdy je AGGREGATE() lepší než SUBTOTAL()?
+6. Jak reaguje SUBTOTAL() na filtr?
+7. Jaký reporting mindset reprezentuje SUBTOTAL()?
+8. Proč je AGGREGATE() robustnější než běžné agregační funkce?
+
+✅ Odpovědi
+
+1. SUBTOTAL() umí reagovat na filtry a skryté řádky.
+2. Provede součet oblasti.
+3. Provede součet a ignoruje ručně skryté řádky.
+4. Sečte oblast C2:C20 a ignoruje skryté řádky i chyby.
+5. Když potřebujeme ignorovat chyby nebo mít větší kontrolu nad výpočtem.
+6. Ignoruje odfiltrované řádky.
+7. Dynamické reporty reagující na filtrovaná data.
+8. Protože zvládá ignorovat chyby, skryté řádky i vnořené agregace.
+
+---
+
+📘 Lekce 29 – Automatické souhrny dat
+
+❓ Otázky
+
+1. Proč musí být data před vytvořením souhrnů seskupena?
+2. Jakou funkci používá Excel při automatických souhrnech?
+3. Proč nedochází k dvojímu započítání mezisoučtů?
+4. Co dělá vzorec =POZVYHLEDAT(H1;A18:A28;0)?
+5. K čemu slouží Ověření dat → Seznam?
+6. Co znamená semi-dynamický reporting?
+7. K čemu slouží úrovně sbalení souhrnů?
+8. Jaké je riziko funkce Najít a nahradit?
+
+✅ Odpovědi
+
+1. Jinak by Excel vytvořil více chybných skupin souhrnů.
+2. SUBTOTAL().
+3. Protože SUBTOTAL() ignoruje jiné SUBTOTAL() funkce v oblasti.
+4. Vrátí pozici přesné shody hodnoty z H1 v oblasti A18:A28.
+5. K vytvoření dropdown seznamu v buňce.
+6. Uživatel mění parametr a report se automaticky přepočítá.
+7. K přepínání mezi detailním a souhrnným pohledem.
+8. Může nechtěně změnit jiné vzorce nebo data v listu.
+
+---
+
+📘 Lekce 30 – POSUN() a dynamické oblasti
+
+❓ Otázky
+
+1. Co vrací funkce POSUN()?
+2. Co dělá vzorec =POSUN(A1;2;1)?
+3. K čemu slouží funkce POČET2()?
+4. Proč je vzorec =POSUN(C1;0;0;POČET2(C:C);1) dynamický?
+5. Co znamená volatilní funkce?
+6. Proč se dnes často místo POSUN() používají Excel tabulky?
+7. Co dělá vzorec =SUMA(POSUN(B1;POČET2(B:B)-3;0;3;1))?
+8. Jaký je hlavní mindset celé lekce?
+
+✅ Odpovědi
+
+1. Odkaz na oblast buněk.
+2. Vrátí odkaz na buňku B3.
+3. Počítá neprázdné buňky.
+4. Výška oblasti se automaticky mění podle počtu dat.
+5. Přepočítává se při každé změně workbooku.
+6. Protože jsou jednodušší, rychlejší a automaticky expandují.
+7. Vrátí součet posledních 3 hodnot ve sloupci B.
+8. Dynamika a automatické přizpůsobování reportu datům.
