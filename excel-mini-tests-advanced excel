@@ -1279,3 +1279,63 @@ Zápis	Význam
 8. `=KDYŽ(NEBO(A(B2>10000;C2>5);D2="ano");"VIP";"STANDARD")`.
 9. Protože bez přesných limitů může analytik vytvořit jinou interpretaci.
 10. SQL `CASE WHEN` v kombinaci s `AND` a `OR`.
+
+---
+
+📘 Lekce 25 – Základní podmíněné formátování
+
+❓ Otázky
+
+1. K čemu slouží podmíněné formátování?
+2. Mění podmíněné formátování skutečnou hodnotu buňky?
+3. Proč se v podmíněném formátování většinou nepoužívá KDYŽ()?
+4. Co znamená vzorec =$B2>10 v podmíněném formátování?
+5. Kde lze spravovat pravidla podmíněného formátování?
+6. Co zobrazují datové pruhy?
+7. Jaký je rozdíl mezi běžným a podmíněným formátováním?
+8. Proč je u podmíněného formátování důležitá správná adresace?
+9. Co znamená absolutní oblast ve vzorci =PRŮMĚR($B$2:$B$13)?
+10. Jaký je rozdíl mezi relativním a absolutním odkazem v podmíněném formátování?
+
+✅ Odpovědi
+
+1. Slouží k automatickému zvýraznění buněk podle podmínky.
+2. Ne, mění pouze vzhled buňky.
+3. Protože samotný vzorec už vrací PRAVDA nebo NEPRAVDA.
+4. Excel vyhodnocuje každou buňku ve sloupci B a zvýrazní hodnoty větší než 10.
+5. Domů → Podmíněné formátování → Spravovat pravidla.
+6. Relativní velikost hodnot vůči ostatním hodnotám v oblasti.
+7. Běžné formátování je statické, podmíněné reaguje na data.
+8. Protože Excel vzorec vyhodnocuje pro každou buňku zvlášť.
+9. Oblast výpočtu průměru zůstává fixní.
+10. Relativní odkaz se při vyhodnocování posouvá, absolutní zůstává pevný.
+
+---
+
+📘 Lekce 26 – Vlastní pravidla podmíněného formátování
+
+❓ Otázky
+
+1. Jaký je hlavní rozdíl mezi základním pravidlem a pravidlem se vzorcem?
+2. Co znamená vzorec =$E3=MIN($E$3:$E$5)?
+3. Proč se při zvýraznění nejlepšího a nejhoršího výsledku používá NEBO()?
+4. Co dělá vzorec =ZLEVA($D3;1)*1=4?
+5. Co vrátí funkce HLEDAT()?
+6. Proč je někdy potřeba převádět text na číslo pomocí *1?
+7. Jak zvýrazníš celý řádek podle hodnoty v jednom sloupci?
+8. Co znamená vzorec =A($D2<0,2;$E2>3)?
+9. Jaký je rozdíl mezi $E3 a $E$3?
+10. Proč je podmíněné formátování užitečné v reportingu?
+
+✅ Odpovědi
+
+1. Vlastní vzorec umožňuje složitější logiku a práci s jinými sloupci.
+2. Zvýrazní řádek s nejnižší hodnotou ve sloupci E.
+3. Protože stačí splnit jednu z podmínek.
+4. Vezme první znak z textu, převede ho na číslo a porovná s hodnotou 4.
+5. Pozici hledaného textu v řetězci.
+6. Protože textové funkce vrací text, ne číslo.
+7. Označíš celou tabulku a použiješ vzorec s relativním řádkem.
+8. Zvýrazní řádek, pokud je marže menší než 20 % a reklamace větší než 3.
+9. $E3 má fixní sloupec, $E$3 má fixní sloupec i řádek.
+10. Protože umožňuje rychle vizuálně identifikovat důležité informace a problémy.
