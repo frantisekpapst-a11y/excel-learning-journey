@@ -1,0 +1,225 @@
+Kvízové otázky kurzu Datová analýza od A do Z - část Excel pokročilý
+
+Posledních 15 otázek jsou otázky ze závěrečného testu části Excel pokročilý.
+
+📂 VBA, prostředí Excelu a klávesové zkratky
+
+Programovací jazyk pro Excel má zkratku:
+
+VB
+VBA
+VBY
+VBE
+
+✅ Správná odpověď: VBA
+
+Nativní doplněk Excelu sloužící k řešení optimalizačních úloh se nazývá:
+
+optimalizátor
+kalkulátor
+řešitel
+rádce
+
+✅ Správná odpověď: řešitel
+
+Souvislý blok buněk můžeme vybrat pomocí kombinace kláves:
+
+Ctrl + Shift + A
+Shift + mezerník
+Ctrl + Shift + mezerník
+Ctrl + mezerník
+
+✅ Správná odpověď: Ctrl + Shift + mezerník
+
+Ovládání pásu karet pomocí klávesnice (bez myši) začneme stiskem klávesy:
+
+pravý Alt
+pravý Shift
+levý Ctrl
+levý Alt
+
+✅ Správná odpověď: levý Alt
+
+Funkci Najít a nahradit spustíme kombinací kláves:
+
+Ctrl + U
+Ctrl + H
+Ctrl + I
+Ctrl + G
+
+✅ Správná odpověď: Ctrl + H
+
+Ke kopírování hodnoty či vzorce aktivní buňky do bezprostředně sousedící souvislé oblasti můžeme využít myš a:
+
+zelený čtvereček vpravo dole aktivní buňky
+zelený čtvereček vlevo dole aktivní buňky
+zelený čtvereček vpravo nahoře aktivní buňky
+zelený čtvereček vlevo nahoře aktivní buňky
+
+✅ Správná odpověď: zelený čtvereček vpravo dole aktivní buňky
+
+K tvorbě automatizovaných procedur můžeme využít:
+
+záznamník funkcí
+stisku kláves Alt + X +Y
+nahrávač pohybu
+nahrávač maker
+
+✅ Správná odpověď: nahrávač maker
+
+Z levé horní buňky souvislé oblasti do levé dolní buňky této oblasti se dostaneme kombinací kláves:
+
+Ctrl + →
+Ctrl + End
+Ctrl + Home
+Ctrl + ↓
+
+✅ Správná odpověď: Ctrl + ↓
+
+📘 Listy, oblasti a pojmenování
+
+Vzorec =SUMA('List1:List5'!A1) sečte hodnoty buňky A1:
+
+na listech List1 až List5
+na listech List1 a List5
+na listech List1 až List4
+na listech List2, List3, List4
+
+✅ Správná odpověď: na listech List1 až List5
+
+Vyber správné tvrzení o viditelnosti listů v Excelu:
+
+Zcela skrytý list lze zobrazit pouze přes VBA
+Excel umožňuje skrýt všechny listy v sešitu
+Skrytý i zcela skrytý list lze zobrazit z nabídky Zobrazit
+Zcela skrytý list se používá jen ve starých verzích Excelu
+
+✅ Správná odpověď: Zcela skrytý list lze zobrazit pouze přes VBA
+
+Nesouvislé oblasti buněk můžete vybrat myší tak, že držíte klávesu:
+
+Shift
+F2
+Ctrl
+Alt
+
+✅ Správná odpověď: Ctrl
+
+Můžeme změnit barvu oušek více vybraných listů najednou?
+
+jen na červenou barvu
+ano
+jen barvu písma
+ne
+
+✅ Správná odpověď: ano
+
+Můžeme pojmenované oblasti využít při zadávání funkcí?
+
+nikdy
+jen, když je funkce na stejném listu jako pojmenovaná oblast
+jen, když to Excelu povolíme
+ano
+
+✅ Správná odpověď: ano
+
+Pro přepínání mezi listy můžeme použít kombinace kláves:
+
+Shift + Page Up nebo Shift + Page Down
+Alt + Page Up nebo Alt + Page Down
+Ctrl + Page Up nebo Ctrl + Page Down
+Ctrl + Home nebo Ctrl + End
+
+✅ Správná odpověď: Ctrl + Page Up nebo Ctrl + Page Down
+
+Mohou mít dva listy v jednom souboru (sešitu) stejný název?
+
+ne
+jen v anglické mutaci Excelu
+jen, pokud to Excelu povolíme
+ano
+
+✅ Správná odpověď: ne
+
+Jaké je správné pojmenování oblasti?
+
+tržby za zboží
+oblast dat
+data_prodej
+údaje o prodeji
+
+✅ Správná odpověď: data_prodej
+
+📘 Vzorce a adresace
+
+Do buňky B3 umístíme vzorec =A1+A2, který následně překopírujeme do buňky A3 na stejném listu. Jaký bude výsledek?
+
+objeví se chybové hlášení #ODKAZ!
+Excel nedovolí zkopírovat tento vzorec
+sečtou se hodnoty buněk XFD1 a XFD2
+sečtou se hodnoty buněk A1 a A2
+
+✅ Správná odpověď: sečtou se hodnoty buněk XFD1 a XFD2
+
+V buňce A1 je umístěno slovo jméno a v B1 slovo příjmení. Do buňky C1 umístíme vzorec =A1&" a "&B1. Jaký bude výsledek?
+
+jméno příjmení
+jménoapříjmení
+jménopříjmení
+jméno a příjmení
+
+✅ Správná odpověď: jméno a příjmení
+
+Chceme-li do buňky B1 zapsat vzorec, který po zkopírování dolů do buněk B2:B5 postupně násobí hodnotu ze sloupce A1 až A5 buňkou C1, použijeme vzorec:
+
+=$A$1*C$1
+=A1*C$1
+=+A*C$1
+=+A1*C1
+
+✅ Správná odpověď: =A1*C$1
+
+Ke sloučení dvou textových řetězců použijeme textový operátor:
+
+součin *
+ampersand &
+součet +
+rozdíl -
+
+✅ Správná odpověď: ampersand &
+
+Pro oddělení argumentů funkce použijeme znak:
+
+dvojtečka :
+čárka ,
+tečka .
+středník ;
+
+✅ Správná odpověď: středník ;
+
+Co sečte vzorec =SUMA(B1:B5;A1:B2)?
+
+buňky B1 až B5 bez buněk A1 až B2
+buňky B1 až B5 a A1 až B2
+buňky B1 a B2
+buňky A1 až B2 bez buněk B1 až B5
+
+✅ Správná odpověď: buňky B1 až B5 a A1 až B2
+
+K označení celé oblasti ve vzorci se používá znak:
+
+středník ;
+čárka ,
+tečka .
+dvojtečka :
+
+✅ Správná odpověď: dvojtečka :
+
+Do buňky B3 umístíme vzorec =$A$1+$A$2, který následně překopírujeme do buňky A3 na stejném listu. Jaký bude výsledek?
+
+sečtou se hodnoty buněk A1 a A2
+Excel nedovolí zkopírovat tento vzorec
+objeví se chybové hlášení #ODKAZ!
+sečtou se hodnoty buněk XFD1 a XFD2
+
+✅ Správná odpověď: sečtou se hodnoty buněk A1 a A2
