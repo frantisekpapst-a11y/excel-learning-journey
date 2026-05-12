@@ -622,13 +622,321 @@ AVG()	AVERAGEIF() / AVERAGEIFS()
 JOIN	SVYHLEDAT() / XLOOKUP()
 DISTINCT	Bez duplicitních záznamů
 
-🚀 Cíl
+🎨 41. Podmíněné formátování pomocí vzorců
+Zvýraznění celé řady
+=$E2>10000
 
-Nepracovat:
+Použití:
 
-víc
+označit celý řádek podle jedné hodnoty
+KPI alerty
+reporting
+dashboardy
+
+Princip:
+
+označíš celou tabulku
+vzorec se vyhodnocuje pro první řádek oblasti
+relativní řádek = posouvá se
+Nejvyšší / nejnižší hodnota
+=$E2=MAX($E$2:$E$20)
+=$E2=MIN($E$2:$E$20)
+
+Použití:
+
+best performer
+nejhorší výsledek
+top sales
+lowest margin
+Kombinace více podmínek
+AND logika
+=A($D2<0,2;$E2>3)
+
+Význam:
+
+marže < 20 %
+A ZÁROVEŇ reklamace > 3
+OR logika
+=NEBO($E2=MIN($E$2:$E$20);$E2=MAX($E$2:$E$20))
+
+Význam:
+
+nejlepší NEBO nejhorší výsledek
+Textové podmínky
+HLEDAT
+=HLEDAT(4;$D2)=1
+
+Vrací:
+
+pozici textu
+ZLEVA
+=ZLEVA($D2;1)*1=4
+
+Postup:
+
+vezme první znak
+převede text na číslo
+porovná s hodnotou 4
+BI mindset
+
+Podmíněné formátování:
+
+není jen design
+je to alerting systém
+zvýrazňuje problémy
+zrychluje interpretaci dashboardu
+
+🔢 42. ZVOLIT() a INDEX()
+ZVOLIT()
+
+Syntaxe:
+
+=ZVOLIT(index;hodnota1;hodnota2;...)
+
+Příklad:
+
+=ZVOLIT(2;"LOW";"MEDIUM";"HIGH")
+
+Výsledek:
+
+MEDIUM
+INDEX()
+
+Syntaxe:
+
+=INDEX(oblast;řádek;sloupec)
+
+Příklad:
+
+=INDEX(A1:C10;3;2)
+
+Vrací:
+
+hodnotu ze 3. řádku
+a 2. sloupce
+Vrácení celého sloupce
+=INDEX(B2:D20;0;2)
+
+Význam:
+
+0 v argumentu řádek
+vrátí celý 2. sloupec
+Vrácení celého řádku
+=INDEX(A2:D20;5;0)
+
+Význam:
+
+vrátí celý 5. řádek
+INDEX + POZVYHLEDAT = profesionální lookup
+=INDEX(B2:B10;POZVYHLEDAT(E2;A2:A10;0))
+
+Výhody:
+
+lookup doleva
+stabilní při změně sloupců
+flexibilnější než SVYHLEDAT
+BI mindset
+
+INDEX():
+
+vybírá data dynamicky
+odděluje logiku hledání a vrácení hodnoty
+je základ robustních lookupů
+
+🧮 43. SUBTOTAL() a AGGREGATE()
+SUBTOTAL()
+
+Syntaxe:
+
+=SUBTOTAL(konstanta;oblast)
+Nejčastější konstanty
+Konstanta	Význam
+1	PRŮMĚR
+2	COUNT
+4	MAX
+5	MIN
+9	SUMA
+109	SUMA bez skrytých řádků
+Součet s ignorováním skrytých řádků
+=SUBTOTAL(109;C2:C20)
+AGGREGATE()
+
+Syntaxe:
+
+=AGGREGATE(funkce;možnosti;oblast)
+Příklad
+=AGGREGATE(9;7;C2:C20)
+
+Význam:
+
+9 = SUMA
+7 = ignoruj:
+skryté řádky
+chyby
+vnořené agregace
+Rozdíl SUMA vs SUBTOTAL
+Funkce	Filtr	Skryté řádky	Chyby
+SUMA	❌	❌	❌
+SUBTOTAL	✅	částečně	❌
+AGGREGATE	✅	✅	✅
+BI mindset
+
+SUBTOTAL():
+
+reaguje na filtr
+ideální pro interaktivní reporting
+
+AGGREGATE():
+
+robustní reporting nad nečistými daty
+
+📑 44. Automatické souhrny dat
+Souhrny
+
+Data → Přehled → Souhrn
+
+Excel automaticky:
+
+vloží mezisoučty
+vytvoří SUBTOTAL()
+vytvoří sbalovací hierarchii
+Podmínka správného fungování
+
+Data musí být:
+
+seskupena
+seřazena podle kategorií
+Celkový součet více oblastí
+=SUBTOTAL(9;C2:C13;D2:D13;E2:E13)
+
+Výhoda:
+
+ignoruje mezisoučty uvnitř oblasti
+Dynamická změna výpočtu
+
+Dropdown:
+
+Součet
+Průměr
+Maximum
+Minimum
+
+Lookup pozice:
+
+=POZVYHLEDAT(H1;A18:A28;0)
+
+Použití:
+
+dynamický reporting
+user-driven dashboard
+Ověření dat
+
+Data → Ověření dat → Seznam
+
+Použití:
+
+dropdowny
+řízení parametrů reportu
+omezení chyb uživatele
+BI mindset
+
+Souhrny:
+
+vytváří hierarchii reportu
+umožňují drill-down analýzu
+oddělují detail a management overview
+
+🔄 45. POSUN() a dynamické oblasti
+POSUN()
+
+Syntaxe:
+
+=POSUN(odkaz;řádky;sloupce;výška;šířka)
+Jednoduchý posun
+=POSUN(A1;2;1)
+
+Výsledek:
+
+vrátí odkaz na B3
+Dynamická oblast
+=POSUN(C1;0;0;POČET2(C:C);1)
+
+Význam:
+
+oblast se automaticky rozšiřuje
+podle počtu hodnot ve sloupci
+Dynamický dropdown
+
+Použití:
+
+ověření dat
+automatické seznamy
+dashboard filtry
+Součet posledních X hodnot
+=SUMA(POSUN(B1;POČET2(B:B)-E1;0;E1;1))
+
+Význam:
+
+E1 = počet posledních hodnot
+dynamický rolling calculation
+Volatilní funkce
+
+POSUN() je volatilní:
+
+přepočítává se při každé změně sešitu
+u velkých souborů může zpomalovat Excel
+
+Alternativa:
+
+INDEX()
+Excel tabulky
+dynamická pole
+BI mindset
+
+Dynamické oblasti:
+
+automaticky reagují na nová data
+minimalizují manuální údržbu reportů
+jsou základ automatizovaných dashboardů
+🧠 46. Excel Advanced – Celkový mindset
+Junior analytik workflow
+RAW DATA
+↓
+Excel Table
+↓
+Čištění dat
+↓
+Lookupy
+↓
+Agregace
+↓
+Podmíněná logika
+↓
+Souhrny
+↓
+Dashboard
+↓
+Power BI
+Nejčastější reálné kombinace
+Lookup + IFERROR
+=IFERROR(XLOOKUP(A2;Tabulka[ID];Tabulka[Jméno]);"Nenalezeno")
+INDEX + MATCH + Dashboard
+=INDEX(Data[Tržba];POZVYHLEDAT(H2;Data[Produkt];0))
+SUMIFS + datumové podmínky
+=SUMIFS(D:D;A:A;">="&H1;A:A;"<="&H2)
+KPI alert
+=A([@Marže]<0,2;[@Reklamace]>3)
+
+→ použito v podmíněném formátování
+
+🚀 Cíl advanced Excelu
+
+Neumět jen vzorce.
 
 Ale:
 
-chytřeji
-
+automatizovat reporting
+minimalizovat ruční práci
+vytvářet robustní modely
+přemýšlet datově
+připravovat data pro Power BI a SQL
