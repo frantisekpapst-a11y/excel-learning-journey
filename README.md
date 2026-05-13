@@ -123,7 +123,7 @@ SQL → Excel → Power BI workflow
 ✅ Lekce 29: Automatické souhrny dat
 ✅ Lekce 30: POSUN() a dynamické oblasti
 
-🔄 Opakování + závěrečný test
+🔄 Opakování + závěrečný test (88 %)
 
 📊 Case Studies
 
