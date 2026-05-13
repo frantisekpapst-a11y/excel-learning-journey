@@ -208,143 +208,39 @@
 
 ## ❓ Otázky
 
-### 1.
-Co znamená relativní adresování?
-
-### 2.
-Co znamená smíšené adresování?
-
-### 3.
-Co znamená odkaz:
-
-```excel
-$A1
-```
-
-### 4.
-Co znamená odkaz:
-
-```excel
-A$1
-```
-
-### 5.
-Kdy použiješ smíšené adresování?
-
-### 6.
-Co dělá klávesa F4 při editaci vzorce?
-
-### 7.
-Proč musíš být při použití F4 v režimu úprav vzorce?
-
-### 8.
-Proč je `Ctrl + Enter` vhodné pro hromadné vyplnění vzorců?
-
-### 9.
-Jaký je rozdíl mezi fill handlem a `Ctrl + Enter`?
-
-### 10.
-Co jsou argumenty funkce?
-
-### 11.
-Jaké argumenty má funkce:
-
-```excel
-=KDYŽ(podmínka;ano;ne)
-```
-
-### 12.
-Co vrátí vzorec:
-
-```excel
-=KDYŽ(B2>100;"splněno";"nesplněno")
-```
-
-pokud je v B2 hodnota 150?
-
-### 13.
-Co udělá funkce:
-
-```excel
-=ZLEVA("Excel";2)
-```
-
-### 14.
-Co se stane, když u funkce ZLEVA vynecháš druhý argument?
-
-### 15.
-Jaký vzorec použiješ, pokud chceš v B1 násobit A1 hodnotou z C1 a kopírovat dolů tak, aby se měnilo A1:A5, ale C1 zůstala fixní?
-
----
+1. Co znamená relativní adresování?
+2. Co znamená smíšené adresování?
+3. Co znamená odkaz $A1?
+4. Co znamená odkaz A$1?
+5. Kdy použiješ smíšené adresování?
+6. Co dělá klávesa F4 při editaci vzorce?
+7. Proč musíš být při použití F4 v režimu úprav vzorce?
+8. Proč je `Ctrl + Enter` vhodné pro hromadné vyplnění vzorců?
+9. Jaký je rozdíl mezi fill handlem a `Ctrl + Enter`?
+10. Co jsou argumenty funkce?
+11. Jaké argumenty má funkce =KDYŽ(podmínka;ano;ne)?
+12. Co vrátí vzorec =KDYŽ(B2>100;"splněno";"nesplněno") pokud je v B2 hodnota 150?
+13. Co udělá funkce =ZLEVA("Excel";2)?
+14. Co se stane, když u funkce ZLEVA vynecháš druhý argument?
+15. Jaký vzorec použiješ, pokud chceš v B1 násobit A1 hodnotou z C1 a kopírovat dolů tak, aby se měnilo A1:A5, ale C1 zůstala fixní?
 
 # ✅ Odpovědi
 
-### 1.
-Relativní adresování znamená, že se odkaz při kopírování vzorce mění podle nové pozice.
-
-### 2.
-Smíšené adresování znamená, že je fixní jen část odkazu — buď řádek, nebo sloupec.
-
-### 3.
-`$A1` znamená fixní sloupec A, řádek se mění.
-
-### 4.
-`A$1` znamená fixní řádek 1, sloupec se mění.
-
-### 5.
-Když se vzorec kopíruje více směry a potřebuju zamknout jen řádek nebo jen sloupec.
-
-### 6.
-Přepíná typ adresace:
-
-```excel
-A1 → $A$1 → A$1 → $A1 → A1
-```
-
-### 7.
-Protože Excel musí vědět, který odkaz ve vzorci má upravit.
-
-### 8.
-Protože vloží vzorec do více buněk bez kopírování formátu.
-
-### 9.
-Fill handle kopíruje vzorec i formát.  
-`Ctrl + Enter` kopíruje jen vzorec/obsah do vybrané oblasti.
-
-### 10.
-Argumenty jsou vstupy funkce, tedy hodnoty, buňky nebo oblasti, se kterými funkce pracuje.
-
-### 11.
-Funkce `KDYŽ()` má tři hlavní argumenty:
-- podmínka
-- hodnota pokud ANO
-- hodnota pokud NE
-
-### 12.
-Vrátí:
-
-```text
-splněno
-```
-
-protože 150 je větší než 100.
-
-### 13.
-Vrátí:
-
-```text
-Ex
-```
-
-### 14.
-Vrátí první znak textu, protože výchozí hodnota argumentu počet znaků je 1.
-
-### 15.
-Správný vzorec:
-
-```excel
-=A1*C$1
-```
+1. Relativní adresování znamená, že se odkaz při kopírování vzorce mění podle nové pozice.
+2. Smíšené adresování znamená, že je fixní jen část odkazu — buď řádek, nebo sloupec.
+3. `$A1` znamená fixní sloupec A, řádek se mění.
+4. `A$1` znamená fixní řádek 1, sloupec se mění.
+5. Když se vzorec kopíruje více směry a potřebuju zamknout jen řádek nebo jen sloupec.
+6. Přepíná typ adresace A1 → $A$1 → A$1 → $A1 → A1.
+7. Protože Excel musí vědět, který odkaz ve vzorci má upravit.
+8. Protože vloží vzorec do více buněk bez kopírování formátu.
+9. Fill handle kopíruje vzorec i formát.`Ctrl + Enter` kopíruje jen vzorec/obsah do vybrané oblasti.
+10. Argumenty jsou vstupy funkce, tedy hodnoty, buňky nebo oblasti, se kterými funkce pracuje.
+11. Funkce `KDYŽ()` má tři hlavní argumenty podmínka, hodnota pokud ANO, hodnota pokud NE.
+12. Vrátí splněno, protože 150 je větší než 100.
+13. Vrátí Ex.
+14. Vrátí první znak textu, protože výchozí hodnota argumentu počet znaků je 1.
+15. Správný vzorec =A1*C$1.
 
 ---
 
@@ -352,516 +248,127 @@ Správný vzorec:
 
 ## ❓ Otázky
 
-### 1.
-Co znamená vnořování funkcí?
+1. Co znamená vnořování funkcí?
+2. Co se vyhodnotí první ve vzorci =ZAOKROUHLIT(PRŮMĚR(A1:A5);0)?
+3. Jaký je hlavní problém dlouhých vnořených funkcí KDYŽ?
+4. K čemu slouží funkce IFS?
+5. Jaký je rozdíl mezi vnořeným KDYŽ a IFS?
+6. Co znamená relační operátor <>?
+7. K čemu slouží operátor :?
+8. K čemu slouží operátor ;?
+9. Co udělá textový operátor &?
+10. Co udělá vzorec =A1&" "&B1?
+11. Jaký je rozdíl mezi zástupnými znaky * a ??
+12. Co je maticový vzorec?
+13. Co udělá vzorec =B2:B6*C2:C6?
+14. Co dělá funkce TRANSPOZICE?
+15. Jaký je rozdíl mezi TRANSPOZICE() a příkazem Vložit jinak → Transponovat?
+16. Jak funguje kumulativní součet =SUMA($C$3:C3)?
+17. Která část odkazu je ve vzorci =SUMA($C$3:C3) fixní?
+18. K čemu se v businessu používají kumulativní výpočty?
 
-### 2.
-Co se vyhodnotí první ve vzorci:
+## ✅ Odpovědi
 
-```excel
-=ZAOKROUHLIT(PRŮMĚR(A1:A5);0)
-```
-
-### 3.
-Jaký je hlavní problém dlouhých vnořených funkcí KDYŽ?
-
-### 4.
-K čemu slouží funkce IFS?
-
-### 5.
-Jaký je rozdíl mezi vnořeným KDYŽ a IFS?
-
-### 6.
-Co znamená relační operátor:
-
-```excel
-<>
-```
-
-### 7.
-K čemu slouží operátor:
-
-```excel
-:
-```
-
-### 8.
-K čemu slouží operátor:
-
-```excel
-;
-```
-
-### 9.
-Co udělá textový operátor:
-
-```excel
-&
-```
-
-### 10.
-Co udělá vzorec:
-
-```excel
-=A1&" "&B1
-```
-
-### 11.
-Jaký je rozdíl mezi zástupnými znaky `*` a `?`?
-
-### 12.
-Co je maticový vzorec?
-
-### 13.
-Co udělá vzorec:
-
-```excel
-=B2:B6*C2:C6
-```
-
-### 14.
-Co dělá funkce TRANSPOZICE?
-
-### 15.
-Jaký je rozdíl mezi `TRANSPOZICE()` a příkazem Vložit jinak → Transponovat?
-
-### 16.
-Jak funguje kumulativní součet:
-
-```excel
-=SUMA($C$3:C3)
-```
-
-### 17.
-Která část odkazu je ve vzorci fixní?
-
-```excel
-=SUMA($C$3:C3)
-```
-
-### 18.
-K čemu se v businessu používají kumulativní výpočty?
+1. Vnořování funkcí znamená, že výsledek jedné funkce slouží jako vstup pro jinou funkci.
+2. Nejdříve se vyhodnotí PRŮMĚR(A1:A5), potom se výsledek zaokrouhlí funkcí ZAOKROUHLIT().
+3. Jsou nepřehledné, hůře se kontrolují a snadno v nich vznikají chyby.
+4. IFS slouží k vyhodnocení více podmínek bez složitého vnořování KDYŽ.
+5. Vnořené KDYŽ používá více funkcí KDYŽ uvnitř sebe. IFS zapisuje více podmínek přehledněji za sebou.
+6. <> znamená nerovná se.
+7. Dvojtečka : označuje souvislou oblast buněk, například A1:A10.
+8. Středník ; odděluje jednotlivé argumenty funkce.
+9. Ampersand & spojuje texty.
+10. Spojí obsah buněk A1 a B1 s mezerou mezi nimi.
+11. * zastupuje libovolný počet znaků, ? zastupuje právě jeden znak.
+12. Maticový vzorec zpracovává více hodnot nebo oblastí najednou.
+13. Vynásobí odpovídající buňky po řádcích: B2C2, B3C3, B4C4, B5C5, B6*C6.
+14. TRANSPOZICE převádí řádky na sloupce nebo sloupce na řádky.
+15. TRANSPOZICE() je dynamická a zůstává propojená se zdrojovými daty. Vložit jinak → Transponovat vytvoří statický výsledek.
+16. Začátek oblasti $C$3 zůstává fixní, konec C3 se při kopírování posouvá dolů.
+17. Fixní část je $C$3.
+18. Používají se například pro kumulativní tržby, YTD revenue, cash flow, budget tracking, forecast progression a running totals.
 
 ---
 
-# ✅ Odpovědi
-
-### 1.
-Vnořování funkcí znamená, že výsledek jedné funkce slouží jako vstup pro jinou funkci.
-
-### 2.
-Nejdříve se vyhodnotí:
-
-```excel
-PRŮMĚR(A1:A5)
-```
-
-Potom se výsledek zaokrouhlí funkcí `ZAOKROUHLIT()`.
-
-### 3.
-Jsou nepřehledné, hůře se kontrolují a snadno v nich vznikají chyby.
-
-### 4.
-IFS slouží k vyhodnocení více podmínek bez složitého vnořování KDYŽ.
-
-### 5.
-Vnořené KDYŽ používá více funkcí KDYŽ uvnitř sebe.  
-IFS zapisuje více podmínek přehledněji za sebou.
-
-### 6.
-`<>` znamená nerovná se.
-
-### 7.
-Dvojtečka `:` označuje souvislou oblast buněk.
-
-Příklad:
-
-```excel
-A1:A10
-```
-
-### 8.
-Středník `;` odděluje jednotlivé argumenty funkce.
-
-Příklad:
-
-```excel
-=SUMA(A1;A3;A5)
-```
-
-### 9.
-Ampersand `&` spojuje texty.
-
-### 10.
-Spojí obsah buněk A1 a B1 s mezerou mezi nimi.
-
-Například:
-
-```text
-Jan Novák
-```
-
-### 11.
-`*` zastupuje libovolný počet znaků.  
-`?` zastupuje právě jeden znak.
-
-### 12.
-Maticový vzorec zpracovává více hodnot nebo oblastí najednou.
-
-### 13.
-Vynásobí odpovídající buňky po řádcích:
-
-```text
-B2*C2
-B3*C3
-B4*C4
-B5*C5
-B6*C6
-```
-
-### 14.
-TRANSPOZICE převádí řádky na sloupce nebo sloupce na řádky.
-
-### 15.
-`TRANSPOZICE()` je dynamická a zůstává propojená se zdrojovými daty.  
-Vložit jinak → Transponovat vytvoří statický výsledek.
-
-### 16.
-Začátek oblasti `$C$3` zůstává fixní, konec `C3` se při kopírování posouvá dolů.
-
-### 17.
-Fixní část je:
-
-```excel
-$C$3
-```
-
-### 18.
-Používají se například pro:
-- kumulativní tržby
-- YTD revenue
-- cash flow
-- budget tracking
-- forecast progression
-- running totals
-
-📘 Lekce 10 – Podmíněné výpočty a logika v Excelu
-❓ Otázky
-1.
-
-K čemu slouží funkce KDYŽ()?
-
-2.
-
-Jak vypadá základní syntaxe funkce KDYŽ()?
-
-3.
-
-Co je logický test?
-
-4.
-
-Co vrátí výraz:
-
-=A1=B1
-
-pokud jsou hodnoty stejné?
-
-5.
-
-Proč může Excel vrátit NEPRAVDA, i když buňky vypadají stejně?
-
-6.
-
-Co vrátí výraz:
-
-="Adam"<"Bohuslav"
-7.
-
-Kdy je vhodné použít funkci IFS()?
-
-8.
-
-Kdy je vhodná funkce SWITCH()?
-
-9.
-
-Kdy je vhodná funkce ZVOLIT()?
-
-10.
-
-Co se stane, když je index ve funkci ZVOLIT() mimo rozsah?
-
-11.
-
-Jak lze ošetřit chybu ve funkci ZVOLIT()?
-
-12.
-
-Jaký je rozdíl mezi:
-
-obsahem buňky
-zobrazením buňky
-13.
-
-Co udělá vzorec:
-
-=KDYŽ(A2>0;"kladné";"nekladné")
-
-pokud je v A2 hodnota -5?
-
-14.
-
-Jaký je hlavní problém dlouhých vnořených KDYŽ()?
-
-15.
-
-Napiš vzorec, který:
-
-vrátí "VIP" pokud je tržba > 100000
-"MID" pokud je > 50000
-jinak "LOW"
-
-pomocí:
-
-vnořeného KDYŽ()
-IFS()
-✅ Odpovědi
-1.
-
-Slouží k rozhodování podle podmínky.
-
-2.
-=KDYŽ(podmínka;hodnota_když_ano;hodnota_když_ne)
-3.
-
-Výraz, který Excel vyhodnotí jako:
-
-PRAVDA
-NEPRAVDA
-4.
-PRAVDA
-5.
-
-Protože Excel porovnává skutečný obsah buněk, ne jen jejich vizuální zobrazení.
-
-6.
-PRAVDA
-
-Protože "Adam" je v abecedě před "Bohuslav".
-
-7.
-
-Když potřebujeme vyhodnotit více podmínek přehledněji než pomocí vnořených KDYŽ().
-
-8.
-
-Když porovnáváme jednu hodnotu s více konkrétními variantami.
-
-9.
-
-Když vybíráme hodnotu podle číselného indexu nebo pořadí.
-
-10.
-
-Excel vrátí chybu:
-
-#HODNOTA!
-11.
-
-Například pomocí:
-
-=KDYŽCHYBHODN(ZVOLIT(...);"výchozí hodnota")
-
-nebo:
-
-=IFERROR(ZVOLIT(...);"výchozí hodnota")
-12.
-Typ	Význam
-Obsah buňky	skutečná uložená hodnota
-Zobrazení buňky	formátovaná vizuální podoba
-13.
-nekladné
-14.
-
-Vzorce jsou:
-
-nepřehledné
-těžko debugovatelné
-náchylné k chybám
-15.
-Vnořené KDYŽ()
-=KDYŽ(A1>100000;"VIP";KDYŽ(A1>50000;"MID";"LOW"))
-IFS()
-=IFS(A1>100000;"VIP";A1>50000;"MID";A1<=50000;"LOW")
-
-📘 Lekce 11 – Logické operátory v Excelu
-❓ Otázky
-1.
-
-Co znamená logický operátor A (AND)?
-
-2.
-
-Kdy vrátí logika A hodnotu PRAVDA?
-
-3.
-
-Co znamená logický operátor NEBO (OR)?
-
-4.
-
-Kdy vrátí logika NEBO hodnotu PRAVDA?
-
-5.
-
-Co znamená XOR logika?
-
-6.
-
-Kdy vrátí XOR hodnotu PRAVDA?
-
-7.
-
-Proč se používají logické operátory místo dlouhého vnořování?
-
-8.
-
-Co vrátí IFERROR(), pokud vzorec skončí chybou?
-
-9.
-
-Jaký je rozdíl mezi:
-
-IFS()
-IFERROR()
-10.
-
-Proč je důležité ošetřovat chyby v reportech?
-
-11.
-
-Napiš vzorec, který vrátí:
-
-"BONUS" pokud:
-tržba > 100000
-a marže > 20 %
-jinak "NO BONUS"
-12.
-
-Co znamená tento zápis?
-
-(B2>100000)*(C2>0,2)
-13.
-
-Proč u logiky OR používáme:
-
->0
-14.
-
-Jak poznáš ve vzorci XOR logiku?
-
-15.
-
-Jaký je rozdíl mezi:
-
-=1
-
-a
-
->0
-
-u logických součtů?
-
-✅ Odpovědi
-1.
-
-Že musí být splněny všechny podmínky současně.
-
-2.
-
-Pouze když jsou všechny podmínky pravdivé.
-
-3.
-
-Že stačí splnit alespoň jednu podmínku.
-
-4.
-
-Když je pravdivá:
-
-první podmínka
-druhá podmínka
-nebo obě současně
-5.
-
-Že musí být splněna právě jedna podmínka.
-
-6.
-
-Když je splněna:
-
-podmínka 1
-nebo podmínka 2
-ale ne obě současně
-7.
-
-Protože:
-
-zkracují vzorce
-zvyšují přehlednost
-zjednodušují debugging
-8.
-
-Vrátí náhradní hodnotu místo chyby.
-
-Například:
-
-=IFERROR(B2/C2;"chyba")
-9.
-Funkce	Použití
-IFS()	více podmínek
-IFERROR()	ošetření chyb
-10.
-
-Protože:
-
-chyby kazí reporting
-rozbíjí dashboardy
-zhoršují čitelnost dat
-11.
-=KDYŽ((B2>100000)*(C2>0,2);"BONUS";"NO BONUS")
-12.
-
-Excel:
-
-vyhodnotí obě podmínky
-PRAVDA = 1
-NEPRAVDA = 0
-
-Násobení tedy funguje jako logické AND.
-
-13.
-
-Protože:
-
-OR může vrátit:
-1
-nebo 2
-potřebujeme tedy ověřit, že výsledek je větší než 0
-14.
-
-Součet podmínek musí být přesně:
-
-=1
-
-Například:
-
-(A1>0)+(B1>0)=1
-15.
-Zápis	Význam
-=1	právě jedna podmínka
->0	alespoň jedna podmínka
+# 📘 Lekce 10 – Podmíněné výpočty a logika v Excelu
+
+## ❓ Otázky
+
+1. K čemu slouží funkce KDYŽ()?
+2. Jak vypadá základní syntaxe funkce KDYŽ()?
+3. Co je logický test?
+4. Co vrátí výraz =A1=B1, pokud jsou hodnoty stejné?
+5. Proč může Excel vrátit NEPRAVDA, i když buňky vypadají stejně?
+6. Co vrátí výraz ="Adam"<"Bohuslav"?
+7. Kdy je vhodné použít funkci IFS()?
+8. Kdy je vhodná funkce SWITCH()?
+9. Kdy je vhodná funkce ZVOLIT()?
+10. Co se stane, když je index ve funkci ZVOLIT() mimo rozsah?
+11. Jak lze ošetřit chybu ve funkci ZVOLIT()?
+12. Jaký je rozdíl mezi obsahem buňky a zobrazením buňky?
+13. Co udělá vzorec =KDYŽ(A2>0;"kladné";"nekladné"), pokud je v A2 hodnota -5?
+14. Jaký je hlavní problém dlouhých vnořených KDYŽ()?
+15. Jak vypadá vzorec pro VIP/MID/LOW pomocí vnořeného KDYŽ()?
+16. Jak vypadá stejný vzorec pomocí IFS()?
+
+## ✅ Odpovědi
+
+1. Slouží k rozhodování podle podmínky.
+2. =KDYŽ(podmínka;hodnota_když_ano;hodnota_když_ne)
+3. Výraz, který Excel vyhodnotí jako PRAVDA nebo NEPRAVDA.
+4. PRAVDA.
+5. Protože Excel porovnává skutečný obsah buněk, ne jen jejich vizuální zobrazení.
+6. PRAVDA, protože „Adam“ je v abecedě před „Bohuslav“.
+7. Když potřebujeme vyhodnotit více podmínek přehledněji než pomocí vnořených KDYŽ().
+8. Když porovnáváme jednu hodnotu s více konkrétními variantami.
+9. Když vybíráme hodnotu podle číselného indexu nebo pořadí.
+10. Excel vrátí chybu #HODNOTA!
+11. Například pomocí =IFERROR(ZVOLIT(...);"výchozí hodnota")
+12. Obsah buňky je skutečná uložená hodnota, zobrazení buňky je jen formátovaná vizuální podoba.
+13. Vrátí „nekladné“.
+14. Jsou nepřehledné, těžko debugovatelné a náchylné k chybám.
+15. =KDYŽ(A1>100000;"VIP";KDYŽ(A1>50000;"MID";"LOW"))
+16. =IFS(A1>100000;"VIP";A1>50000;"MID";A1<=50000;"LOW")
+
+---
+
+# 📘 Lekce 11 – Logické operátory v Excelu
+
+## ❓ Otázky
+
+1. Co znamená logický operátor A (AND)?
+2. Kdy vrátí logika A hodnotu PRAVDA?
+3. Co znamená logický operátor NEBO (OR)?
+4. Kdy vrátí logika NEBO hodnotu PRAVDA?
+5. Co znamená XOR logika?
+6. Kdy vrátí XOR hodnotu PRAVDA?
+7. Proč se používají logické operátory místo dlouhého vnořování?
+8. Co vrátí IFERROR(), pokud vzorec skončí chybou?
+9. Jaký je rozdíl mezi IFS() a IFERROR()?
+10. Proč je důležité ošetřovat chyby v reportech?
+11. Jak vypadá vzorec pro BONUS při tržbě >100000 a marži >20 %?
+12. Co znamená zápis (B2>100000)*(C2>0,2)?
+13. Proč u OR logiky používáme >0?
+14. Jak poznáš ve vzorci XOR logiku?
+15. Jaký je rozdíl mezi =1 a >0 u logických součtů?
+
+## ✅ Odpovědi
+
+1. Musí být splněny všechny podmínky současně.
+2. Pouze když jsou všechny podmínky pravdivé.
+3. Stačí splnit alespoň jednu podmínku.
+4. Když je pravdivá jedna nebo obě podmínky.
+5. Musí být splněna právě jedna podmínka.
+6. Když platí jen jedna podmínka, ale ne obě současně.
+7. Protože zkracují vzorce, zvyšují přehlednost a usnadňují debugging.
+8. Vrátí náhradní hodnotu místo chyby.
+9. IFS() řeší více podmínek, IFERROR() ošetřuje chyby.
+10. Protože chyby kazí reporting, rozbíjí dashboardy a zhoršují čitelnost dat.
+11. =KDYŽ((B2>100000)*(C2>0,2);"BONUS";"NO BONUS")
+12. Excel převede PRAVDA/NEPRAVDA na 1/0 a násobení funguje jako logické AND.
+13. Protože OR může vrátit 1 nebo 2 a potřebujeme ověřit, že výsledek je větší než 0.
+14. Součet podmínek musí být přesně =1.
+15. =1 znamená právě jedna podmínka, >0 znamená alespoň jedna podmínka.
 
 ---
 
