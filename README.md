@@ -316,6 +316,10 @@ Další krok v learning journey:
 
 ---
 
+# ⚠️ Poznámka
+
+Repozitář používá pouze anonymizovaná nebo ukázková data určená pro studijní a portfolio účely.
+
 # 📌 Stav
 
 Repozitář je průběžně aktualizován podle studia kurzu, mini testů, business case studies a praktických cvičení.
