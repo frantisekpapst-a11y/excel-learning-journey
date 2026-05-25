@@ -141,6 +141,8 @@ Struktura repozitáře odráží moji tehdejší nízkou úroveň znalosti Githu
 
 # 📊 Case Studies
 
+Jedná se o case studies inspirované certifikovaným kurzem itnetwork Datová analýza od A do Z, část Excel pro pokročilé. Nejedná se tedy o case studies nebo příklady řešené přímo v rámci tohoto kurzu.
+
 ## 📦 Case Study 01 — Sales Analysis
 
 **Procvičení:**
