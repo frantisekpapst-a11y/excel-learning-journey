@@ -1,6 +1,6 @@
 # 📊 Excel Learning Journey
 
-Tento repozitář dokumentuje moji cestu učením Microsoft Excelu — od úplných základů až po pokročilou práci s daty, reporting, analytické workflow a přípravu na Power BI.
+Tento repozitář dokumentuje moji cestu učením Microsoft Excelu — od úplných základů, přičemž základy jsou zde zmíněny spíše okrajově, až po pokročilou práci s daty, reporting, analytické workflow a přípravu na Power BI.
 
 ---
 
@@ -11,6 +11,7 @@ Vybudovat praktické portfolio a dostat se na úroveň junior data analytika.
 ---
 
 # 📁 Struktura repozitáře
+Struktura repozitáře odráží moji tehdejší nízkou úroveň znalosti Githubu, neboť jsem s ním začal paralelně.
 
 ```md
 📂 excel-learning-journey
@@ -319,9 +320,4 @@ Další krok v learning journey:
 # ⚠️ Poznámka
 
 Repozitář používá pouze anonymizovaná nebo ukázková data určená pro studijní a portfolio účely.
-
-# 📌 Stav
-
-Repozitář je průběžně aktualizován podle studia kurzu, mini testů, business case studies a praktických cvičení.
-
 Cílem není jen naučit se syntaxe funkcí, ale budovat analytické myšlení a schopnost řešit reálné business problémy pomocí dat.
