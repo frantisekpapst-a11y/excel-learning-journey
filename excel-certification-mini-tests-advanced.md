@@ -1,7 +1,5 @@
 Kvízové otázky kurzu Datová analýza od A do Z - část Excel pokročilý
 
-Posledních 15 otázek jsou otázky ze závěrečného testu části Excel pokročilý.
-
 Programovací jazyk pro Excel má zkratku:
 ✅ Správná odpověď: VBA
 Nativní doplněk Excelu sloužící k řešení optimalizačních úloh se nazývá:
