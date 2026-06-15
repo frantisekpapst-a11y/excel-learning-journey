@@ -16,24 +16,12 @@ Struktura repozitáře odráží moji tehdejší nízkou úroveň znalosti Githu
 ```md
 📂 excel-learning-journey
  ┣ 📄 README.md
- ┣ 📄 case-study-1.md
- ┣ 📄 case-study-2.md
- ┣ 📄 case-study-3.md
- ┣ 📄 case-study-4.md
- ┣ 📄 case-study-5.md
- ┣ 📄 case-study-6.md
- ┣ 📄 case-study-7.md
- ┣ 📄 excel-certificates-basic.pdf
- ┣ 📄 excel-certificates-advanced.pdf
- ┣ 📄 excel-tahak-itnetwork-basic.pdf
- ┣ 📄 excel-tahak-itnetwork-advanced.pdf
- ┣ 📂 excel-cheatsheet
- ┣ 📂 excel-examples
- ┣ 📂 excel-mini-tests-basic-excel
- ┣ 📂 excel-mini-tests-advanced-excel
- ┣ 📂 excel-mini-tests-itnetwork-basic
- ┣ 📂 excel-mini-tests-itnetwork-advanced
- ┗ 📂 excel-notes
+ ┣ 📂 xls-case-studies
+ ┣ 📂 xls-certificates
+ ┣ 📂 xls-cheatsheets
+ ┣ 📂 xls-examples
+ ┣ 📂 xls-mini-tests
+ ┗ 📂 xls-notes
 ```
 
 ---
